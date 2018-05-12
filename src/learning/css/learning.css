@@ -1,0 +1,109 @@
+.page-container{
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../../assets/img/bg-blue-learning.jpg");
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+.page-container .close{
+    font-size: 40px;
+    color:white;
+    position: absolute;
+    top:20px;
+    right:20px;
+}
+.centered-container{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:40%;
+    text-align: center;
+}
+.directive-container{
+    margin-bottom: 50px;
+    font-size: 34px;
+    text-transform: uppercase;
+    font-family: "Montserrat";
+}
+.source-container, .target-container{
+    background-color: rgba(255,255,255,0.8);
+    border-radius:10px;
+    height:130px;
+    line-height: 130px;
+    font-size: 24px;
+    margin:5px;
+}
+
+.correction-container {
+    display: none;
+    background-color: rgba(47, 255, 47, 0.774);
+    border-radius:10px;
+    height:130px;
+    line-height: 130px;
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+    margin:5px;
+} 
+.bad-container {
+    display: block;
+}
+
+.good-reply {
+    background-color: rgba(47, 255, 47, 0.555);
+}
+.bad-reply {  
+    background-color: rgba(255, 0, 0, 0.555);
+}
+
+.next-button {
+    width:168px;
+    padding:20px 0;
+    background-color:#ed0049;
+    color:white;
+    margin-top:20px;
+    border: none;
+    border-radius: 10px;
+}
+
+.nextButton {
+    margin-top: 140px;
+}
+
+.next-button:hover {
+    background-color: rgba(47, 255, 47, 0.712); 
+}
+.nextButton:hover {
+    background-color: rgba(47, 255, 47, 0.712);
+}
+
+.in-reply  {
+    line-height: 130px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+input[type=text] {
+    width: 550px;
+    background-color:transparent;
+    border:none;
+    }
+
+input[type="text"]:focus {
+        outline:none;
+    }
+
+.destroy-session > input {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    height: 50px;
+    width: 90px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 14px;
+}
