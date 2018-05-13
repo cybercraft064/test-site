@@ -21,7 +21,7 @@ $return = "";
 // verification session en cours
 if (isset($_SESSION['email'])) {
 
-     header('Location: ../../dashboard/dashboard-lessons.php'); 
+     header('Location: ../dashboard/dashboard-lessons.php'); 
 
 // chargement des variables de controles
 } else 	if (isset($_POST['email']) && isset($_POST['password'])) {
