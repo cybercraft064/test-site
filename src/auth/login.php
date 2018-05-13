@@ -1,4 +1,7 @@
 <?php include('logic/login-logic.php');
+
+	  // récupèration des variables 	
+	  include('post/login-post.php');
 ?>
 
 <!DOCTYPE html>
@@ -49,13 +52,13 @@
                		<div class="separator"></div>
 				</div>
 				
-					<form action="login.php" method="post">
+					<form action="./post/login-post.php" method="post">
 
 						<div class="input-wrapper <?php echo $bad_mail; ?>">
 							<div class="input-icon-box">
 								<i class="icon-mail"></i>
 							</div>
-							<input type="email" placeholder="<?php echo $userMail; ?>" class="<?php echo $field_input_mail; ?>" name="email" autocomplete="off" required />
+							<input type="email" placeholder="<?php echo $userMail; ?>" class="<?php echo $field_input_mail; ?>" name="mail" autocomplete="off" required />
 						</div>
 					
 						<div class="input-wrapper <?php echo $bad_pwd; ?>">

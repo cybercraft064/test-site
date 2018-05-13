@@ -1,5 +1,4 @@
 <?php
-// session_start();  // deja ouvert dans les *-logic
 
 global $db;
 
@@ -12,7 +11,7 @@ try {
 
 
 // fonction de recherche utilisateur
-// appelé par: login-logic.php
+// appelé par: login-post.php
 function connexion($mail, $password) {
     global $db;
 
@@ -26,35 +25,29 @@ function connexion($mail, $password) {
 
     $user = $resultats->fetch();
 
-    // Email ok 
+    // mail ok 
     // contrôle si s'est le bon mot de passe (2)
     if ($user['password_user'] == $password) {
-
+     
         // Password ok 
         // chargement des variables de session (3)
-        // je ne fais pas d'array car toutes ne seront 
-        // pas appelées en mm temps.
         $_SESSION['mail'] = $user['mail_user'];
         $_SESSION['id-user'] = $user['id_user'];
         $_SESSION['pseudo-user'] = $user['pseudo_user'];
         $_SESSION['level-user'] = $user['level_user'];
         $_SESSION['lesson-user'] = $user['lesson_user'];
 
-        //redirection vers (son) dashboard (4)
-        header('location: ../dashboard/dashboard-lessons.php');          
+        return "goodUser";
         
      // il y à une erreur quelconque
-     // vérif si sa vient de l'Email   
+     // vérif si sa vient du mail   
     } else if ($user['mail_user'] == null) {
-        return "badUser";
+        return "badMail";
 
-    // sinon se devrait être le password 
-    // mais je test comme même !   
-    } else if ($user['password_user'] != $password) {
+    // sinon se devrait être le password  
+    } else 
         return "badPassword";
-    }
-
-}
+}//
 
 // fonction verification si email non existant
 // appelé par: signup-logic.php
