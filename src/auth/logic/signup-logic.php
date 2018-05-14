@@ -35,8 +35,7 @@ if (isset($_SESSION['email'])) {
         if ($exist != 1) {
             //fonction d'ajout utilisateur
              addUser($mail, $password, $pseudo);
-             header('Location: ../home/home.php'); 
-    
+             header('Location: ../home/home.php');    
 
         } else {
             // si l'email existe en base -> Avertissement par un message transmit par le placeholder de l'input du mail

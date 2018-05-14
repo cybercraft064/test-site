@@ -1,5 +1,6 @@
 <?php
     if (!isset($_SESSION)) { session_start(); }
+    include('./logic/home-logic.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,7 @@
     </head> 
     <body>
         <div class="top-container">
+            <header class="pseudo"><?php echo $pseudo_user;?> </header>
             <div class="txt-left"> 
                 <h1 class="big" >fais évoluer ton speaky grâce à ton
                 <span class="small">apprentissage !</span></h1>

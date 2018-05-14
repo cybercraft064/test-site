@@ -23,7 +23,6 @@ function connexion($mail, $password) {
     $resultats = $db->prepare($sql);
     $resultats->bindValue("mail", $mail, PDO::PARAM_STR);
     $resultats->execute();
-
     $user = $resultats->fetch();
 
     // mail ok 
@@ -62,7 +61,7 @@ function chekMail($mail){
 } //
 
 
-//fonction de création d'utilisateur
+//fonction d'ajout d'un utilisateur
 function addUser($mail, $password, $pseudo){  
     global $db;
               
@@ -72,9 +71,28 @@ function addUser($mail, $password, $pseudo){
     $req->bindValue('pwd', $password ,PDO::PARAM_STR);
     $req->bindValue('pseudo', $pseudo ,PDO::PARAM_STR);
     $req->execute();
+    
 
     // recupération de l'ID 
-   $_SESSION['id-user'] = $db->lastInsertId(); 
+   $_SESSION['last-id-user'] = $db->lastInsertId(); 
+   $id = $_SESSION['last-id-user'];
 
+
+    // chargement de ses variables de session
+    $sql = "SELECT * FROM users WHERE id_user = :id";
+    
+    $resultats = $db->prepare($sql);
+    $resultats->bindValue("id", $id, PDO::PARAM_INT);
+    $resultats->execute();
+    $user = $resultats->fetch();
+    
+        // chargement des variables de session
+        $_SESSION['mail'] = $user['mail_user'];
+        $_SESSION['id-user'] = $user['id_user'];
+        $_SESSION['pseudo-user'] = $user['pseudo_user'];
+        $_SESSION['level-user'] = $user['level_user'];
+        $_SESSION['lesson-user'] = $user['lesson_user'];
+
+ 
 } //
 

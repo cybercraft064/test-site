@@ -90,24 +90,11 @@ a {
     text-align: center;
 }
 
-/* la première carte est toujours claire */
-.filter2,
-.filter3,
-.filter4,
-.filter5,
-.filter6,
-.filter7,
-.filter8,
-.filter9,
-.filter10,
-.filter11,
-.filter12 {
+.filter {
     background-color: rgba(250, 250,250, 0.5);
     height: 117px;
     width: 117px;
 }
-
-
 
 .icon-pen {
     padding-top: 12px;
@@ -119,7 +106,6 @@ a {
     height: 35px;
     width: 35px;
 }
-
 
 .progress-bar {
     width: 80%;

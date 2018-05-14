@@ -5,6 +5,15 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.pseudo {
+    position: absolute;
+    right: 52px;
+    top: 32px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #ed0049;
+    font-size: 32px;
+}
+
 .txt-left {
     position: absolute;
     top:30%;

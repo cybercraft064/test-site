@@ -41,57 +41,57 @@ include('logic/dashboard-lessons-logic.php');
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
                 </div></a>
-                <a href="./../learning/start-learning.php?lesson=2"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=2"><div class="record <?php echo $filter2; ?>">
                     <p>2</p>
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
                 </div></a>
-                <a href="./../learning/start-learning.php?lesson=3"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=3"><div class="record <?php echo $filter3; ?>">
                     <p>3</p>
                     <img src="../../assets/img/sound.png" class="icon-sound" />
                     <div class="progress-bar"></div>
                 </div>
-                <a href="./../learning/start-learning.php?lesson=4"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=4"><div class="record <?php echo $filter4; ?>">
                     <p>4</p>
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
                 </div>                
-                <a href="./../learning/start-learning.php?lesson=5"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=5"><div class="record <?php echo $filter5; ?>">
                     <p>5</p>
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
                 </div>
-                <a href="./../learning/start-learning.php?lesson=6"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=6"><div class="record <?php echo $filter6; ?>">
                     <p>6</p>
                     <img src="../../assets/img/sound.png" class="icon-sound" />
                     <div class="progress-bar"></div>
                 </div>                
-                <a href="./../learning/start-learning.php?lesson=7"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=7"><div class="record <?php echo $filter7; ?>">
                     <p>7</p>
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
                 </div>
-                <a href="./../learning/start-learning.php?lesson=8"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=8"><div class="record <?php echo $filter8; ?>">
                     <p>8</p>
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
                 </div>
-                <a href="./../learning/start-learning.php?lesson=9"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=9"><div class="record <?php echo $filter9; ?>">
                     <p>9</p>
                     <img src="../../assets/img/sound.png" class="icon-sound" />
                     <div class="progress-bar"></div>
                 </div>
-                <a href="./../learning/start-learning.php?lesson=10"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=10"><div class="record <?php echo $filter10; ?>">
                     <p>10</p>
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
                 </div>                
-                <a href="./../learning/start-learning.php?lesson=11"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=11"><div class="record <?php echo $filter11; ?>">
                     <p>11</p>
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
                 </div>
-                <a href="./../learning/start-learning.php?lesson=12"><div class="record <?php echo $filter; ?>">
+                <a href="./../learning/start-learning.php?lesson=12"><div class="record <?php echo $filter12; ?>">
                     <p>12</p>
                     <img src="../../assets/img/pen.png" class="icon-pen" />
                     <div class="progress-bar"></div>
