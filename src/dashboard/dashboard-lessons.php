@@ -1,7 +1,5 @@
 
 <?php 
-    if (!isset($_SESSION)) { session_start(); } 
-
 include('logic/dashboard-lessons-logic.php');
 ?>
 

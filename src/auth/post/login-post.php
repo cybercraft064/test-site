@@ -1,12 +1,11 @@
 <?php
-    if (!isset($_SESSION)) { session_start(); }
 
-echo "  ----- je suis passé par login-post.php ------------";
+session_start();
 
 
 // remise à vide des variables de test
-unset($_SESSION['userMail']);
-unset($_SESSION['userPassword']); 
+unset($_SESSION['erreurMail']);
+unset($_SESSION['erreurPassword']); 
 
 // variables du post
 $mail = "";
@@ -34,13 +33,13 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
             break;
 
         case "badMail":
-            $_SESSION['userMail'] = "Inconnu: ".$mail;
+            $_SESSION['erreurMail'] = "Inconnu: ".$mail;
             // redirection
             header('location: ../login.php'); 
             break;
 
         case "badPassword":    
-            $_SESSION['userPassword'] = "Erreur de mot de passe";     
+            $_SESSION['erreurPassword'] = "Erreur de mot de passe";     
             // redirection
             header('location: ../login.php');         
             break;

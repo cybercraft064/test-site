@@ -1,8 +1,8 @@
 <?php
-    if (!isset($_SESSION)) { session_start(); }
-        
-    echo "---- je passe par dashboard-lessons-logic.php ---";
-    print_r($_SESSION);
+    session_start(); 
+
+    echo "---- je passe par dashboard-lessons-logic.php ---"; // debug
+    print_r($_SESSION); // debug
 
     // variables de travail
     $pseudo_user = $_SESSION['pseudo-user'];

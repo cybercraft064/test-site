@@ -1,5 +1,5 @@
 <?php
-    if (!isset($_SESSION)) { session_start(); }
+    session_start();
 
 //init de l'index 
 $_SESSION['wordIndex'] = 0;
