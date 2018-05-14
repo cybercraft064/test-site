@@ -7,10 +7,14 @@ $couleur = "";
 $etat = "";
 
 // boucle principal
+// si le step est à: verifier la réponse
 if ($_SESSION['step'] === "checkAnswer") {
 
     $_SESSION['wordIndex']++;
 }
+
+// appel de la BD
+
 
 // création d'une instance de PDO (gestion de la BD)
 $db = new PDO('mysql:host=localhost;dbname=speekoo', 'root', '');

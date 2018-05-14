@@ -5,11 +5,18 @@
 
     print_r($_SESSION);
 
-   // echo ' ----- test de la variable de session $_SESSION["pseudo-user"] :'.$_SESSION['pseudo-user']; //debug
-   // echo ' ----- test de la variable de session $_SESSION["level-user"] :'.$_SESSION['lesson-user']; //debug
-
     // variables de travail
     $pseudo_user = $_SESSION['pseudo-user'];
 
+
+
     // numéro de la dernière leçon validée
-    $lesson = $_SESSION['lesson-user'];
+    $lesson = $_SESSION['lesson-user'];  
+
+    // activation ou non de la carte lesson
+    for ($i = 12; $i > $lesson; $i --){
+        $filter = "filter$i"; // toujour la dernière valeur
+    }
+    
+
+   // echo $filter = "filter";
