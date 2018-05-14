@@ -1,7 +1,8 @@
-<?php include('logic/login-logic.php');
+<?php
+    if (!isset($_SESSION)) { session_start(); }
 
-	  // récupèration des variables 	
-	  include('post/login-post.php');
+include('logic/login-logic.php');
+
 ?>
 
 <!DOCTYPE html>

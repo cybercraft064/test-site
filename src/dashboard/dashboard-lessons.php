@@ -1,5 +1,9 @@
 
-<?php include('logic/dashboard-lessons-logic.php'); ?>
+<?php 
+    if (!isset($_SESSION)) { session_start(); }
+
+include('logic/dashboard-lessons-logic.php');
+?>
 
 
 <!DOCTYPE html>

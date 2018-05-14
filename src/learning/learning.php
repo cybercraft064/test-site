@@ -1,4 +1,7 @@
-<?php include('logic/learning-logic.php'); ?>
+<?php 
+    if (!isset($_SESSION)) { session_start(); }
+include('logic/learning-logic.php');
+ ?>
 
 <!DOCTYPE html>
 <html>

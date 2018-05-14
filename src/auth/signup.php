@@ -1,4 +1,8 @@
-<?php include('logic/signup-logic.php'); ?>
+<?php 
+    if (!isset($_SESSION)) { session_start(); }
+
+    include('logic/signup-logic.php');
+?>
 
 <!DOCTYPE html>
 

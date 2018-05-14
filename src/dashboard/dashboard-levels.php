@@ -1,4 +1,8 @@
-<?php include('logic/dashboard-levels-logic.php'); ?>
+<?php 
+if (!isset($_SESSION)) { session_start(); }
+
+include('logic/dashboard-levels-logic.php');
+ ?>
 
 <!DOCTYPE html>
 <html>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+    if (!isset($_SESSION)) { session_start(); }
 
 // init du placeHolder de l'input Email
 // sera modifié si l'email existe dans la base
