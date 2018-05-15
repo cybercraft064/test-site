@@ -27,8 +27,8 @@ include('logic/learning-logic.php');
             
                 <!-- $couleur change suivant la réponse -->
                 <div class="target-container <?php echo $couleur; ?>">
-                    <form method="post" action="learning.php">
-                        
+                
+                    <form method="post" action="learning.php">                        
                         <input type="text" name="input-reply" class="in-reply" value="<?php echo $reponse; ?>" autocomplete="off" autofocus />
                         <input type="submit" value="Envoyer" class="next-button <?php echo $nextButton; ?>" />
                     </form>                  
@@ -39,10 +39,8 @@ include('logic/learning-logic.php');
                     </div>
                 </div>
         
-            <div class="destroy-session">
-                               
-                <a href="close-session.php"><input type="submit" value="closeSession" /></a>
-                
+            <div class="destroy-session">                              
+                <a href="close-session.php"><input type="submit" value="closeSession" /></a>               
             </div>
         </div>    
     </body>

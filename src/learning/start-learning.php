@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+//INI DES COMPTEURS DE LA PARTIE  
+
 //init de l'index 
 $_SESSION['wordIndex'] = 0;
 $_SESSION['step'] ="userInput";

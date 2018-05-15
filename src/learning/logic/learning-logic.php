@@ -1,12 +1,13 @@
 <?php
 
-if (!isset($_SESSION)) { session_start(); }
+session_start();
 
 $reponse = "";
 $couleur = "";
 $etat = "";
 
-// boucle principal
+// BOUCLE PRINCIPAL
+
 // si le step est à: verifier la réponse
 if ($_SESSION['step'] === "checkAnswer") {
 

@@ -3,14 +3,13 @@
 session_start();
 
 
-// remise à vide des variables de test
+// neutralisation des variables antérieures
 unset($_SESSION['erreurMail']);
 unset($_SESSION['erreurPassword']); 
-
+$return = "";
 // variables du post
 $mail = "";
 $password = "";
-$return = "";
 
 // ***************** traitement du POST *********************** //
 // chargement des variables de controles
@@ -43,10 +42,6 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
             // redirection
             header('location: ../login.php');         
             break;
-
-        default :
-            echo "cas non traité !! "; // debug
-            break;    
     }
 
 } //

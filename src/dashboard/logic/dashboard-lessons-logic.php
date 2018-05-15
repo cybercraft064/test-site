@@ -1,13 +1,23 @@
 <?php
     session_start(); 
 
-    echo "---- je passe par dashboard-lessons-logic.php ---"; // debug
-    print_r($_SESSION); // debug
-
     // variables de travail
     $pseudo_user = $_SESSION['pseudo-user'];
 
     // init des filters
+    // le premier etant toujours actif.
+
+    /*$filter2; $filter3; $filter4; $filter5; $filter6;
+    $filter7; $filter8; $filter9; $filter10; $filter11;
+    $filter12;
+
+    for ($i = 2;$i <= 12; $i++){
+        $filter[$i] = "filter";
+        echo $filter[$i]."$i--";
+    }
+
+    echo $filter3; */
+
     $filter2 = "filter";
     $filter3 = "filter";
     $filter4 = "filter";
@@ -18,7 +28,7 @@
     $filter9 = "filter";
     $filter10 = "filter";
     $filter11 = "filter";
-    $filter12 = "filter";
+    $filter12 = "filter";  
 
     // numéro de la dernière leçon validée
     $lesson = $_SESSION['lesson-user'];
