@@ -4,7 +4,7 @@
 //INI DES COMPTEURS DE LA PARTIE  
 
 //init de l'index 
-$_SESSION['wordIndex'] = 0;
+$_SESSION['wordIndex'] = 1; // wordIndex est l'ID de la table traduction
 $_SESSION['step'] ="userInput";
 
 //init du compteur de bonne réponse

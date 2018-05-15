@@ -11,7 +11,6 @@ $return = "";
 $mail = "";
 $password = "";
 
-// ***************** traitement du POST *********************** //
 // chargement des variables de controles
 if (isset($_POST['mail']) && isset($_POST['password'])) {
     $mail = htmlspecialchars($_POST['mail']);

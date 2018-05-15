@@ -92,7 +92,26 @@ function addUser($mail, $password, $pseudo){
         $_SESSION['pseudo-user'] = $user['pseudo_user'];
         $_SESSION['level-user'] = $user['level_user'];
         $_SESSION['lesson-user'] = $user['lesson_user'];
-
- 
 } //
+
+
+//extraction des mots/phrases à traduir
+function getTranslation($wordIndex){
+global $db;
+
+$sql = "SELECT * FROM traduction WHERE wordIndex = :wordIndex";
+$req = $db->prepare($sql);
+$req->bindValue("wordIndex",$wordIndex, PDO::PARAM_INT);
+$req->execute();
+$rep = $req->fetch();
+
+        // chargement de la ligne
+        $_SESSION['source'] = $rep['source'];
+        $_SESSION['reponse'] = $rep['reponse'];
+
+} //
+
+
+
+
 

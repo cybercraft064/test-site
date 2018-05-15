@@ -22,20 +22,20 @@ include('logic/learning-logic.php');
                 </div>
 
                 <div class="source-container">
-                    <?php echo $result[$_SESSION['wordIndex']]["source"]; ?>
+                    <?php echo $_SESSION["source"]; ?>
                 </div>  
             
                 <!-- $couleur change suivant la réponse -->
-                <div class="target-container <?php echo $couleur; ?>">
+                <div class="target-container <?php echo $_SESSION['couleur']; ?>">
                 
-                    <form method="post" action="learning.php">                        
-                        <input type="text" name="input-reply" class="in-reply" value="<?php echo $reponse; ?>" autocomplete="off" autofocus />
-                        <input type="submit" value="Envoyer" class="next-button <?php echo $nextButton; ?>" />
+                    <form method="post" action="./post/learning-post.php">                        
+                        <input type="text" name="input-reply" class="in-reply" value="<?php echo htmlspecialchars($_SESSION['value']); ?>" autocomplete="off" autofocus />
+                        <input type="submit" value="Envoyer" class="next-button <?php echo $_SESSION['nextButton']; ?>" />
                     </form>                  
                 </div>
 
-                <div class="correction-container <?php echo $etat; ?>">
-                        <?php echo $result[$_SESSION['wordIndex']]["reponse"]; ?> 
+                <div class="correction-container <?php echo $_SESSION['etat']; ?>">
+                        <?php echo $_SESSION["reponse"]; ?> 
                     </div>
                 </div>
         
