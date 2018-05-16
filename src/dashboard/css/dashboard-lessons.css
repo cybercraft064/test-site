@@ -90,10 +90,24 @@ a {
     text-align: center;
 }
 
+
 .filter {
     background-color: rgba(250, 250,250, 0.5);
     height: 117px;
     width: 117px;
+}
+
+/* win et parent */
+.win {
+    color: green;
+}
+/* win devient enfant du parent unit-to-do */
+.unit-to-do .win {
+    color: #ed0049;
+}
+/* idem du parent filter */
+.filter .win {
+    color: gray;
 }
 
 .icon-pen {
@@ -101,19 +115,29 @@ a {
     height: 40px;
     width: 40px;
 }
+
 .icon-sound {
     padding-top: 16px;
     height: 35px;
     width: 35px;
 }
-
+/* ------------------------------------------------------------------- */
+/*  utilisation d'une logic automatic avec .progress-bar */
 .progress-bar {
     width: 80%;
-    margin-left: 6%;
-    margin-top: 15px;
-    border: 5px solid green;
+    margin-left: 5px;
+    margin-top: 10px;
+    border: 6px solid green;
     border-radius: 5px;
 }
+/* si .progress-bar devient enfant alors */
+.filter .progress-bar{
+    border:0;
+}
+/* même cas .progress-bar devient enfant */
+.unit-to-do .progress-bar{
+    border:0;
+} /* -------------------------------------------------------------------- */
 
 .pseudo {
     position: absolute;

@@ -33,67 +33,43 @@ include('logic/dashboard-lessons-logic.php');
             </div>  
             
             <div class="centered-level">
+                
+                <?php for ($i=0;$i<12;$i++){ 
 
-                <a href="./../learning/start-learning.php?lesson=1"><div class="record">
-                    <p>1</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div></a>
-                <a href="./../learning/start-learning.php?lesson=2"><div class="record <?php echo $filter2; ?>">
-                    <p>2</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div></a>
-                <a href="./../learning/start-learning.php?lesson=3"><div class="record <?php echo $filter3; ?>">
-                    <p>3</p>
-                    <img src="../../assets/img/sound.png" class="icon-sound" />
-                    <div class="progress-bar"></div>
-                </div>
-                <a href="./../learning/start-learning.php?lesson=4"><div class="record <?php echo $filter4; ?>">
-                    <p>4</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div>                
-                <a href="./../learning/start-learning.php?lesson=5"><div class="record <?php echo $filter5; ?>">
-                    <p>5</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div>
-                <a href="./../learning/start-learning.php?lesson=6"><div class="record <?php echo $filter6; ?>">
-                    <p>6</p>
-                    <img src="../../assets/img/sound.png" class="icon-sound" />
-                    <div class="progress-bar"></div>
-                </div>                
-                <a href="./../learning/start-learning.php?lesson=7"><div class="record <?php echo $filter7; ?>">
-                    <p>7</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div>
-                <a href="./../learning/start-learning.php?lesson=8"><div class="record <?php echo $filter8; ?>">
-                    <p>8</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div>
-                <a href="./../learning/start-learning.php?lesson=9"><div class="record <?php echo $filter9; ?>">
-                    <p>9</p>
-                    <img src="../../assets/img/sound.png" class="icon-sound" />
-                    <div class="progress-bar"></div>
-                </div>
-                <a href="./../learning/start-learning.php?lesson=10"><div class="record <?php echo $filter10; ?>">
-                    <p>10</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div>                
-                <a href="./../learning/start-learning.php?lesson=11"><div class="record <?php echo $filter11; ?>">
-                    <p>11</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div>
-                <a href="./../learning/start-learning.php?lesson=12"><div class="record <?php echo $filter12; ?>">
-                    <p>12</p>
-                    <img src="../../assets/img/pen.png" class="icon-pen" />
-                    <div class="progress-bar"></div>
-                </div> 
+                        $filterClass = "";
+
+                        if ($i == (int) $lesson){ // début boucle
+                            $filterClass="unit-to-do";
+                        }
+                        if($i > (int) $lesson){
+                            $filterClass = "filter";
+                        }                    
+                    ?>
+
+                    <?//Utilisation de la logic automatic (parent / enfant)
+                      // si PROGRESS-BAR reste enfant de RECORD  le .css est .progress-bar
+                      // si PROGRESS-BAR devient enfant de "UNIT-TO-DO" ou "FILTER 
+                      // on peut utiliser se nouveau parent comme path du .css
+                      // ce qui donne (.unit-to-do .progress-bar) ou (.filter .progress-bar)
+                      // se qui permet de modifier .progress-bar uniquement pour ces cas la.
+                    ?>
+
+                    <a href="./../learning/start-learning.php?lesson=<?php echo $i+1; ?>">
+                        <div class="record <?php echo $filterClass; ?>">
+                            <p class="win"><?php echo $i+1; ?></p>
+
+                            <?php if ($i == 2 || $i == 5 || $i == 7) { ?>
+                                <img src="../../assets/img/sound.png" class="icon-sound" />
+                                <?php } else { ?>
+                                <img src="../../assets/img/pen.png" class="icon-pen" />
+                                <?php } ?>
+                    
+                            <div class="progress-bar"></div>
+                        </div>
+                    </a>
+
+                <?php } // fin de boucle ?>
+               
             </div>
 
             <footer>

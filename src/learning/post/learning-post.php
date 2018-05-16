@@ -1,39 +1,39 @@
 <?php
 session_start();
 
-// Init des Variables
-$reponse ="";
-
 // Controle de la saisie
-if (!empty($_POST["input-reply"]) && $_SESSION['step'] !== "checkAnswer") {
+if ($_SESSION['step'] === "userInput") {
 
-    $_SESSION['step'] = "checkAnswer"; // etat verification de la reponse
+    // variables de comparaison
+    $userAnswer = strtolower(htmlspecialchars($_POST["input-reply"]));
+    $correctAnswer = strtolower($_SESSION["reponse"]) ;
 
-    // variable de comparaison
-    $reponse = htmlspecialchars($_POST["input-reply"]);
-
-    if (strtolower($reponse) == strtolower($_SESSION["reponse"])) {
-        $_SESSION['value'] = $reponse;
-        $_SESSION['couleur'] = "good-reply";
+    if ($userAnswer == $correctAnswer) {
+        $_SESSION['value'] = $userAnswer;
+        $_SESSION['couleur-css'] = "good-reply";
+        $_SESSION['answerReply'] = "correct";
         $_SESSION['cptGoodReply']++;
-        // retour à l'envoyeur
-        header('location: ../learning.php');
-
+        
     } else {
-        $_SESSION['couleur'] = "bad-reply";  
-        $_SESSION['etat'] = "bad-container";
-        $_SESSION['nextButton'] = "nextButton";
+        $_SESSION['value'] = $userAnswer;
+        $_SESSION['couleur-css'] = "bad-reply"; 
+        $_SESSION['answerReply'] = "incorrect";
+        $_SESSION['nextButton-css'] = "nextButton";
         $_SESSION['cptBadReply']++;
-        // retour à l'envoyeur
-
-        echo "-- je suis dans mauvaise réponse --";
-      //  header('location: ../learning.php');        
+        
     }
-
-
+    
+    // changement de step
+    $_SESSION['step'] = "checkAnswer"; // etat vérification de la reponse   
+    header('location: ../learning.php');
+    
 }  else {
-    echo " -- je suis dans else --";
-   /* $_SESSION['step'] = "userInput";
-        // retour à l'envoyeur
-        header('location: ../learning.php'); */
+
+    $_SESSION['step'] = "userInput"; 
+    $_SESSION['value'] = "";
+    $_SESSION['couleur-css'] = "";
+    $_SESSION['nextButton-css'] = ""; // 
+
+        // retour à l'envoyeur */
+        header('location: ../learning.php');
 } 

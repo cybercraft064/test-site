@@ -1,15 +1,17 @@
 <?php
     if (!isset($_SESSION)) { session_start(); }
 
+if (!isset($db))  {
+
 global $db;
 
 // pour les tests [supprimer le controle try/Catch après]
 try {
     $db = new PDO('mysql:host=localhost;dbname=speekoo;charset=utf8', 'root', '');
 } catch (PDOException $e) {
-
 }
 
+} //
 
 // fonction de recherche utilisateur
 // appelé par: login-post.php
@@ -97,20 +99,29 @@ function addUser($mail, $password, $pseudo){
 
 //extraction des mots/phrases à traduir
 function getTranslation($wordIndex){
-global $db;
+    global $db;
 
-$sql = "SELECT * FROM traduction WHERE wordIndex = :wordIndex";
-$req = $db->prepare($sql);
-$req->bindValue("wordIndex",$wordIndex, PDO::PARAM_INT);
-$req->execute();
-$rep = $req->fetch();
+    $sql = "SELECT * FROM traduction WHERE wordIndex = :wordIndex";
+    $req = $db->prepare($sql);
+    $req->bindValue("wordIndex",$wordIndex, PDO::PARAM_INT);
+    $req->execute();
+    $rep = $req->fetch();
 
-        // chargement de la ligne
-        $_SESSION['source'] = $rep['source'];
-        $_SESSION['reponse'] = $rep['reponse'];
-
+    return $rep;
 } //
 
+
+// mise à jour de la dernière lecon terminée
+function updateLessons($id_user, $lesson_user){
+    global $db;
+
+    $sql = "UPDATE users SET lesson_user :lesson_user WHERE id_user = :id_user";
+    $req = $db->prepare($sql);
+    $req->bindValue("id_user", $id_user, PDO::PARAM_INT);
+    $req->bindValue("lesson_user", $lesson_user, PDO::PARAM_INT);
+    $req->execute();
+
+} //
 
 
 
