@@ -1,6 +1,5 @@
 <?php
-session_start();
-
+include('logic/winner-logic.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,19 +12,12 @@ session_start();
     </head> 
     <body>
         <div class="page-container">
-            <header>    
-               <!-- <h1> winner </h1> -->
-            </header>  
 
-            <?php 
-                   echo '<pre>';
-                   print_r($_SESSION);
-                   echo '</pre>';
-            ?>       
-            
-            <footer>
+            <section>    
+                <h1> winner </h1> 
                 <div class="pseudo"><?php echo htmlspecialchars($_SESSION['pseudo-user']); ?></div>
-            </footer>  
+                <h2>tu passes au niveau  <span class="lesson"><?php echo $lesson_next;?></span></h2>
+            </section>      
 
         </div>
     </body>    

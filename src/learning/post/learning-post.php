@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+// cette page est appelé par le FORM de learning.php
+
 // Controle de la saisie
 if ($_SESSION['step'] === "userInput") {
 
@@ -32,8 +34,9 @@ if ($_SESSION['step'] === "userInput") {
     $_SESSION['step'] = "userInput"; 
     $_SESSION['value'] = "";
     $_SESSION['couleur-css'] = "";
-    $_SESSION['nextButton-css'] = ""; // 
+    $_SESSION['answerReply'] = "";
+    $_SESSION['nextButton-css'] = ""; 
 
-        // retour à l'envoyeur */
-        header('location: ../learning.php');
+     // retour à l'envoyeur */
+     header('location: ../learning.php');
 } 

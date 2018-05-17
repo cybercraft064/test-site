@@ -38,7 +38,7 @@ include('logic/dashboard-lessons-logic.php');
 
                         $filterClass = "";
 
-                        if ($i == (int) $lesson){ // début boucle
+                        if ($i == (int) $lesson){ 
                             $filterClass="unit-to-do";
                         }
                         if($i > (int) $lesson){

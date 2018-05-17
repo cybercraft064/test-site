@@ -1,6 +1,10 @@
 <?php
     session_start();
 
+    // appel gestion de la base  
+    include("./../shared/bd-manager.php");
+
+
 // init du placeHolder de l'input Email
 // sera modifié si l'email existe dans la base
 $NewMail = "Email";
@@ -16,26 +20,36 @@ $password = "";
 $pseudo = "";
 
 // test si utilisateur s'est trompé de manip.
+// avec un retour sur son dashboard
 if (isset($_SESSION['email'])) {
+    header('Location: ../dashboard/dashboard-levels.php');
 
-    header('Location: ../../dashboard/dashboard-levels.php');
 
+    //sinon on récupère le post
     } else if (isset($_POST["newUserEmail"])) {         
 
         $mail = htmlspecialchars($_POST["newUserEmail"]);
         $password = htmlspecialchars($_POST["newUserPassword"]); 
         $pseudo = htmlspecialchars($_POST["newUserPseudo"]); 
-        
-    // appel gestion de la base  
-    include_once("./../shared/bd-manager.php");
-               
-    //Fonction verification de l'uniciticé de l'email
+             
+    //Fonction vérification de l'uniciticé de l'email
     $exist = chekMail($mail);
 
         if ($exist != 1) {
+
+            // ok l'email n'existe pas création de cette user
             //fonction d'ajout utilisateur
-             addUser($mail, $password, $pseudo);
-             header('Location: ../home/home.php');    
+            $user = addUser($mail, $password, $pseudo);
+    
+            // chargement des variables de session
+            $_SESSION['mail'] = $user['mail_user'];
+            $_SESSION['id-user'] = $user['id_user'];
+            $_SESSION['pseudo-user'] = $user['pseudo_user'];
+            $_SESSION['level-user'] = $user['level_user'];
+            $_SESSION['lesson-user'] = $user['lesson_user'];
+
+            // direction le dashboard
+            header('Location: ../dashboard/dashboard-lessons.php');    
 
         } else {
             // si l'email existe en base -> Avertissement par un message transmit par le placeholder de l'input du mail

@@ -3,23 +3,33 @@
     height: 100vh;
     background-image: url("../../../assets/img/bg-blue-learning.jpg");
     background-size: cover;
-    font-family: 'Fjalla One', sans-serif;
-  /*  font-family: 'Montserrat', sans-serif; */
+    font-family: 'Fjalla One', sans-serif; 
 }
 
 h1 {
-  /*  font-size: 48px; */
-    font-size: 324px;
+    font-size: 250px; 
     color: rgb(19, 255, 38);
     text-align: center;
-    padding-top: 150px;
+    padding-top: 50px;
+}
+
+h2 {
+    font-size: 100px;
+    color: rgb(19, 255, 38);
+    text-align: center;
+    padding-top: 50px;
 }
 
 .pseudo {
-    position: absolute;
-    left: 32px;
-    bottom: 32px;
-    font-family: 'Fjalla One', sans-serif;
+    font-size: 100px;
     color: #ed0049;
-    font-size: 32px;
+    text-align: center;
+    padding-top: 50px
+}
+
+.lesson {
+    font-size: 120px;
+    color: #ed0049;
+    
+
 }
