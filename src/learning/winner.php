@@ -12,12 +12,33 @@ include('logic/winner-logic.php');
     </head> 
     <body>
         <div class="page-container">
+              
+            <header> 
+                </header>
+                
+                <?php // Utilisation de la logic Parent / enfant : $typeLesson prends la valeur de (revision) ?>
+                <section class="<?php echo $typeLesson; ?> ">  
 
-            <section>    
-                <h1> winner </h1> 
-                <div class="pseudo"><?php echo htmlspecialchars($_SESSION['pseudo-user']); ?></div>
-                <h2>tu passes au niveau  <span class="lesson"><?php echo $lesson_next;?></span></h2>
-            </section>      
+                    <h1> winner </h1> 
+                    <div class="pseudo"><?php echo htmlspecialchars($_SESSION['pseudo-user']); ?></div>
+                    
+                    <span class="next-lesson">
+                        <h2>tu passes à la leçon <span class="lesson"><?php echo $lesson_next;?></span></h2>
+                    </span>
+                    
+                    <span class="previous-lesson">
+                        <h2>Bravo tu as bien révisé</h2>  
+                    </span>
+
+                    <div class="btn-center">
+                    <a href="../dashboard/dashboard-lessons.php" class="next-button">Continuer !</a>
+                    <a href="../auth/logout.php" class="close-session">Se déconnecter</a>
+                    </div>
+
+                </section> 
+
+                <footer>
+            </footer>      
 
         </div>
     </body>    

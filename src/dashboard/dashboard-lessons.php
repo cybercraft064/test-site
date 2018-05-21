@@ -1,6 +1,7 @@
 
 <?php 
 include('logic/dashboard-lessons-logic.php');
+// appelé par login-post.php
 ?>
 
 <!DOCTYPE html>
@@ -37,12 +38,14 @@ include('logic/dashboard-lessons-logic.php');
                 <?php for ($i=0;$i<12;$i++){ 
 
                         $filterClass = "";
+                        $linkLesson = "./../learning/start-learning.php?lesson=";
 
                         if ($i == (int) $lesson){ 
                             $filterClass="unit-to-do";
                         }
                         if($i > (int) $lesson){
                             $filterClass = "filter";
+                            $linkLesson = '#';
                         }                    
                     ?>
 
@@ -54,7 +57,7 @@ include('logic/dashboard-lessons-logic.php');
                       // se qui permet de modifier .progress-bar uniquement pour ces cas la.
                     ?>
 
-                    <a href="./../learning/start-learning.php?lesson=<?php echo $i+1; ?>">
+                    <a href="<?php echo $linkLesson . ($i+1);?>">           
                         <div class="record <?php echo $filterClass; ?>">
                             <p class="win"><?php echo $i+1; ?></p>
 
@@ -73,7 +76,7 @@ include('logic/dashboard-lessons-logic.php');
             </div>
 
             <footer>
-                <div class="pseudo"><?php echo $pseudo_user; ?></div>
+                <div class="pseudo"><?php echo $pseudo_user; ?> - <a href="../auth/logout.php">Se déconnecter</a></div>
             </footer>    
         </div>    
 

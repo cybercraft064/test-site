@@ -8,45 +8,58 @@ include("../shared/bd-manager.php");
 
 
 // si le step est à: entrée de l'utilisateur
-// on incrémente [wordIndex] 
-// les variables de session s'ont initialisées dans ( start-learning.php )
+// les variables session s'ont initialisées dans ( start-learning.php )
 if ($_SESSION['step'] === "userInput") {
+  
+  // incrementation mot suivant et sert de compteur de ligne
+  $_SESSION['wordIndex']++;
+  
+  if ($_SESSION['wordIndex'] > $_SESSION['wordsNbInLesson']) {  
 
-    $_SESSION['wordIndex']++;
+    //traitements des annonces dans winner.php
+    // si le numéro de la lesson en cours et inférieur de celui enregistré en base
+    // alors s'est que nous sommes en révision
+    if ($_SESSION['current-lesson'] <= $_SESSION['lesson-user']) {
 
-    // compteur de traduction effectué
-    $_SESSION['count']++;
+        $_SESSION['revision'] = true;
 
-    if ($_SESSION['count'] > 3) { // 5 origine   3 pour le debug
+       } else {
 
-      // recupération de l'id user
-      $id_user = (int) htmlspecialchars($_SESSION['id-user']);
+        $_SESSION['revision'] = false;
 
-       // on incrémente le numéro de lesson 
-       $_SESSION['lesson-user']++;
-       $lesson_user = (int) htmlspecialchars($_SESSION['lesson-user']);
-            
-       // controle des nouvelles valeurs
-       $_SESSION['controle_valeur_lesson'] = $lesson_user;
-       $_SESSION['controle_valeur_id_user'] = $id_user;
-       // fonction Update du numéro de leçon
-       updateLessons($id_user,$lesson_user);     
-       
-       // direction la page winner
-       header('Location: winner.php');      
+        // Validation en base du numéro de leçon terminé / table -> users
+        // recupération de l'id user (1)
+        $id_user = (int) htmlspecialchars($_SESSION['id-user']);
+    
+        // incrementation du numéro de leçon (2)
+        $_SESSION['lesson-user']++;
+        $lesson_user = (int) htmlspecialchars($_SESSION['lesson-user']);
+        
+        // fonction de mise à jour (3)
+        updateLessons($id_user,$lesson_user);     
+        
+        // passage au niveau de lesson suivant
+        // sans faire de mise à jour, puisque pas encore validé
+        $_SESSION['lesson-index'] = $lesson_user +1;
 
-      }
-} 
+        }
 
+    // direction la page winner de toute les manières
+    header('Location: winner.php');      
+    
+  }
+} //
 
-// chargement de l'index de la table traduction
-$wordIndex = (int) $_SESSION['wordIndex'];
+// sinon
 
-// appel de la fonction qui récupère la ligne de traduction
-$translations = getTranslation($wordIndex);
+// init de l'index 0
+// vu que s'est un tableau / la première ligne vaut zéro.
+$wordIndex = (int) ($_SESSION['wordIndex'] -1);
 
-// chargement de la ligne en cours d'utilisation
-$_SESSION['source'] = $translations['source'];
-$_SESSION['reponse'] = $translations['reponse'];
+// chargement de la ligne en cours de traitement
+$translations = $_SESSION['translations'];
+$_SESSION['source'] = $translations[$wordIndex]['source'];
+$_SESSION['reponse'] = $translations[$wordIndex]['reponse'];
+
 
 

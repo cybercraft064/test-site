@@ -16,35 +16,36 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
     $password = htmlspecialchars($_POST['password']); 
 
     // execution de la fonction de controle utilisateurs
-    $return = checkUserConnexion($mail, $password);
+    $rep = checkUserConnexion($mail, $password);
 
-    switch ($return) {
-        
-        case "badMail":
+    if ($rep == "badMail") {
         $_SESSION['erreurMail'] = "Inconnu: ".$mail;
         // redirection
         header('location: ../login.php'); 
-        break;
-        
-        case "badPassword":    
+
+    } elseif ($rep == "badPassword") {  
         $_SESSION['erreurPassword'] = "Erreur de mot de passe";     
         // redirection
-        header('location: ../login.php');         
-        break;
-        
-        default :
+        header('location: ../login.php');    
+
+    } else {   
+
         // chargement des variables de session 
-        $_SESSION['mail'] = $return['mail_user'];
-        $_SESSION['id-user'] = $return['id_user'];
-        $_SESSION['pseudo-user'] = $return['pseudo_user'];
-        $_SESSION['level-user'] = $return['level_user'];
-        $_SESSION['lesson-user'] = $return['lesson_user'];
+        $_SESSION['mail'] = $rep['mail_user'];
+        $_SESSION['id-user'] = $rep['id_user'];
+        $_SESSION['pseudo-user'] = $rep['pseudo_user'];
+        $_SESSION['level-user'] = $rep['level_user'];
+        $_SESSION['lesson-user'] = $rep['lesson_user']; // toujours à zéro pour les nouveaux utilisateur / puisque que le niveau n'est pas encore validé
+                                                        // il passera à 1 dès validation.
+        //et copie pour la lesson_index
+        // sachant que lesson_index doit avoir +1
+        // on travaille sur le niveau des lecons qui ne sont pas encore validé
+        $_SESSION['lesson-index'] = ($rep['lesson_user'] +1);
+
 
         // redirection vers sont dashboard
         header('location: ../../dashboard/dashboard-lessons.php'); 
 
-        break; // j'ai un doute sur l'éfficacitée des break;)
-        
-    }
+    }              
 
 } //

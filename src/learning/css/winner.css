@@ -7,17 +7,17 @@
 }
 
 h1 {
-    font-size: 250px; 
+    font-size: 120px; 
     color: rgb(19, 255, 38);
     text-align: center;
     padding-top: 50px;
 }
 
 h2 {
-    font-size: 100px;
+    font-size: 60px;
     color: rgb(19, 255, 38);
     text-align: center;
-    padding-top: 50px;
+    padding-top: 74px;
 }
 
 .pseudo {
@@ -27,9 +27,51 @@ h2 {
     padding-top: 50px
 }
 
-.lesson {
+.next-lesson .lesson {
     font-size: 120px;
     color: #ed0049;
-    
-
 }
+
+.previous-lesson {
+    display: none;
+}
+
+
+/* ----------------- parent / enfant ------------ */
+.revision .next-lesson {
+    display: none;
+}
+
+.revision .previous-lesson {
+    display: block;
+}
+
+.btn-center {
+display: block;
+ margin:auto;
+}
+
+ a.next-button,
+ a.close-session {  
+     display: inline-block;
+     margin:auto;
+     width:200px;
+     margin-top:50px;
+     text-align: center;
+     font-size: 18px;
+     text-transform: uppercase;
+     font-weight: 700;
+     padding:18px 0;
+     color:white;
+     background-color: #ed0049;
+     text-decoration: none; 
+     border-radius: 5px;
+ }
+
+ a.close-session {
+     background-color: blueviolet;
+
+ }
+
+
+

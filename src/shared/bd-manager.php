@@ -83,22 +83,22 @@ function addUser($mail, $password, $pseudo){
 
 //extraction des mots/phrases à traduir
 // appelé par: learning-logic.php
-function getTranslation($wordIndex){
+function getTranslation($lesson_index){
     global $db;
 
-    $sql = "SELECT * FROM traduction WHERE wordIndex = :wordIndex";
+    $sql = "SELECT * FROM traduction WHERE lesson_index = :lessonIndex" ;
     $req = $db->prepare($sql);
-    $req->bindValue("wordIndex",$wordIndex, PDO::PARAM_INT);
+    $req->bindValue("lessonIndex",$lesson_index, PDO::PARAM_INT);
     $req->execute();
-    $trad = $req->fetch();
+    $trad = $req->fetchAll();
     $req->closeCursor();
     return $trad;
-} //
+} // 
 
 
 // mise à jour de la dernière lecon terminée
 // appelé par: learning-logic.php
-function updateLessons($id_user, $lesson_user){
+function updateLessons($id_user,$lesson_user){
     global $db;
 
     $sql = "UPDATE users SET lesson_user = :lesson_user WHERE id_user = :id_user";
