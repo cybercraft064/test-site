@@ -29,6 +29,12 @@ img.logo {
 
 .link-burger {
     text-decoration: none;
+    position: relative;
+    cursor: pointer;
+
+}
+.show-burger .burger-menu{
+    display: block;
 }
 .burger {
     position: absolute;
@@ -43,9 +49,29 @@ img.logo {
     border-radius: 5px;
 }
 
+
+/* ------- gestion du menu ----------- */
 .link-burger:hover .barre {
     border: 3px solid #ed0049;
 }
+.burger-menu{
+    position: absolute;
+    background-color: white;
+    padding:10px;
+    color:rgb(50,50,50);
+    top:80px;
+    right:50px;
+    border-radius: 5px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display:none;
+}
+.show-menu .burger-menu{
+    display:block;
+}
+/* ------------------------------------ */
+
 
 .centered-container h1 {
     font-family: 'Fjalla One', sans-serif;
@@ -149,3 +175,4 @@ a {
     font-size: 32px;
 }
 
+.

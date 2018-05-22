@@ -36,12 +36,21 @@ if ($_SESSION['step'] === "userInput") {
         $lesson_user = (int) htmlspecialchars($_SESSION['lesson-user']);
         
         // fonction de mise à jour (3)
-        updateLessons($id_user,$lesson_user);     
+        updateLessons($id_user,$lesson_user);  
         
         // passage au niveau de lesson suivant
         // sans faire de mise à jour, puisque pas encore validé
         $_SESSION['lesson-index'] = $lesson_user +1;
+        
+        // test passage au niveau de lesson suivant
+            // numéro du dernier niveau validé
+            $levelCurrent = (int) htmlspecialchars($_SESSION['level-user']);
 
+            if ($_SESSION['lesson-index'] == 12){
+              $levelCurrent++;
+              // function de mise jour du niveau base -> users
+              updateLevel($id_user, $levelCurrent);
+            } 
         }
 
     // direction la page winner de toute les manières

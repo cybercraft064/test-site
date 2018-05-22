@@ -19,17 +19,21 @@ include('logic/dashboard-lessons-logic.php');
             <div class="header">
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
                 <img src="../../assets/img/portugais.png" class="logo-language" />
-                <a href="dashboard-levels" class="link-burger"> 
+                <div class="link-burger" id="link-burger"> 
                     <div class="burger">
                         <div class="barre"></div>
                         <div class="barre"></div>
                         <div class="barre"></div>
                     </div>
-                </a>    
+                    <ul class="burger-menu">
+                        <li><a href="dashboard-levels.php">Niveaux</li>
+                        <li><a href="../auth/logout.php">Se déconnecter</li>
+                    </ul>
+                </div>    
             </div>
       
             <div class="centered-container">
-                <h1>Niveau 1 - Planète Mongus</h1>
+                <h1>Niveau <?php echo htmlspecialchars($_SESSION['level-user']);?> - Planète Mongus</h1>
                 <div class="parting"></div>           
             </div>  
             
@@ -49,7 +53,7 @@ include('logic/dashboard-lessons-logic.php');
                         }                    
                     ?>
 
-                    <?//Utilisation de la logic automatic (parent / enfant)
+                <?php //Utilisation de la logic automatic (parent / enfant)
                       // si PROGRESS-BAR reste enfant de RECORD  le .css est .progress-bar
                       // si PROGRESS-BAR devient enfant de "UNIT-TO-DO" ou "FILTER 
                       // on peut utiliser se nouveau parent comme path du .css
@@ -78,7 +82,9 @@ include('logic/dashboard-lessons-logic.php');
             <footer>
                 <div class="pseudo"><?php echo $pseudo_user; ?> - <a href="../auth/logout.php">Se déconnecter</a></div>
             </footer>    
-        </div>    
-
+        </div> 
+        
+        <script src="js/dashboard.js"> </script>
+    
     </body>
 </html>    

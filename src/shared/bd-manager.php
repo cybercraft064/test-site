@@ -96,15 +96,27 @@ function getTranslation($lesson_index){
 } // 
 
 
-// mise à jour de la dernière lecon terminée
+// mise à jour de la dernière lecon validée
 // appelé par: learning-logic.php
 function updateLessons($id_user,$lesson_user){
     global $db;
-
     $sql = "UPDATE users SET lesson_user = :lesson_user WHERE id_user = :id_user";
     $upd = $db->prepare($sql);
     $upd->bindValue("id_user", $id_user, PDO::PARAM_INT);
     $upd->bindValue("lesson_user", $lesson_user, PDO::PARAM_INT);
+    $upd->execute();
+    $upd->closeCursor();
+} //
+
+
+// mise à jour du niveau validée
+// appelé par: learning-logic.php
+function updateLevel($id_user,$level_user){
+    global $db;
+    $sql = "UPDATE users SET level_user = :level_user WHERE id_user = :id_user";
+    $upd = $db->prepare($sql);
+    $upd->bindValue("id_user", $id_user, PDO::PARAM_INT);
+    $upd->bindValue("level_user", $level_user, PDO::PARAM_INT);
     $upd->execute();
     $upd->closeCursor();
 } //

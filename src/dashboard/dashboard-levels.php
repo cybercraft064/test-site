@@ -38,11 +38,17 @@ include('logic/dashboard-levels-logic.php');
 
             <div class="centered-container">
                 <h1>Dashboard Ligue</h1>
+
                 <div class="parting"></div>
-                <a href="dashboard-levels.php"><span class="chevron-left"><</span></a>
+                <a href="<?php echo $linkLevel.($level -1); ?>"><span class="chevron-left"> < </span></a>
+
+                <a href="#">
                 <img src="./../../assets/img/learning-world-1.png" class="learn-world" />
-                <a href="dashboard-levels.php"><span class="chevron-right">></span></a>
-                <h2>Monde n°1</h2>
+                </a>
+
+                <a href="<?php echo $linkLevel.($level +1); ?>"><span class="chevron-right"> > </span></a>
+
+                <h2>Monde n°<?php echo $level; ?></h2>
             </div>
 
                 <img src="./../../assets/img/mountain.png" class="bg-mountains" />

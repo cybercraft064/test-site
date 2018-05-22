@@ -7,7 +7,7 @@
 }
 
 h1 {
-    font-size: 120px; 
+    font-size: 208px; 
     color: rgb(19, 255, 38);
     text-align: center;
     padding-top: 50px;
@@ -47,16 +47,16 @@ h2 {
 }
 
 .btn-center {
-display: block;
- margin:auto;
+    display: flex;
+    justify-content: center;
 }
 
  a.next-button,
  a.close-session {  
      display: inline-block;
-     margin:auto;
      width:200px;
      margin-top:50px;
+     margin-left:40px;
      text-align: center;
      font-size: 18px;
      text-transform: uppercase;
