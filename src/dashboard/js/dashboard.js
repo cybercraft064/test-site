@@ -1,15 +1,16 @@
-var elementA;
+var elementBurger;
+
+
+elementBurger = document.getElementById('link-burger');
+
+elementBurger.addEventListener('click', openMenu);
+
 
 function openMenu(){
     
-    if (elementA.classList.contains('show-burger')){  
-        elementA.classList.remove('show-burger');
+    if (elementBurger.classList.contains('show-burger')){  
+        elementBurger.classList.remove('show-burger');
     } else {
-        elementA.classList.add('show-burger');        
+        elementBurger.classList.add('show-burger');        
     }
 };
-
-elementA = document.getElementById('link-burger');
-
-elementA.addEventListener('click', openMenu);
-

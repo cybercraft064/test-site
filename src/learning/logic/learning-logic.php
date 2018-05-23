@@ -43,17 +43,21 @@ if ($_SESSION['step'] === "userInput") {
         $_SESSION['lesson-index'] = $lesson_user +1;
         
         // test passage au niveau de lesson suivant
-            // numéro du dernier niveau validé
+            // numéro du dernier niveau validé 12 max
             $levelCurrent = (int) htmlspecialchars($_SESSION['level-user']);
 
-            if ($_SESSION['lesson-index'] == 12){
+            if ($_SESSION['lesson-index'] > 12){
               $levelCurrent++;
+              
               // function de mise jour du niveau base -> users
               updateLevel($id_user, $levelCurrent);
+
+              // direction la page de changement de NIVEAU
+              header('Location: winner.php?nextLevel=1');            
             } 
         }
 
-    // direction la page winner de toute les manières
+    // direction la page winner de lessons
     header('Location: winner.php');      
     
   }
