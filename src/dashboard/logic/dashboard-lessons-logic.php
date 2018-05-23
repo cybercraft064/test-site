@@ -9,6 +9,11 @@
     // numéro de la dernière leçon validée
     // utilisé pour obsculter les lessons pas encore effectuées
     $lesson = $_SESSION['lesson-user'];
+
+    // variables variable :)
+    $backgroundLesson = '../../assets/img/bg-learning';
+    $level = $_SESSION['level-user'];
+
     
        
     

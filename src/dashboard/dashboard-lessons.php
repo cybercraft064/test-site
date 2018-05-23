@@ -14,8 +14,8 @@ include('logic/dashboard-lessons-logic.php');
         <title>DashBoard-Lessons</title>
     </head> 
     <body>
-        <div class="container">
-
+        <div class="container" style="background-image: url('<?php echo $backgroundLesson."-".$level.".jpg";?>')">
+            
             <div class="header">
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
                 <img src="../../assets/img/portugais.png" class="logo-language" />
@@ -26,7 +26,7 @@ include('logic/dashboard-lessons-logic.php');
                         <div class="barre"></div>
                     </div>
                     <ul class="burger-menu">
-                        <li><a href="dashboard-levels.php">Niveaux</li>
+                        <li><a href="dashboard-levels.php?level=<?php echo $_SESSION['level-user']; ?>">Niveaux</li>
                         <li><a href="../auth/logout.php">Se déconnecter</li>
                     </ul>
                 </div>    
@@ -39,7 +39,7 @@ include('logic/dashboard-lessons-logic.php');
             
             <div class="centered-level">
                 
-                <?php for ($i=0;$i<12;$i++){ 
+                <?php for ($i=0;$i<12;$i++){ // début de la boucle principal
 
                         $filterClass = "";
                         $linkLesson = "./../learning/start-learning.php?lesson=";
@@ -80,7 +80,7 @@ include('logic/dashboard-lessons-logic.php');
             </div>
 
             <footer>
-                <div class="pseudo"><?php echo $pseudo_user; ?> - <a href="../auth/logout.php">Se déconnecter</a></div>
+                <div class="pseudo"><?php echo $pseudo_user; ?></div>
             </footer>    
         </div> 
         

@@ -8,7 +8,7 @@ include("../shared/bd-manager.php");
 $_SESSION['step'] ="userInput";
 
 //INI DES COMPTEURS DE LA PARTIE  
-//init de l'index-> correspond au numéro de la ligne à traduire dans le (lesson_index)
+//init de l'index-> correspond au numéro de la ligne à traduire dans (lesson_index)
 $_SESSION['wordIndex'] = 0; 
 $_SESSION['wordsNbInLesson'] = 0;
 
@@ -30,6 +30,7 @@ $_SESSION['cptBadReply'] = 0;
 
 // -----------------------------------------------------------------------------
 // récupération du numéro de la leçon à traduire (1)
+// provient de 
 $_SESSION['current-lesson'] = (int) htmlspecialchars($_GET['lesson']);
 // 
 
@@ -39,6 +40,5 @@ $_SESSION['translations'] = $translations;
 
 // nombre de traduction à effecter pour cette leçon
 $_SESSION['wordsNbInLesson'] =  count($translations);
-
 
 header('Location: learning.php');

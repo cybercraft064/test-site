@@ -13,7 +13,7 @@ include('logic/learning-logic.php');
         <title>learning</title>
     </head> 
     <body>
-        <div class="page-container">
+        <div class="page-container" style="background-image: url('<?php echo $backgroundLesson.$level.".jpg";?>')">
             <a href="../dashboard/dashboard-lessons.php"><div class="close">x</div></a>
              <div class="destroy-session">                              
                  <a href="close-session.php"><input type="submit" value="closeSession" /></a>               

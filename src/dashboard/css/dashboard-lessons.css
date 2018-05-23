@@ -1,10 +1,8 @@
 
-
 .container {
     height: 100vh;
     width: 100%;
-    background-image: url("../../../assets/img/bg-blue-learning.jpg");
-    background-size: cover;
+    background-size: cover; 
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -14,6 +12,7 @@
     top: 25px;
     height: 46px;
 }
+
 img.logo {
     height: 46px;
     width: 127px;
@@ -173,5 +172,3 @@ a {
     color: #ed0049;
     font-size: 32px;
 }
-
-.
