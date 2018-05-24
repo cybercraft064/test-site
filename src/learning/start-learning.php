@@ -1,6 +1,6 @@
 <?php
     session_start();
-// appelé par le POST de dashboard-lessons.php
+// appelé par dashboard-lessons.php avec un $_GET['lesson'];
 
 include("../shared/bd-manager.php"); 
 

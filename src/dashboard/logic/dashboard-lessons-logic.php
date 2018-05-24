@@ -9,9 +9,19 @@
     // utilisé pour invalider les lessons non encore effectuées
     $lesson = $_SESSION['lesson-user'];
 
-    // variables variable :)
+    // variable reçu en get
+    // permet de savoir le niveau des leçons à afficher suivant la demande
+    if (isset($_GET['level'])) {
+
+        $levelLessons = (int) htmlspecialchars($_GET['level']);
+    } else {
+        
+        $levelLessons = htmlspecialchars($_SESSION['level-user']);
+    }
+
+    // variables varientes :)
     $backgroundLesson = '../../assets/img/bg-learning-';
-    $level = $_SESSION['level-user'];
+
 
     
        

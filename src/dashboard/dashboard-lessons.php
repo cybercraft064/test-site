@@ -1,6 +1,11 @@
 <?php 
 include('logic/dashboard-lessons-logic.php');
-// appelé par login-post.php
+
+// est appelé par
+// login-post.php en début de session 
+// login-logic si déjà connecté
+// signup.php si email déjà enregistré
+// et enfin par le dashboard-levels
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +18,7 @@ include('logic/dashboard-lessons-logic.php');
         <title>DashBoard-Lessons</title>
     </head> 
     <body>
-        <div class="container" style="background-image: url('<?php echo $backgroundLesson.$level.".jpg";?>')">
+        <div class="container" style="background-image: url('<?php echo $backgroundLesson.$levelLessons.".jpg";?>')">
             
             <div class="header">
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
@@ -32,7 +37,7 @@ include('logic/dashboard-lessons-logic.php');
             </div>
       
             <div class="centered-container">
-                <h1>Niveau <?php echo htmlspecialchars($_SESSION['level-user']);?> - Planète Mongus</h1>
+                <h1>Niveau <?php echo $levelLessons ?> - Planète Mongus</h1>
                 <div class="parting"></div>           
             </div>  
             
@@ -60,7 +65,7 @@ include('logic/dashboard-lessons-logic.php');
                       // se qui permet de modifier .progress-bar uniquement pour ces cas la.
                     ?>
 
-                    <a href="<?php echo $linkLesson . ($i+1);?>">           
+                    <a href="<?php echo $linkLesson.($i+1);?>">           
                         <div class="record <?php echo $filterClass; ?>">
                             <p class="win"><?php echo $i+1; ?></p>
 

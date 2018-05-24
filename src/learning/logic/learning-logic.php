@@ -69,7 +69,7 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
         }
     }
     
-} else {  // sinon nous somme en cours de leçon !! //
+}  // sinon nous somme en cours de leçon !! //
   
     // vu que s'est un tableau 
     // init de l'index à zéro au premier passage
@@ -79,7 +79,7 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
     $translations = $_SESSION['translations'];
     $_SESSION['source'] = $translations[$wordIndex]['source'];
     $_SESSION['reponse'] = $translations[$wordIndex]['reponse'];
-}//
+
 
 
 

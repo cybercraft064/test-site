@@ -1,5 +1,6 @@
 <?php
     session_start();
+    // includ de signup.php
 
     // appel gestion de la base  
     include("./../shared/bd-manager.php");
@@ -22,7 +23,9 @@ $pseudo = "";
 // test si utilisateur s'est trompé de manip.
 // avec un retour sur son dashboard
 if (isset($_SESSION['email'])) {
-    header('Location: ../dashboard/dashboard-levels.php');
+
+    $currentLesson = $_SESSION['lesson-user'];
+    header("Location: ../dashboard/dashboard-lessons.php?lesson=".$currentLesson); 
 
 
     //sinon on récupère le post
@@ -38,7 +41,7 @@ if (isset($_SESSION['email'])) {
         if ($exist != 1) {
 
             // ok l'email n'existe pas création de cette user
-            //fonction d'ajout utilisateur
+            //fonction d'ajout utilisateur / table -> users
             $user = addUser($mail, $password, $pseudo);
     
             // chargement des variables de session
@@ -48,8 +51,8 @@ if (isset($_SESSION['email'])) {
             $_SESSION['level-user'] = $user['level_user'];
             $_SESSION['lesson-user'] = $user['lesson_user'];
 
-            // direction le dashboard
-            header('Location: ../dashboard/dashboard-lessons.php');    
+            // direction le dashboard levels           
+            header("Location: ../dashboard/dashboard-levels.php?level=1");
 
         } else {
             // si l'email existe en base -> Avertissement par un message transmit par le placeholder de l'input du mail

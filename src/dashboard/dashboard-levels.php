@@ -47,7 +47,7 @@ include('logic/dashboard-levels-logic.php');
                     
                 <a href="<?php echo $linkLevel.($currentLevel -1); ?>"><span class="chevron-left"> < </span></a>
                     
-                <a href="#">
+                <a href="<?php echo $linkLessons.$currentLevel; ?>">
                   <img src="<?php echo $learningWorld.$currentLevel.'.png'; ?>"  class="learn-world" />
                 </a>
                     
