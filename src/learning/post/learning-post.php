@@ -1,9 +1,8 @@
 <?php
 session_start();
+// page appelé par le FORM de learning.php
 
-// cette page est appelé par le FORM de learning.php
-
-// Controle de la saisie
+// Contrôle de la saisie
 if ($_SESSION['step'] === "userInput") {
 
     // variables de comparaison
@@ -26,7 +25,7 @@ if ($_SESSION['step'] === "userInput") {
     }
     
     // changement de step
-    $_SESSION['step'] = "checkAnswer"; // etat vérification de la reponse   
+    $_SESSION['step'] = "checkAnswer"; // état vérification de la réponse   
     header('location: ../learning.php');
     
 }  else {
@@ -39,4 +38,4 @@ if ($_SESSION['step'] === "userInput") {
 
      // retour à l'envoyeur */
      header('location: ../learning.php');
-} 
+} //

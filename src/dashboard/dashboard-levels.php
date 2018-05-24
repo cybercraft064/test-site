@@ -1,5 +1,6 @@
 <?php
 include('logic/dashboard-levels-logic.php');
+// appelé par 
  ?>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@ include('logic/dashboard-levels-logic.php');
         <title>DashBoard-Levels</title>
     </head>
     <body>
-        <div class="container-dashboard<?php echo $currentLevel; ?>">
+        <div class="container-dashboard" style="background-image: url('<?php echo $backgroundLevel.$currentLevel.".jpg";?>')"> 
 
             <div class="header">
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
@@ -36,25 +37,26 @@ include('logic/dashboard-levels-logic.php');
 
             </div>
 
-            <?php if ($currentLevel -1 == 0)  { $chevron = "chevron-left-none"; } ?>
-
+            <?php if ($currentLevel -1 == 0)   { $chevron = "chevron-left-none"; }  ?>
+            <?php if ($currentLevel +1 == 11)  { $chevron = "chevron-right-none"; } ?>
+            
             <div class="centered-container <?php echo $chevron; ?>">
                 <h1>Dashboard Ligue</h1> 
-
+                    
                 <div class="parting"></div>
-
+                    
                 <a href="<?php echo $linkLevel.($currentLevel -1); ?>"><span class="chevron-left"> < </span></a>
-                
+                    
                 <a href="#">
-                <img src="<?php echo $learningWorld.$currentLevel.'.png'; ?>"  class="learn-world" />
+                  <img src="<?php echo $learningWorld.$currentLevel.'.png'; ?>"  class="learn-world" />
                 </a>
-
+                    
                 <a href="<?php echo $linkLevel.($currentLevel +1); ?>"><span class="chevron-right"> > </span></a>
 
                 <h2>Monde n°<?php echo $currentLevel; ?></h2>
             </div>
 
-                <img src="./../../assets/img/mountain.png" class="bg-mountains" />
+       <?php //   <img src="./../../assets/img/mountain.png" class="bg-mountains" />  ?>
 
             <footer>
                 <div class="pseudo"><?php echo $pseudo_user; ?></div>

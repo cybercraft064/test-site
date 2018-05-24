@@ -1,12 +1,13 @@
 <?php
-
 session_start();
+// include de login.php
 
 // avant tout traitement verification si la session et active
 // et redirection vers sont dashboard si s'est le cas.
 if (isset($_SESSION['mail'])) {
 
-     header('Location: ../../dashboard/dashboard-lessons.php'); 
+    $currentLesson = $_SESSION['lesson-user'];
+    header("Location: ../../dashboard/dashboard-lessons.php?lesson=".$currentLesson); 
 
 } else {
 

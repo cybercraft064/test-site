@@ -1,7 +1,7 @@
 <?php
-
 include('logic/login-logic.php');
 
+// appelé par index.php
 ?>
 
 <!DOCTYPE html>

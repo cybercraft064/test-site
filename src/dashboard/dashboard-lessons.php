@@ -1,4 +1,3 @@
-
 <?php 
 include('logic/dashboard-lessons-logic.php');
 // appelé par login-post.php
@@ -14,7 +13,7 @@ include('logic/dashboard-lessons-logic.php');
         <title>DashBoard-Lessons</title>
     </head> 
     <body>
-        <div class="container" style="background-image: url('<?php echo $backgroundLesson."-".$level.".jpg";?>')">
+        <div class="container" style="background-image: url('<?php echo $backgroundLesson.$level.".jpg";?>')">
             
             <div class="header">
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>

@@ -1,16 +1,19 @@
 <?php
 session_start();
+// appelé par login.php
+
 include("../../shared/bd-manager.php");
 
 // neutralisation des variables antérieures
 unset($_SESSION['erreurMail']);
 unset($_SESSION['erreurPassword']); 
 $return = "";
+
 // variables du post
 $mail = "";
 $password = "";
 
-// chargement des variables de controles provenants du POST
+// chargement des variables de contrôle provenants du POST
 if (isset($_POST['mail']) && isset($_POST['password'])) {
     $mail = htmlspecialchars($_POST['mail']);
     $password = htmlspecialchars($_POST['password']); 
@@ -43,9 +46,9 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
         $_SESSION['lesson-index'] = ($rep['lesson_user'] +1);
 
 
-        // redirection vers sont dashboard
-        header('location: ../../dashboard/dashboard-lessons.php'); 
-
+        // redirection vers sont dashboard lessons
+        $currentLesson = $_SESSION['lesson-user'];
+        header("Location: ../../dashboard/dashboard-lessons.php?lesson=".$currentLesson); 
     }              
 
 } //

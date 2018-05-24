@@ -1,10 +1,10 @@
 <?php
 session_start();
+// page include de learning.php
 
-// cette page est appelé par learning.php
 // init des Valeurs Variable
 $backgroundLesson = '../../assets/img/bg-learning-';
-$level = (int) htmlspecialchars($_SESSION['level-user']);
+$level = (int) htmlspecialchars($_SESSION['level-user']); // dernière validé en Bd
 
 // appel de la BD
 include("../shared/bd-manager.php"); 
@@ -20,13 +20,13 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
   if ($_SESSION['wordIndex'] > $_SESSION['wordsNbInLesson']) {  /* ************************ */
 
     //traitements des annonces dans winner.php
-    // si le numéro de la lesson en cours et inférieur de celui enregistré en base
-    // alors s'est que nous sommes en révision
+    // si le numéro de la lesson en cours et inférieur ou égale de celui enregistré en base
+    // s'est que nous sommes en révision
     if ($_SESSION['current-lesson'] <= $_SESSION['lesson-user']) { /* ************************* */
 
         $_SESSION['revision'] = true;
 
-       } else { /* ******* */
+       } else { /* alors nous validons cette lesson en Bd */
 
         $_SESSION['revision'] = false;
 
@@ -41,25 +41,26 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
         // fonction de mise à jour du nouveau numéro (3)
         updateLessons($id_user,$lesson_user);  
         
-        // passage à l'index des lesson suivant
-        // sans faire de mise à jour, puisque pas encore validé
+        // passage à l'index des lessons suivantes
+        // sans faire de mise à jour, puisque non encore validé
         $_SESSION['lesson-index'] = $lesson_user +1;
 
         
+        // Ensuite nous testons si la dernière leçon de ce niveau est atteint
         // test de passage à un (level) niveau supperieur 
         if ($_SESSION['lesson-index'] > 12){  /* *********************** */
           
-            // récupération du dernier (level) validé
+            // récupération du dernier niveau validé
             $levelCurrent = (int) htmlspecialchars($_SESSION['level-user']);
             $levelCurrent++;
               
-            // function de mise jour du niveau base -> users
+            // function de mise jour du (level) / base -> users
             updateLevel($id_user, $levelCurrent);
 
             // direction la page de changement de NIVEAU  
             header( "location: ../dashboard/dashboard-levels.php?level=".$levelCurrent) ;  
             
-            } else { // on est seulement dans le cas de la lecon suivante
+            } else { // on est seulement dans le cas de la leçon suivante
 
               // direction la page winner de lessons
               header('Location: winner.php');      
@@ -67,18 +68,19 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
 
         }
     }
-} //
+    
+} else {  // sinon nous somme en cours de leçon !! //
+  
+    // vu que s'est un tableau 
+    // init de l'index à zéro au premier passage
+    $wordIndex = (int) ($_SESSION['wordIndex'] -1);
+    
+    // chargement de la ligne en cours de traitement
+    $translations = $_SESSION['translations'];
+    $_SESSION['source'] = $translations[$wordIndex]['source'];
+    $_SESSION['reponse'] = $translations[$wordIndex]['reponse'];
+}//
 
-// sinon
-
-// init de l'index 0
-// vu que s'est un tableau / la première ligne vaut zéro.
-$wordIndex = (int) ($_SESSION['wordIndex'] -1);
-
-// chargement de la ligne en cours de traitement
-$translations = $_SESSION['translations'];
-$_SESSION['source'] = $translations[$wordIndex]['source'];
-$_SESSION['reponse'] = $translations[$wordIndex]['reponse'];
 
 
 
