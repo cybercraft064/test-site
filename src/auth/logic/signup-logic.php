@@ -24,8 +24,9 @@ $pseudo = "";
 // avec un retour sur son dashboard
 if (isset($_SESSION['email'])) {
 
+    $currentLevel = $_SESSION['level-user'];
     $currentLesson = $_SESSION['lesson-user'];
-    header("Location: ../dashboard/dashboard-lessons.php?lesson=".$currentLesson); 
+    header("Location: ../dashboard/dashboard-lessons.php?lesson=".$currentLesson."&amp;level=".$currentLevel); 
 
 
     //sinon on récupère le post

@@ -1,6 +1,6 @@
 <?php
 session_start();
-// appelé par login.php
+// appelé par le form de login.php
 
 include("../../shared/bd-manager.php");
 
@@ -31,24 +31,24 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
         // redirection
         header('location: ../login.php');    
 
-    } else {   
+    } else {   // allez au boulot
 
         // chargement des variables de session 
         $_SESSION['mail'] = $rep['mail_user'];
         $_SESSION['id-user'] = $rep['id_user'];
         $_SESSION['pseudo-user'] = $rep['pseudo_user'];
         $_SESSION['level-user'] = $rep['level_user'];
-        $_SESSION['lesson-user'] = $rep['lesson_user']; // toujours à zéro pour les nouveaux utilisateur / puisque que le niveau n'est pas encore validé
-                                                        // il passera à 1 dès validation.
+        $_SESSION['lesson-user'] = $rep['lesson_user']; // toujours à zéro pour les nouveaux utilisateur 
+                                                        // il passera à 1 dès sa première validation.
         //et copie pour la lesson_index
         // sachant que lesson_index doit avoir +1
-        // on travaille sur le niveau des lecons qui ne sont pas encore validé
+        // on travaille sur le niveau des leçons qui ne sont pas encore validées
         $_SESSION['lesson-index'] = ($rep['lesson_user'] +1);
 
-
-        // redirection vers sont dashboard lessons
+        $currentLevel = $_SESSION['level-user'];
         $currentLesson = $_SESSION['lesson-user'];
-        header("Location: ../../dashboard/dashboard-lessons.php?lesson=".$currentLesson); 
+        header("Location: ../../dashboard/dashboard-lessons.php?lesson=".$currentLesson."&amp;level=".$currentLevel); 
+
     }              
 
 } //

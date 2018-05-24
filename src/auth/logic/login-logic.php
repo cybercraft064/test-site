@@ -2,13 +2,13 @@
 session_start();
 // include de login.php
 
-// avant tout traitement verification si la session et active
+// avant tout traitement vérification si la session et active
 // et redirection vers sont dashboard si s'est le cas.
 if (isset($_SESSION['mail'])) {
 
     $currentLevel = $_SESSION['level-user'];
     $currentLesson = $_SESSION['lesson-user'];
-    header("Location: ../dashboard/dashboard-lessons.php?lesson=".$currentLesson."&level=".$currentLevel); 
+    header("Location: ../dashboard/dashboard-lessons.php?lesson=".$currentLesson."&amp;level=".$currentLevel); 
 
 } else {
 
@@ -38,11 +38,4 @@ if (empty($_SESSION['erreurPassword'])){
     $field_input_pwd = "field-input-bad"; 
     }   
 }//
-
-
-
-
-
-
-
 

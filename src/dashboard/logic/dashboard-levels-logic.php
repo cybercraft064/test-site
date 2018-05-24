@@ -1,6 +1,6 @@
 <?php
     session_start();
-    // page include de dashboard-level.php
+    //include de dashboard-level.php
 
     // variables de travail
     $chevron = "";
@@ -14,8 +14,9 @@
     // pour révision entre autre
     $currentLevel = $_SESSION['current-level'];
 
-    // pour la redirection vers ces leçons
-    $linkLessons = "dashboard-lessons.php?level=";
+    // et pour la redirection vers ces leçons
+    $currentLesson = $_SESSION['lesson-user'];
+    $linkLessons = "dashboard-lessons.php?lesson=";
 
     // partie aléatoire
     $linkLevel = "dashboard-levels.php?level=";

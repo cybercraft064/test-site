@@ -18,7 +18,7 @@ include('logic/login-logic.php');
 </head>
 <body>
     <div class="page-container"> 
-		<div class=login-filter>
+		<div class="login-filter">
 
 			<div class="header">		
 			<a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>

@@ -47,7 +47,7 @@ include('logic/dashboard-levels-logic.php');
                     
                 <a href="<?php echo $linkLevel.($currentLevel -1); ?>"><span class="chevron-left"> < </span></a>
                     
-                <a href="<?php echo $linkLessons.$currentLevel; ?>">
+                <a href="<?php echo $linkLessons.$currentLesson."&amp;level=".$currentLevel; ?>">
                   <img src="<?php echo $learningWorld.$currentLevel.'.png'; ?>"  class="learn-world" />
                 </a>
                     
@@ -55,8 +55,6 @@ include('logic/dashboard-levels-logic.php');
 
                 <h2>Monde n°<?php echo $currentLevel; ?></h2>
             </div>
-
-       <?php //   <img src="./../../assets/img/mountain.png" class="bg-mountains" />  ?>
 
             <footer>
                 <div class="pseudo"><?php echo $pseudo_user; ?></div>
