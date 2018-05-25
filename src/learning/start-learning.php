@@ -30,11 +30,14 @@ $_SESSION['cptBadReply'] = 0;
 
 // -----------------------------------------------------------------------------
 // récupération du numéro de la leçon à traduire (1)
-// provient de 
+// provient de dashboard-lessons.php
 $_SESSION['current-lesson'] = (int) htmlspecialchars($_GET['lesson']);
-// 
+
+
+// test  
 
 // fonction qui récupère les lignes des mots à traduires (2)
+// en faite les (lesson-index) du numéro de lesson à faire.
 $translations = getTranslation($_SESSION['current-lesson']);
 $_SESSION['translations'] = $translations;
 

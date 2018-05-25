@@ -11,7 +11,7 @@ include('logic/winner-logic.php');
         <title>Winner</title>
     </head> 
     <body>
-        <div class="page-container">
+        <div class="page-container" style="background-image: url('<?php echo $backgroundLesson.$levelCurrent.".jpg";?>')">
               
             <header> 
                 </header>

@@ -19,7 +19,7 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
   
   if ($_SESSION['wordIndex'] > $_SESSION['wordsNbInLesson']) {  /* ************************ */
 
-    //traitements des annonces dans winner.php
+    // traitements des annonces dans winner.php
     // si le numéro de la lesson en cours et inférieur ou égale de celui enregistré en base
     // s'est que nous sommes en révision
     if ($_SESSION['current-lesson'] <= $_SESSION['lesson-user']) { /* ************************* */
@@ -48,7 +48,7 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
         
         // Ensuite nous testons si la dernière leçon de ce niveau est atteint
         // test de passage à un (level) niveau supperieur 
-        if ($_SESSION['lesson-index'] > 12){  /* *********************** */
+        if ($_SESSION['lesson-index'] > $_SESSION['endLesson']){  // endLesson provient de dashboard-lessons-logic.php
           
             // récupération du dernier niveau validé
             $levelCurrent = (int) htmlspecialchars($_SESSION['level-user']);
@@ -63,7 +63,7 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
             } else { // on est seulement dans le cas de la leçon suivante
 
               // direction la page winner de lessons
-              header('Location: winner.php');      
+              header('Location: winner.php?level='.$levelCurrent);      
             }
 
         }

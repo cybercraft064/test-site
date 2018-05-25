@@ -5,6 +5,7 @@ include('logic/dashboard-lessons-logic.php');
 // login-post.php en début de session 
 // login-logic si déjà connecté
 // signup.php si email déjà enregistré
+// appelé aussi par Winner.php
 // et enfin par le dashboard-levels
 ?>
 
@@ -37,13 +38,13 @@ include('logic/dashboard-lessons-logic.php');
             </div>
       
             <div class="centered-container">
-                <h1>Niveau <?php echo $levelLessons ?> - Planète Mongus</h1>
+                <h1>Niveau <?php echo $levelLessons; ?> - <?php echo $planetName; ?> </h1> 
                 <div class="parting"></div>           
             </div>  
             
             <div class="centered-level">
                 
-                <?php for ($i=0;$i<12;$i++){ // début de la boucle principal
+                <?php for ($i=$startLesson; $i<$endLesson; $i++){ // début de la boucle principal
 
                         $filterClass = "";
                         $linkLesson = "./../learning/start-learning.php?lesson=";
@@ -60,7 +61,7 @@ include('logic/dashboard-lessons-logic.php');
                 <?php //Utilisation de la logic automatic (parent / enfant)
                       // si PROGRESS-BAR reste enfant de RECORD  le .css est .progress-bar
                       // si PROGRESS-BAR devient enfant de "UNIT-TO-DO" ou "FILTER 
-                      // on peut utiliser se nouveau parent comme path du .css
+                      // on utilise se nouveau parent comme path du .css
                       // ce qui donne (.unit-to-do .progress-bar) ou (.filter .progress-bar)
                       // se qui permet de modifier .progress-bar uniquement pour ces cas la.
                     ?>
@@ -69,7 +70,7 @@ include('logic/dashboard-lessons-logic.php');
                         <div class="record <?php echo $filterClass; ?>">
                             <p class="win"><?php echo $i+1; ?></p>
 
-                            <?php if ($i == 2 || $i == 5 || $i == 7) { ?>
+                            <?php if ($i == $soundLesson[0] || $i == $soundLesson[1] || $i == $soundLesson[2]) { ?>
                                 <img src="../../assets/img/sound.png" class="icon-sound" />
                                 <?php } else { ?>
                                 <img src="../../assets/img/pen.png" class="icon-pen" />
