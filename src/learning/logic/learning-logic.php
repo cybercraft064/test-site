@@ -63,7 +63,9 @@ if ($_SESSION['step'] === "userInput") {  /* ******************************  */
             } else { // on est seulement dans le cas de la leçon suivante
 
               // direction la page winner de lessons
-              header('Location: winner.php?level='.$levelCurrent);      
+              $levelCurrent = (int) htmlspecialchars($_SESSION['level-user']);
+              $levelCurrent++;
+              header("Location: winner.php?level=".$levelCurrent);      
             }
 
         }

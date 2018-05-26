@@ -3,7 +3,7 @@ session_start();
 // cette page est appelé par winner.php
 
 // recupération du path de l'image
-$backgroundLesson = "./../../assets/img/bg-learning-";
+$backgroundLevel = "./../../assets/img/bg-learning-";
 
 if (isset ($_GET['level'] )) { 
     $levelCurrent = (int) htmlspecialchars($_GET['level']);
