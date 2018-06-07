@@ -34,17 +34,22 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
 
     } else {   // sinon tout est ok  allez au boulot
 
-        // chargement des variables de session 
+        // chargement des variables de session Table-> users
         $_SESSION['mail'] = $rep['mail_user'];
         $_SESSION['id-user'] = $rep['id_user'];
         $_SESSION['pseudo-user'] = $rep['pseudo_user'];
-        $_SESSION['validated-level-bd'] = $rep['level_user'];
-        $_SESSION['validated-lesson-bd'] = $rep['lesson_user']; // toujours à zéro pour les nouveaux utilisateur 
-                                                        // il passera à 1 dès sa première validation.
+        $_SESSION['validated-klm-bd'] = $rep['klm_user'];
+
+        // chargement des variables de session Table-> users_languages
+        $rep1 = loadLineUserTbUsersLanguages($id);
+        $_SESSION['current-code-language'] = $rep1['code_language'];
+        $_SESSION['validated-level-bd'] = $rep1['level_user'];
+        $_SESSION['validated-lesson-bd'] = $rep1['lesson_user'];  
+                                                        
         // et création de la current-lesson
         // sachant que current-lesson doit avoir +1
         // puisque on travaille sur le niveau des leçons qui ne sont pas encore validées en Bd
-        $_SESSION['current-lesson'] = ($rep['lesson_user'] +1);
+        $_SESSION['current-lesson'] = ($rep1['lesson_user'] +1);
 
         // nous passons au dashboard-lesson  (1)le niveau en cours  (2)la dernière leçon validée en bd
         $validatedLevel = (int) $_SESSION['validated-level-bd'];

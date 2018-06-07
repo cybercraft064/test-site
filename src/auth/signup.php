@@ -8,10 +8,10 @@
 <head>
     <meta charset="UTF-8">
 	<title>Signup</title>  
-	<link href="../shared/css/reset.css" rel="stylesheet" type="text/css"/>
-    <link href="./css/login.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Raleway:300,400,700" rel="stylesheet">
+	<link href="../shared/css/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/login.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <div class="page-container"> 
