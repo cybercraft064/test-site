@@ -14,12 +14,12 @@
     </head> 
     <body>
         <div class="top-container">
-            <header class="pseudo"><?php echo $pseudo_user;?> </header>
+            <header class="pseudo"><?= $pseudo_user;?> </header>
             <div class="txt-left"> 
                 <h1 class="big" >fais évoluer ton speaky grâce à ton
                 <span class="small">apprentissage !</span></h1>
 
-                <a href="../dashboard/dashboard-levels.php" class="button-game">Jouer !</a>     
+                <a href="../dashboard/dashboard-levels.php?level=1" class="button-game">Jouer !</a>     
                 
             </div>
             <img src="../../assets/img/mountain.png" class="bg-mountains" />

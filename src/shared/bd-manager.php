@@ -81,7 +81,7 @@ function addUser($mail, $password, $pseudo){
 } //
 
 
-//extraction des mots/phrases à traduir
+// extraction des mots/phrases à traduir
 // appelé par: learning-logic.php
 function getTranslation($lesson_index){
     global $db;

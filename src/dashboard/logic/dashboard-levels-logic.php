@@ -11,11 +11,11 @@
     $_SESSION['current-level'] = (int) htmlspecialchars($_GET['level']);
 
     // ($currentLevel) sert aussi à choisir un autre niveau
-    // pour révision entre autre
+    // pour révision par exemple
     $currentLevel = $_SESSION['current-level'];
 
     // et pour la redirection vers ces leçons
-    $currentLesson = $_SESSION['lesson-user'];
+    $currentLesson = $_SESSION['validated-lesson-bd'];
     $linkLessons = "dashboard-lessons.php?lesson=";
 
     // partie aléatoire

@@ -32,11 +32,11 @@
                         
                 <form action="signup.php" method="post">
 
-                    <div class="input-wrapper <?php echo $bad_mail; ?>">
+                    <div class="input-wrapper <?= $bad_mail; ?>">
                         <div class="input-icon-box">
                             <i class="icon-mail"></i>
                         </div>
-                        <input type="email" placeholder="<?php echo $NewMail; ?>" class="<?php echo $field_input_mail; ?>" name="newUserEmail" autocomplete="off" required />
+                        <input type="email" placeholder="<?= $NewMail; ?>" class="<?= $field_input_mail; ?>" name="newUserEmail" autocomplete="off" required />
                     </div>
 
                     <div class="input-wrapper">

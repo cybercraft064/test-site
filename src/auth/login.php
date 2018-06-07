@@ -54,18 +54,18 @@ include('logic/login-logic.php');
 				
 					<form action="./post/login-post.php" method="post">
 
-						<div class="input-wrapper <?php echo $bad_mail; ?>">
+						<div class="input-wrapper <?= $bad_mail; ?>">
 							<div class="input-icon-box">
 								<i class="icon-mail"></i>
 							</div>
-							<input type="email" placeholder="<?php echo $userMail; ?>" class="<?php echo $field_input_mail; ?>" name="mail" autocomplete="on" required />
+							<input type="email" placeholder="<?= $userMail; ?>" class="<?= $field_input_mail; ?>" name="mail" autocomplete="on" required />
 						</div>
 					
-						<div class="input-wrapper <?php echo $bad_pwd; ?>">
+						<div class="input-wrapper <?= $bad_pwd; ?>">
 							<div class="input-icon-box">
 								<i class="icon-lock"></i>
 							</div>
-							<input type="password" placeholder="<?php echo $userPassword; ?>" class="<?php echo $field_input_pwd; ?>" name="password" autocomplete="on" required />
+							<input type="password" placeholder="<?= $userPassword; ?>" class="<?= $field_input_pwd; ?>" name="password" autocomplete="on" required />
 						</div>
 						
 						<input type="submit" class="connect-button" value="Connecte-toi !">

@@ -13,7 +13,7 @@ include('logic/dashboard-levels-logic.php');
         <title>DashBoard-Levels</title>
     </head>
     <body>
-        <div class="container-dashboard" style="background-image: url('<?php echo $backgroundLevel.$currentLevel.".jpg";?>')"> 
+        <div class="container-dashboard" style="background-image: url('<?= $backgroundLevel.$currentLevel.".jpg";?>')"> 
 
             <div class="header">
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
@@ -38,26 +38,26 @@ include('logic/dashboard-levels-logic.php');
             </div>
 
             <?php if ($currentLevel -1 == 0)   { $chevron = "chevron-left-none"; }  ?>
-            <?php if ($currentLevel +1 == 11)  { $chevron = "chevron-right-none"; } ?>
+            <?php if (($currentLevel +1 == 11) | ($currentLevel == (int) htmlspecialchars($_SESSION['validated-level-bd']))) { $chevron = "chevron-right-none";} ?>
             
-            <div class="centered-container <?php echo $chevron; ?>">
+            <div class="centered-container <?= $chevron; ?>">
                 <h1>Dashboard Ligue</h1> 
                     
                 <div class="parting"></div>
                     
-                <a href="<?php echo $linkLevel.($currentLevel -1); ?>"><span class="chevron-left"> < </span></a>
+                <a href="<?= $linkLevel.($currentLevel -1); ?>"><span class="chevron-left"> < </span></a>
                     
-                <a href="<?php echo $linkLessons.$currentLesson."&amp;level=".$currentLevel; ?>">
-                  <img src="<?php echo $learningWorld.$currentLevel.'.png'; ?>"  class="learn-world" />
+                <a href="<?= $linkLessons.$currentLesson."&level=".$currentLevel; ?>">
+                  <img src="<?= $learningWorld.$currentLevel.'.png'; ?>"  class="learn-world" />
                 </a>
                     
-                <a href="<?php echo $linkLevel.($currentLevel +1); ?>"><span class="chevron-right"> > </span></a>
+                <a href="<?= $linkLevel.($currentLevel +1); ?>"><span class="chevron-right"> > </span></a>
 
-                <h2>Monde n°<?php echo $currentLevel; ?></h2>
+                <h2>Monde n°<?= $currentLevel; ?></h2>
             </div>
 
             <footer>
-                <div class="pseudo"><?php echo $pseudo_user; ?></div>
+                <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>  
         </div>
     </body>

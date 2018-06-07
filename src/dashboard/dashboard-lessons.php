@@ -19,7 +19,7 @@ include('logic/dashboard-lessons-logic.php');
         <title>DashBoard-Lessons</title>
     </head> 
     <body>
-        <div class="container" style="background-image: url('<?php echo $backgroundLesson.$levelLessons.".jpg";?>')">
+        <div class="container" style="background-image: url('<?= $backgroundLesson.$levelLessons.".jpg";?>')">
             
             <div class="header">
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
@@ -31,14 +31,14 @@ include('logic/dashboard-lessons-logic.php');
                         <div class="barre"></div>
                     </div>
                     <ul class="burger-menu">
-                        <li><a href="dashboard-levels.php?level=<?php echo $_SESSION['level-user']; ?>">Niveaux</li>
+                        <li><a href="dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</li>
                         <li><a href="../auth/logout.php">Se déconnecter</li>
                     </ul>
                 </div>    
             </div>
       
             <div class="centered-container">
-                <h1>Niveau <?php echo $levelLessons; ?> - <?php echo $planetName; ?> </h1> 
+                <h1>Niveau <?= $levelLessons; ?> - <?= $planetName; ?> </h1> 
                 <div class="parting"></div>           
             </div>  
             
@@ -66,9 +66,9 @@ include('logic/dashboard-lessons-logic.php');
                       // se qui permet de modifier .progress-bar uniquement pour ces cas la.
                     ?>
 
-                    <a href="<?php echo $linkLesson.($i+1);?>">           
-                        <div class="record <?php echo $filterClass; ?>">
-                            <p class="win"><?php echo $i+1; ?></p>
+                    <a href="<?= $linkLesson.($i+1);?>">           
+                        <div class="record <?= $filterClass; ?>">
+                            <p class="win"><?= $i+1; ?></p>
 
                             <?php if ($i == $soundLesson[0] || $i == $soundLesson[1] || $i == $soundLesson[2]) { ?>
                                 <img src="../../assets/img/sound.png" class="icon-sound" />
@@ -85,7 +85,7 @@ include('logic/dashboard-lessons-logic.php');
             </div>
 
             <footer>
-                <div class="pseudo"><?php echo $pseudo_user; ?></div>
+                <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>    
         </div> 
         

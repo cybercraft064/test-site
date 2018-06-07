@@ -24,9 +24,9 @@ $pseudo = "";
 // avec un retour sur son dashboard
 if (isset($_SESSION['email'])) {
 
-    $currentLevel = $_SESSION['level-user'];
-    $currentLesson = $_SESSION['lesson-user'];
-    header("Location: ../dashboard/dashboard-lessons.php?lesson=".$currentLesson."&amp;level=".$currentLevel); 
+    $validatedLevel = $_SESSION['validated-level-bd'];
+    $validatedLesson = $_SESSION['validated-lesson-bd'];
+    header("Location: ../dashboard/dashboard-lessons.php?level=".$validatedLevel."&lesson=".$validatedLesson); 
 
 
     //sinon on récupère le post
@@ -41,19 +41,20 @@ if (isset($_SESSION['email'])) {
 
         if ($exist != 1) {
 
-            // ok l'email n'existe pas création de cette user
-            //fonction d'ajout utilisateur / table -> users
+            // ok l'email n'existe pas, création de cette user
+            //fonction ajout utilisateur / table -> users
             $user = addUser($mail, $password, $pseudo);
     
             // chargement des variables de session
             $_SESSION['mail'] = $user['mail_user'];
             $_SESSION['id-user'] = $user['id_user'];
             $_SESSION['pseudo-user'] = $user['pseudo_user'];
-            $_SESSION['level-user'] = $user['level_user'];
-            $_SESSION['lesson-user'] = $user['lesson_user'];
+            $_SESSION['validated-level-bd'] = $user['level_user'];
+            $_SESSION['validated-lesson-bd'] = $user['lesson_user'];
 
             // direction le dashboard levels           
-            header("Location: ../dashboard/dashboard-levels.php?level=1");
+      //      header("Location: ../dashboard/dashboard-levels.php?level=1"); // puisque nouvelle utilisateur
+      header("Location: ../home/home.php"); // accueil nouvelle utilisateur
 
         } else {
             // si l'email existe en base -> Avertissement par un message transmit par le placeholder de l'input du mail

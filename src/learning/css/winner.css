@@ -26,12 +26,16 @@ h2 {
     padding-top: 50px
 }
 
-.next-lesson .lesson {
+.next-lesson .lesson,
+.next-level .level {
     font-size: 120px;
     color: #ed0049;
 }
 
-.previous-lesson {
+.next-level {
+    display: none;
+}
+.previous-lesson {    
     display: none;
 }
 
@@ -42,6 +46,10 @@ h2 {
 }
 
 .revision .previous-lesson {
+    display: block;
+}
+
+.okNextLeve .next-level {
     display: block;
 }
 

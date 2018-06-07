@@ -6,9 +6,9 @@ session_start();
 // et redirection vers sont dashboard si s'est le cas.
 if (isset($_SESSION['mail'])) {
 
-    $currentLevel = $_SESSION['level-user'];
-    $currentLesson = $_SESSION['lesson-user'];
-    header("Location: ../dashboard/dashboard-lessons.php?lesson=".$currentLesson."&amp;level=".$currentLevel); 
+    $validatedLevel = $_SESSION['validated-level-bd'];
+    $validatedLesson = $_SESSION['validated-lesson-bd'];
+    header("Location: ../../dashboard/dashboard-lessons.php?level=".$validatedLevel."&lesson=".$validatedLesson);  
 
 } else {
 

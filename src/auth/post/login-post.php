@@ -8,8 +8,8 @@ include("../../shared/bd-manager.php");
 unset($_SESSION['erreurMail']);
 unset($_SESSION['erreurPassword']); 
 $return = "";
-
 // variables du post
+
 $mail = "";
 $password = "";
 
@@ -19,6 +19,7 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
     $password = htmlspecialchars($_POST['password']); 
 
     // execution de la fonction de controle utilisateurs
+    // source bd-manager.php
     $rep = checkUserConnexion($mail, $password);
 
     if ($rep == "badMail") {
@@ -31,23 +32,24 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
         // redirection
         header('location: ../login.php');    
 
-    } else {   // allez au boulot
+    } else {   // sinon tout est ok  allez au boulot
 
         // chargement des variables de session 
         $_SESSION['mail'] = $rep['mail_user'];
         $_SESSION['id-user'] = $rep['id_user'];
         $_SESSION['pseudo-user'] = $rep['pseudo_user'];
-        $_SESSION['level-user'] = $rep['level_user'];
-        $_SESSION['lesson-user'] = $rep['lesson_user']; // toujours à zéro pour les nouveaux utilisateur 
+        $_SESSION['validated-level-bd'] = $rep['level_user'];
+        $_SESSION['validated-lesson-bd'] = $rep['lesson_user']; // toujours à zéro pour les nouveaux utilisateur 
                                                         // il passera à 1 dès sa première validation.
-        //et copie pour la lesson_index
-        // sachant que lesson_index doit avoir +1
-        // on travaille sur le niveau des leçons qui ne sont pas encore validées
-        $_SESSION['lesson-index'] = ($rep['lesson_user'] +1);
+        // et création de la current-lesson
+        // sachant que current-lesson doit avoir +1
+        // puisque on travaille sur le niveau des leçons qui ne sont pas encore validées en Bd
+        $_SESSION['current-lesson'] = ($rep['lesson_user'] +1);
 
-        $currentLevel = $_SESSION['level-user'];
-        $currentLesson = $_SESSION['lesson-user'];
-        header("Location: ../../dashboard/dashboard-lessons.php?lesson=".$currentLesson."&amp;level=".$currentLevel); 
+        // nous passons au dashboard-lesson  (1)le niveau en cours  (2)la dernière leçon validée en bd
+        $validatedLevel = (int) $_SESSION['validated-level-bd'];
+        $validatedLesson = (int) $_SESSION['validated-lesson-bd'];
+        header("Location: ../../dashboard/dashboard-lessons.php?level=".$validatedLevel."&lesson=".$validatedLesson); 
 
     }              
 

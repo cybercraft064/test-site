@@ -13,7 +13,7 @@ include('logic/learning-logic.php');
         <title>learning</title>
     </head> 
     <body>
-        <div class="page-container" style="background-image: url('<?php echo $backgroundLesson.$level.".jpg";?>')">
+        <div class="page-container" style="background-image: url('<?= $backgroundLesson.$level.".jpg";?>')">
             <a href="../dashboard/dashboard-lessons.php"><div class="close">x</div></a>
              <div class="destroy-session">                              
                  <a href="close-session.php"><input type="submit" value="closeSession" /></a>               
@@ -25,25 +25,24 @@ include('logic/learning-logic.php');
                 </div>
 
                 <div class="source-container">
-                    <?php echo $_SESSION["source"]; ?>
+                    <?= $_SESSION["source"]; ?>
                 </div>  
             
                 <!-- $couleur change suivant la réponse -->
-                <div class="target-container <?php echo $_SESSION['couleur-css']; ?>">
+                <div class="target-container <?= $_SESSION['couleur-css']; ?>">
                 
                     <form method="post" action="post/learning-post.php">                        
-                        <input type="text" name="input-reply" class="in-reply" value="<?php echo htmlspecialchars($_SESSION['value']); ?>" autocomplete="off" autofocus />
-                        <input type="submit" value="Envoyer" class="next-button <?php echo $_SESSION['nextButton-css']; ?>" />
+                        <input type="text" name="input-reply" class="in-reply" value="<?= htmlspecialchars($_SESSION['value']); ?>" autocomplete="off" autofocus />
+                        <input type="submit" value="Envoyer" class="next-button <?= $_SESSION['nextButton-css']; ?>" />
                     </form>                  
                 </div>
 
-                <?php if($_SESSION['step'] === "checkAnswer" && $_SESSION['answerReply'] === "incorrect"){ ?>
+                <?php if($_SESSION['step'] === "check-answer" && $_SESSION['answer-reply'] === "incorrect"){ ?>
                 <div class="correction-container">
-                        <?php echo $_SESSION["reponse"]; ?> 
+                        <?= $_SESSION["reponse"]; ?> 
                     </div>
                 </div>
-                <?php } ?>
-        
+                <?php } ?>    
         </div>    
     </body>
 </html>

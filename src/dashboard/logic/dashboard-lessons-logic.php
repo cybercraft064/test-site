@@ -6,24 +6,24 @@
     // variables de travail
     $pseudo_user = $_SESSION['pseudo-user'];
     
-    // numéro de la dernière leçon (lesson) validée
-    // utilisé pour invalider les lessons non encore effectuées
-    $lesson = $_SESSION['lesson-user'];
+    // numéro de la dernière leçon validée
+    // utilisé pour invalider les leçons non encore effectuées
+    $lesson = $_SESSION['validated-lesson-bd'];
     
-    // variable reçu en get  // -------------------------------------------------- //
-    // permet de savoir le niveau des leçons à afficher suivant la demande
-    if (isset($_GET['level'])) {
-        
+    // variable reçu en $GET  // -------------------------------------------------- //
+    // permet de connaitre le niveau des leçons à afficher suivant la demande (cas révision)
+    if (isset($_GET['level']) & !empty($_GET['level']) ) {
         $levelLessons = (int) htmlspecialchars($_GET['level']);
+        $_SESSION['temoin-level-dash-lesson-logic']=$levelLessons; // ------- DEBUG -------
     } else {
         
-        $levelLessons = htmlspecialchars($_SESSION['level-user']);
+        $levelLessons = htmlspecialchars($_SESSION['validated-level-bd']);
     }
     
     // permet de récupèrer le nom de planète suivant le (level)
     include("./../shared/planets-name.php");   
     
-    // Lessons des différents levels // --------------------------------------------- //
+    // Lessons des différents levels // ----------  des que tu auras du temps crés une table pour la gestion des planetes  ----------- //
     switch ($levelLessons) {
         case 1:
         $startLesson = 0;
@@ -59,10 +59,10 @@
     // variables varientes :)
     $backgroundLesson = '../../assets/img/bg-learning-';
 
-    // $_SESSION['endLesson'] est utilisé pour connaitre le numéro de la dernière leçon
+    // $_SESSION['endLesson-level'] est utilisé pour connaitre le numéro de la dernière leçon
     // pour la boucle de test de passage à un niveau suppérieur
     // dans learning-logic.php
-    $_SESSION['endLesson'] = $endLesson;
+    $_SESSION['endLesson-level'] = $endLesson;
 
 
     

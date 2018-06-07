@@ -11,27 +11,32 @@ include('logic/winner-logic.php');
         <title>Winner</title>
     </head> 
     <body>
-        <div class="page-container" style="background-image: url('<?php echo $backgroundLevel.$levelCurrent.".jpg";?>')">
+        <div class="page-container" style="background-image: url('<?= $backgroundLevel.$levelCurrent.".jpg";?>')">
               
             <header> 
                 </header>
                 
-                <?php // Utilisation de la logic Parent / enfant : $typeLesson prends la valeur de (revision) ?>
-                <section class="<?php echo $typeLesson; ?> ">  
+                <?php // Utilisation de la logic Parent / enfant : $typeLesson prends la valeur de (revision) ou "" ?>
+                <section class="<?= $typeLesson; ?>">  
 
                     <h1> winner </h1> 
-                    <div class="pseudo"><?php echo htmlspecialchars($_SESSION['pseudo-user']); ?></div>
+                    <div class="pseudo"><?= htmlspecialchars($_SESSION['pseudo-user']); ?></div>
                     
                     <span class="next-lesson">
-                        <h2>tu passes à la leçon <span class="lesson"><?php echo $lesson_next;?></span></h2>
+                        <h2>tu passes à la leçon <span class="lesson"><?= $lesson_next;?></span></h2>
                     </span>
+
+                    <span class="next-level">
+                        <h2>tu passes au niveau  <span class="level"><?= $levelCurrent;?></span></h2>
+                    </span>
+
                     
                     <span class="previous-lesson">
                         <h2>Bravo tu as bien révisé</h2>  
                     </span>
 
                     <div class="btn-center">
-                    <a href="../dashboard/dashboard-lessons.php" class="next-button">Continuer !</a>
+                    <a class="next-button" href="../dashboard/dashboard-lessons.php?level=<?= $levelCurrent;?>">Continus</a>
                     <a href="../auth/logout.php" class="close-session">Se déconnecter</a>
                     </div>
 
