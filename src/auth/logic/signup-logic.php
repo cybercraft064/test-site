@@ -24,7 +24,7 @@ $pseudo = "";
 // avec un retour sur son dashboard
 if (isset($_SESSION['email'])) {
 
-    header("Location: ../dashboard/dashboard-lessons.php?level=".(int) htmlspecialchars($_SESSION['validated-level-bd']) ."&lesson=".(int) htmlspecialchars($_SESSION['validated-lesson-bd'])); 
+    header("Location: ../../dashboard/dashboard-lessons.php?level=".(int) htmlspecialchars($_SESSION['validated-level-bd']) ."&lesson=".(int) htmlspecialchars($_SESSION['validated-lesson-bd'])); 
 
 
     //sinon on récupère le post
@@ -48,12 +48,16 @@ if (isset($_SESSION['email'])) {
             $_SESSION['id-user'] = $user['id_user'];
             $_SESSION['pseudo-user'] = $user['pseudo_user'];
             // init de ses compteur
-            $_SESSION['validated-level-bd'] = 1;
-            $_SESSION['validated-lesson-bd'] = 0; 
-            $_SESSION['validated-klm-bd'] = 0; 
+            $_SESSION['validated-klm-bd'] = $user['klm_user'];
+            $_SESSION['current-langage'] = $user['code_language'];
+            $_SESSION['validated-level-bd'] = $user['level_user'];
+            $_SESSION['validated-lesson-bd'] = $user['lesson_user']; 
 
-            // direction le dashboard levels           
+      //      var_dump($user);
+
+      // direction le dashboard levels           
       //      header("Location: ../dashboard/dashboard-levels.php?level=1"); // puisque nouvelle utilisateur
+      
       header("Location: ../home/home.php"); // accueil nouvelle utilisateur
 
         } else {

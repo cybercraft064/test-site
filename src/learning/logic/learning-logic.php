@@ -25,10 +25,18 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
     if ($_SESSION['current-lesson'] <= $_SESSION['validated-lesson-bd']) {  /* test le cas d'une révision */
 
         $_SESSION['revision'] = true;
+        $klm = "";
+
+        // incrementation des kilometres +2 en mode révision
+        $klm = (int) htmlspecialchars($_SESSION['validated-klm-bd']);
+        $klm = $klm +2;
+        $_SESSION['validated-klm-bd'] = $klm;
+        updateKlm($id_user,$klm);
 
        } else { /* sinon nous validons cette lesson en Bd */
 
         $_SESSION['revision'] = false;
+        $klm = "";
 
         // Validation en Bd du numéro de leçon terminé : table -> users
         // recupération de l'id user (1)
@@ -37,9 +45,13 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
         // incrementation du numéro de leçon (2)
         $_SESSION['validated-lesson-bd']++;
         $lesson_user = (int) htmlspecialchars($_SESSION['validated-lesson-bd']);
-        
-        // fonction de mise à jour du nouveau numéro (3)
         updateLessons($id_user,$lesson_user);  
+
+        // incrementation des kilometres +5 (3)
+        $klm = (int) htmlspecialchars($_SESSION['validated-klm-bd']);
+        $klm = $klm +5;
+        $_SESSION['validated-klm-bd'] = $klm;
+        updateKlm($id_user,$klm);
         
         // passage à l'index de leçon suivante
         // sans faire de mise à jour, puisque non encore validée

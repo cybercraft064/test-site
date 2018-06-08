@@ -17,7 +17,7 @@ include('logic/dashboard-levels-logic.php');
 
             <div class="header">
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
-                <img src="./../../assets/img/portugais.png" class="logo-language" />
+                <img src="../../assets/img/pays/<?= strtoupper($_SESSION['current-code-language']); ?>.png" class="logo-language" />
                 <a href="dashboard-lessons.php" class="link-burger">
                     <div class="burger">
                         <div class="barre"></div>
@@ -37,10 +37,10 @@ include('logic/dashboard-levels-logic.php');
 
             </div>
 
-            <?php if ($currentLevel -1 == 0)   { $chevron = "chevron-left-none"; }  ?>
-            <?php if (($currentLevel +1 == 11) | ($currentLevel == (int) htmlspecialchars($_SESSION['validated-level-bd']))) { $chevron = "chevron-right-none";} ?>
+            <?php if ($currentLevel == 1)   { $chevronLeft = "chevron-left-none"; }  ?>
+            <?php if (($currentLevel +1 == 11) | ($currentLevel == (int) htmlspecialchars($_SESSION['validated-level-bd']))) { $chevronRight = "chevron-right-none";} ?>
             
-            <div class="centered-container <?= $chevron; ?>">
+            <div class="centered-container <?= $chevronLeft; ?> <?= $chevronRight; ?>">
                 <h1>Dashboard Ligue</h1> 
                     
                 <div class="parting"></div>

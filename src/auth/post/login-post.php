@@ -8,8 +8,8 @@ include("../../shared/bd-manager.php");
 unset($_SESSION['erreurMail']);
 unset($_SESSION['erreurPassword']); 
 $return = "";
-// variables du post
 
+// variables du post
 $mail = "";
 $password = "";
 
@@ -36,15 +36,23 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
 
         // chargement des variables de session Table-> users
         $_SESSION['mail'] = $rep['mail_user'];
-        $_SESSION['id-user'] = $rep['id_user'];
+        $_SESSION['id-user'] = (int )$rep['id_user'];
         $_SESSION['pseudo-user'] = $rep['pseudo_user'];
         $_SESSION['validated-klm-bd'] = $rep['klm_user'];
 
-        // chargement des variables de session Table-> users_languages
-        $rep1 = loadLineUserTbUsersLanguages($id);
-        $_SESSION['current-code-language'] = $rep1['code_language'];
-        $_SESSION['validated-level-bd'] = $rep1['level_user'];
-        $_SESSION['validated-lesson-bd'] = $rep1['lesson_user'];  
+             // chargement des variables de session Table-> users_languages
+              $rep1 = loadLineUserTbUsersLanguages((int) $rep['id_user']);
+              $_SESSION['current-code-language'] = $rep1['code_language'];
+              $_SESSION['validated-level-bd'] = $rep1['level_user'];
+              $_SESSION['validated-lesson-bd'] = $rep1['lesson_user'];    
+
+
+
+
+        var_dump($rep);
+
+
+
                                                         
         // et création de la current-lesson
         // sachant que current-lesson doit avoir +1

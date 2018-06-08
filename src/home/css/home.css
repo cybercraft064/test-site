@@ -13,6 +13,60 @@
     color: #ed0049;
     font-size: 32px;
 }
+.GB {
+    position: absolute;
+    top: 500px;
+    left: 150px;
+    border-radius: 50px;
+}
+.GB:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+.DE {
+    position: absolute;
+    top: 400px;
+    left: 250px;
+    border-radius: 50px;
+}
+.DE:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+.DE2 {
+ transform: rotate(0deg);
+}
+
+.IT {
+    position: absolute;
+    top: 300px;
+    left: 350px;
+    border-radius: 50px;
+}
+.IT:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+.ES {
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    border-radius: 50px;
+}
+.ES:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+.PT {
+    position: absolute;
+    top: 100px;
+    left: 550px;
+    border-radius: 50px;
+}
+.PT:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
 
 .txt-left {
     position: absolute;
