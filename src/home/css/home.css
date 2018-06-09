@@ -1,3 +1,7 @@
+a {
+    cursor: pointer;
+}
+
 .top-container {
     height: 100vh;
     width: 100%;
@@ -5,69 +9,71 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.pseudo {
+.logo {
     position: absolute;
-    right: 52px;
-    top: 32px;
-    font-family: 'Fjalla One', sans-serif;
-    color: #ed0049;
-    font-size: 32px;
+    left: 30px;
+    top: 25px;
+    height: 46px;
 }
-.GB {
+
+img.logo {
+    height: 46px;
+    width: 127px;
+}
+
+.logo-language {
     position: absolute;
-    top: 500px;
-    left: 150px;
-    border-radius: 50px;
-}
-.GB:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+    left:89%;
+    top:24px;
+    height: 55px;
+    width: 55px;
 }
 
-.DE {
+.link-burger {
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+
+}
+.burger {
     position: absolute;
-    top: 400px;
-    left: 250px;
-    border-radius: 50px;
-}
-.DE:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+    left:94%;
+    top:22px;
 }
 
-.DE2 {
- transform: rotate(0deg);
+.barre {
+    width: 38px;
+    margin-top: 10px;
+    border: 3px solid rgb(248, 244, 237);
+    border-radius: 5px;
 }
 
-.IT {
+
+/* ------- gestion du menu ----------- */
+.link-burger:hover .barre {
+    border: 3px solid #ed0049;
+}
+.burger-menu{
     position: absolute;
-    top: 300px;
-    left: 350px;
-    border-radius: 50px;
-}
-.IT:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
-}
-
-.ES {
-    position: absolute;
-    top: 200px;
-    left: 450px;
-    border-radius: 50px;
-}
-.ES:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+    background-color: white;
+    padding:10px;
+    color:rgb(50,50,50);
+    top:80px;
+    right:50px;
+    border-radius: 5px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display:none;
 }
 
-.PT {
-    position: absolute;
-    top: 100px;
-    left: 550px;
-    border-radius: 50px;
-}
-.PT:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+.show-burger .burger-menu{
+    display: block;
 }
 
+/* ------------------------------------ */
 
+/*  ------------------ texte --------------- */
 .txt-left {
     position: absolute;
     top:30%;
@@ -81,18 +87,33 @@
     text-align: center;
 }
 
-.txt-left .big {
+.txt-right {
+    position: absolute;
+    top:30%;
+    right:5%;
+    transform: translateY(-50%);
+    font-family: 'Fjalla One', sans-serif;  
+    color: white;
+    font-weight: 700; 
+    width: 320px;
+    padding-top: 30px;    
+    text-align: center;
+}
+
+.txt-left .big,
+.txt-right .big {
     font-size: 42px;
     line-height: 50px;
     text-align: justify;
     text-transform: uppercase;
 }
 
-.txt-left .small {
+.txt-left .small,
+.txt-right .small {
     font-size: 32px;
 }
 
-.button-game{
+.button-game {
     display:inline-block;
     margin-top: 20px;
     margin-left: -20px;
@@ -109,6 +130,66 @@
     background-color: green;
 }
 
+/* ----------------------- Flag ------------------------------ */
+
+.flag-rotate {
+    transform: rotate(0deg); /* au cas ou */
+}
+
+.GB {
+    top: 500px;
+    left: 350px;
+}
+.GB:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+
+.DE {
+    top: 400px;
+    left: 450px;
+}
+.DE:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+
+.IT {
+    top: 300px;
+    left: 550px;
+}
+.IT:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+
+.ES {
+    top: 200px;
+    left: 650px;
+}
+.ES:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+.PT {
+    top: 100px;
+    left: 750px;
+}
+.PT:hover {
+    box-shadow: 5px 5px 8px rgb(78, 116, 138);
+}
+
+.size-flag {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border: none;
+    border-radius: 100px;
+} 
+/* ------------------------ endf flag ----------------------- */
+
+
+
 .bg-mountains{
     position: absolute;
     bottom: 0px;
@@ -122,4 +203,11 @@
     right:10%;
 }
 
-
+.pseudo {
+    position: absolute;
+    left: 32px;
+    bottom: 32px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #ed0049;
+    font-size: 32px;
+}

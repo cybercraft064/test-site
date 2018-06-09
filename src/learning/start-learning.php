@@ -36,7 +36,7 @@ $_SESSION['current-lesson'] = (int) htmlspecialchars($_GET['lesson']);
 
 
 // fonction qui récupère sous forme de tableau toutes les lignes de mots/phrases à traduires (2)
-$translations = getTranslation($_SESSION['current-lesson']);
+$translations = getTranslation($_SESSION['current-code-language'], $_SESSION['current-lesson']);
 $_SESSION['translations'] = $translations;
 
 // nombre de traduction à effecter pour cette leçon

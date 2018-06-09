@@ -18,35 +18,51 @@
             <img src="../../assets/img/mountain.png" class="bg-mountains" />
             <img src="../../assets/img/speakies.png" class="speekies" />
 
-            <header class="pseudo"><?= $pseudo_user;?> </header>
-
-            <div class="GB"><a href='../dashboard/dashboard-levels.php?lang=GB' class="">
-            <img src="../../assets/img/pays/GB.png" width="100" height="100" alt="drapeau Anglais"  style="border: none;"> 
-           </a></div>
-           <div class="DE"><a href='../dashboard/dashboard-levels.php?lang=DE' class="">
-            <img src="../../assets/img/pays/DE.png" width="100" height="100" alt="drapeau Allemand"  style="border: none;"> 
-           </a></div>
-           <div class="IT"><a href='../dashboard/dashboard-levels.php?lang=IT' class="">
-            <img src="../../assets/img/pays/IT.png" width="100" height="100" alt="drapeau Italien"  style="border: none;"> 
-           </a></div>
-           <div class="ES"><a href='../dashboard/dashboard-levels.php?lang=ES' class="">
-            <img src="../../assets/img/pays/ES.png" width="100" height="100" alt="drapeau Espagnol"  style="border: none;"> 
-           </a></div>
-           <div class="PT"><a href='../dashboard/dashboard-levels.php?lang=PT' class="">
-            <img src="../../assets/img/pays/PT.png" width="100" height="100" alt="drapeau Portugais"  style="border: none;"> 
-           </a></div>
-
-
-            <div class=""><a href='../dashboard/dashboard-levels.php?lang=ES' class="ES"></a></div>
-            <div class=""><a href='../dashboard/dashboard-levels.php?lang=PT' class="PT"></a></div>
-
-            <div class="txt-left"> 
-                <h1 class="big" >fais évoluer ton speaky grâce à ton
-                <span class="small">apprentissage !</span></h1>
-                <a href="../dashboard/dashboard-levels.php?level=1" class="button-game">Jouer !</a>                    
+            <div class="header">
+                <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>              
+                <div class="link-burger" id="link-burger"> 
+                    <div class="burger">
+                        <div class="barre"></div>
+                        <div class="barre"></div>
+                        <div class="barre"></div>
+                    </div>
+                    <ul class="burger-menu">
+                      <li><a href="../auth/logout.php">Se déconnecter</li>
+                    </ul>
+                </div>    
             </div>
 
-        </div> 
+
+            <header class="pseudo"><?= $pseudo_user;?> </header>
+
+            <div class="txt-left"> 
+                <h1 class="big" >choisies la langue que tu veux
+                <span class="small">apprendre !</span></h1>                  
+            </div>
+
+            <div class="size-flag GB"><a href='logic/home-logic.php?lang=GB'  class="">
+            <img class="size-flag" src="../../assets/img/pays/GB.png" alt="drapeau Anglais"> 
+           </a></div>
+           <div class="size-flag DE"><a href='logic/home-logic.php?lang=DE' class="">
+            <img class="size-flag" src="../../assets/img/pays/DE.png" alt="drapeau Allemand"> 
+           </a></div>
+           <div class="size-flag IT"><a href='logic/home-logic.php?lang=IT' class="">
+            <img class="size-flag" src="../../assets/img/pays/IT.png" alt="drapeau Italien"> 
+           </a></div>
+           <div class="size-flag ES"><a href='logic/home-logic.php?lang=ES' class="">
+            <img class="size-flag" src="../../assets/img/pays/ES.png" alt="drapeau Espagnol"> 
+           </a></div>
+           <div class="size-flag PT"><a href='logic/home-logic.php?lang=PT' class="">
+            <img class="size-flag" src="../../assets/img/pays/PT.png" alt="drapeau Portugais"> 
+           </a></div>
+
+
+            <div class="txt-right"> 
+                <h1 class="big" >et fais évoluer ton speaky grâce à ton
+                <span class="small">apprentissage !</span></h1>
+            </div>
+        </div>
+        <script src="../shared/js/burger.js"> </script> 
     </body>
 </html>
 

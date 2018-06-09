@@ -9,12 +9,12 @@
         
     } //
     
-    //fonction création d'un utilisateur
+    //fonction création d'un utilisateur (1)
     // appelé par:  signup-logic.php
     function createUser($mail, $password, $pseudo){  
         global $db;
         
-        $sql = "INSERT INTO users (mail_user,password_user,pseudo_user,klm_user) VALUES (:mail,:pwd,:pseudo,4)";
+        $sql = "INSERT INTO users (mail_user,password_user,pseudo_user,klm_user) VALUES (:mail,:pwd,:pseudo,0)";
         $req = $db->prepare($sql);        
         $req->bindValue(':mail', $mail ,PDO::PARAM_STR);
         $req->bindValue(':pwd', $password ,PDO::PARAM_STR);
@@ -26,21 +26,17 @@
         $id = $db->lastInsertId();
         $sql="";
 
-        // création du lien avec la table --> users_languages
-        $sql = "INSERT INTO users_languages (user_idl,code_language,level_user,lesson_user,current_lang)
-                VALUES (:user_idl,:code_language,:level_user,:lesson_user,:current_lang)";  // code langage test en DUR // a modifier apres
-
+        // création du lien avec la table --> users_languages (2)
+        $sql = "INSERT INTO users_languages (user_idl)
+                VALUES (:user_idl)";
+                
         $seq = $db->prepare($sql);
         $seq->bindValue(":user_idl", $id, PDO::PARAM_INT);
-        $seq->bindValue(":code_language", "DE", PDO::PARAM_STR); // par défaut pour le moment
-        $seq->bindValue(":level_user", 15, PDO::PARAM_STR);
-        $seq->bindValue(":lesson_user", 5, PDO::PARAM_STR);
-        $seq->bindValue(":current_lang", true, PDO::PARAM_STR); // par defaut pour le moment
         $seq->execute();
         $seq->closeCursor();
         $sql="";
 
-        // chargement de ses variables de session
+        // chargement de ses variables de session (3)
         $sql = "SELECT *
         FROM users, users_languages
         WHERE users.id_user = users_languages.user_idl
@@ -55,9 +51,7 @@
     } //
 
 
-
-
-// fonction de recherche utilisateur
+// connexion utilisateur
 // appelé par:  login-post.php
 function checkUserConnexion($mail, $password) {
     global $db;
@@ -89,7 +83,7 @@ function checkUserConnexion($mail, $password) {
     }
 }//
 
-// récupération des données de la Table-> users_languages
+// récupération des données de la Table-> users_languages (3)
 function loadLineUserTbUsersLanguages($id){
     global $db;
     $sql ="SELECT * FROM users_languages
@@ -115,11 +109,15 @@ function chekMail($mail){
 
 
 // extraction des mots/phrases à traduir
-// appelé par: learning-logic.php
-function getTranslation($lesson_index){
+// appelé par: learning-logic.php                       // derniere modif non testé //
+function getTranslation($code_lang,$lesson_index){
     global $db;
-    $sql = "SELECT * FROM traduction WHERE lesson_index = :lessonIndex" ;
+    $sql = "SELECT * FROM traduction 
+    WHERE code_lang = :code_lang 
+    AND lesson_index = :lessonIndex";
+
     $req = $db->prepare($sql);
+    $req->bindValue(":code_lang",$code_lang, PDO::PARAM_INT);
     $req->bindValue(":lessonIndex",$lesson_index, PDO::PARAM_INT);
     $req->execute();
     $trad = $req->fetchAll();
@@ -162,7 +160,17 @@ function updateKlm($id_user,$klm_user) {
     $upd->execute();
     $upd->closeCursor();
 } //
-    
 
+// utilisé par home-logic.php
+function updateLang($id_user,$cd_lang) {
+    global $db;
+    $sql = "UPDATE users_languages SET code_language = :cd_lang, current_lang = :cur_lang WHERE user_idl = :id_user";
+    $upd = $db->prepare($sql);
+    $upd->bindValue(":id_user", $id_user, PDO::PARAM_INT);
+    $upd->bindValue(":cd_lang", $cd_lang, PDO::PARAM_STR);
+    $upd->bindValue(":cur_lang", TRUE, PDO::PARAM_BOOL);
+    $upd->execute();
+    $upd->closeCursor(); 
+} //
 
 

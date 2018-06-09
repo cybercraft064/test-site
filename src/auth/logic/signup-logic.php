@@ -47,18 +47,14 @@ if (isset($_SESSION['email'])) {
             $_SESSION['mail'] = $user['mail_user'];
             $_SESSION['id-user'] = $user['id_user'];
             $_SESSION['pseudo-user'] = $user['pseudo_user'];
+            $_SESSION['new_user'] ="ok"; 
             // init de ses compteur
-            $_SESSION['validated-klm-bd'] = $user['klm_user'];
-            $_SESSION['current-langage'] = $user['code_language'];
-            $_SESSION['validated-level-bd'] = $user['level_user'];
-            $_SESSION['validated-lesson-bd'] = $user['lesson_user']; 
+            $_SESSION['validated-klm-bd'] = 0;
+            $_SESSION['validated-level-bd'] = 1;
+            $_SESSION['validated-lesson-bd'] = 0; 
 
-      //      var_dump($user);
-
-      // direction le dashboard levels           
-      //      header("Location: ../dashboard/dashboard-levels.php?level=1"); // puisque nouvelle utilisateur
-      
-      header("Location: ../home/home.php"); // accueil nouvelle utilisateur
+      // direction l'accueil nouvelle utilisateur
+      header("Location: ../home/home.php"); 
 
         } else {
             // si l'email existe en base -> Avertissement par un message transmit par le placeholder de l'input du mail
