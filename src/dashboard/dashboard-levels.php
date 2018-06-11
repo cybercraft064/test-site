@@ -19,7 +19,7 @@ include('logic/dashboard-levels-logic.php');
 
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
 
-                <img src="../../assets/img/pays/<?= strtoupper($_SESSION['current-code-language']); ?>.png" class="logo-language" />
+                <img src="../../assets/img/pays/<?= strtoupper($currentCodeLang); ?>.png" class="logo-language" />
 
 
                 <div class="link-burger" id="link-burger"> 

@@ -15,7 +15,9 @@
     if (isset($_GET['level']) && !empty($_GET['level']) ) {
         $levelLessons = (int) ($_GET['level']);
 
-        $_SESSION['temoin-level-dash-lesson-logic'] = $levelLessons; // ------- DEBUG -------
+        $_SESSION['current-level'] = $levelLessons;
+
+        $_SESSION['dashboard-lessons-logic-$levelLesson: '] = $levelLessons; // ------- DEBUG -------
 
     } else {
         

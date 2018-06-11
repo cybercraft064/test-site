@@ -32,12 +32,12 @@ $_SESSION['cptBadReply'] = 0;
 
 // récupération du numéro de la leçon à traduire (1)
 // provient de dashboard-lessons.php
-$_SESSION['current-lesson'] = (int) htmlspecialchars($_GET['lesson']);
+$_SESSION['current-lesson'] = ($_GET['lesson']);
 
 
 // fonction qui récupère sous forme de tableau toutes les lignes de mots/phrases à traduires (2)
 $cdLang =  htmlspecialchars($_SESSION['current-code-language']);
-$curLesson = (int) $_SESSION['current-lesson'];
+$curLesson = $_SESSION['current-lesson'];
 
 $translations = getTranslation($cdLang, $curLesson );
 $_SESSION['translations'] = $translations;
@@ -45,5 +45,5 @@ $_SESSION['translations'] = $translations;
 // nombre de traduction à effecter pour cette leçon
 $_SESSION['Nbtranslation-InLesson'] = count($translations);
 
-$levelCurrent = (int) ($_SESSION['current-level']);
+$levelCurrent = ($_SESSION['current-level']);
 header("Location: learning.php?level=".$levelCurrent);
