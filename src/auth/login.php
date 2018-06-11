@@ -65,7 +65,7 @@ include('logic/login-logic.php');
 							<div class="input-icon-box">
 								<i class="icon-lock"></i>
 							</div>
-							<input type="password" placeholder="<?= $userPassword; ?>" class="<?= $field_input_pwd; ?>" name="password" autocomplete="on" required />
+							<input type="password" placeholder="<?= $userPassword; ?>" class="<?= $field_input_pwd; ?>" name="password" autocomplete="off" required />
 						</div>
 						
 						<input type="submit" class="connect-button" value="Connecte-toi !">

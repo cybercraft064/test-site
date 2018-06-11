@@ -4,7 +4,10 @@ session_start();
 
 // init des Valeurs Variable
 $backgroundLesson = '../../assets/img/bg-learning-';
-$level = (int) htmlspecialchars($_SESSION['validated-level-bd']); // dernier niveau validé en Bd
+$level = (int) ($_SESSION['current-level']); 
+
+// recupération de l'id user 
+$id_user = (int) ($_SESSION['id-user']);
 
 // appel de la BD
 include("../shared/bd-manager.php"); 
@@ -26,48 +29,55 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
 
         $_SESSION['revision'] = true;
         $klm = "";
-
+        
         // incrementation des kilometres +2 en mode révision
-        $klm = (int) htmlspecialchars($_SESSION['validated-klm-bd']);
+        $klm = (int) ($_SESSION['validated-klm-bd']);
         $klm = $klm +2;
         $_SESSION['validated-klm-bd'] = $klm;
         updateKlm($id_user,$klm);
 
-       } else { /* sinon nous validons cette lesson en Bd */
+
+       } else { /* sinon nous validons cette leçon en Bd */
 
         $_SESSION['revision'] = false;
         $klm = "";
 
-        // Validation en Bd du numéro de leçon terminé : table -> users
-        // recupération de l'id user (1)
-        $id_user = (int) htmlspecialchars($_SESSION['id-user']);
+        // Validation du numéro de leçon : table -> users_languages
     
-        // incrementation du numéro de leçon (2)
+        // incrementation du numéro de leçon 
         $_SESSION['validated-lesson-bd']++;
-        $lesson_user = (int) htmlspecialchars($_SESSION['validated-lesson-bd']);
+        $lesson_user = (int) ($_SESSION['validated-lesson-bd']);
         updateLessons($id_user,$lesson_user);  
 
-        // incrementation des kilometres +5 (3)
-        $klm = (int) htmlspecialchars($_SESSION['validated-klm-bd']);
+        // incrementation des kilometres +5 : table -> users 
+        $klm = (int) ($_SESSION['validated-klm-bd']);
         $klm = $klm +5;
         $_SESSION['validated-klm-bd'] = $klm;
         updateKlm($id_user,$klm);
+
+       }
+            // traitement collectif //
         
         // passage à l'index de leçon suivante
         // sans faire de mise à jour, puisque non encore validée
         $_SESSION['current-lesson'] = $lesson_user +1;
-
-        
+     
         // Ensuite nous testons si la dernière leçon de ce niveau est atteint
-        // test de passage à un (level) niveau supperieur 
-        if ($_SESSION['current-lesson'] > $_SESSION['endLesson-level']){  // endLesson-level provient de dashboard-lessons-logic.php
-          
+        // test de passage à un niveau supperieur 
+        if ($_SESSION['current-lesson'] > $_SESSION['endLesson-level']) {  // endLesson-level provient de dashboard-lessons-logic.php
+
             // Incrémentation du niveau actuel
             $_SESSION['validated-level-bd']++;
-            $levelCurrent = (int) htmlspecialchars($_SESSION['validated-level-bd']);
-              
-            // function de mise jour du (level) / base -> users
+            $levelCurrent = (int) ($_SESSION['validated-level-bd']);
+
+
+            // pas d'incrémentation en bd si Mode Révision //
+            if ($_SESSION['revision'] = FALSE) {    
+                            
+            // function de mise jour du niveau : base-> users_languages
             updateLevel($id_user, $levelCurrent);
+
+            }     
 
             // direction le dashboard level  
             header( "location: ../dashboard/dashboard-levels.php?level=".$levelCurrent) ; 
@@ -76,13 +86,13 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
             } else { //sinon nous passons à la leçon suivante
 
               // direction la page winner de lessons      
-              header("Location: winner.php?level=".(int) htmlspecialchars($_SESSION['validated-level-bd']));
+              header("Location: winner.php?level=".(int) ($_SESSION['current-level']));  //($_SESSION['validated-level-bd'])
             }
 
         }
     }
     
-}  // sinon nous somme en cours de leçon !! ------------------------------------ //
+  // sinon nous somme en cours de leçon !! ------------------------------------ //
   
     // vu que s'est un tableau 
     // init de l'index à zéro au premier passage

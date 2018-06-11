@@ -16,16 +16,30 @@ include('logic/dashboard-levels-logic.php');
         <div class="container-dashboard" style="background-image: url('<?= $backgroundLevel.$currentLevel.".jpg";?>')"> 
 
             <div class="header">
+
                 <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
+
                 <img src="../../assets/img/pays/<?= strtoupper($_SESSION['current-code-language']); ?>.png" class="logo-language" />
-                <a href="dashboard-lessons.php" class="link-burger">
+
+
+                <div class="link-burger" id="link-burger"> 
+
+
                     <div class="burger">
                         <div class="barre"></div>
                         <div class="barre"></div>
                         <div class="barre"></div>
                     </div>
-                </a>
+
+                    <ul class="burger-menu">
+                      <li><a href="../home/home.php">Choix des Langues</li>  
+                      <li><a href="../auth/logout.php">Se déconnecter</li>
+                    </ul>
+
+                </div>  
+
             </div>
+
 
             <div class="nav-left">
                 <div class="icon-cup">120</div>
@@ -34,11 +48,11 @@ include('logic/dashboard-levels-logic.php');
                     <p>Combats Gagnés</p>
                 <div class="icon-bad">02</div>
                     <p>Combats Perdus</P>
-
             </div>
+            
 
             <?php if ($currentLevel == 1)   { $chevronLeft = "chevron-left-none"; }  ?>
-            <?php if (($currentLevel +1 == 11) | ($currentLevel == (int) htmlspecialchars($_SESSION['validated-level-bd']))) { $chevronRight = "chevron-right-none";} ?>
+            <?php if (($currentLevel +1 == 11) | ($currentLevel == (int) ($_SESSION['validated-level-bd']))) { $chevronRight = "chevron-right-none";} ?>
             
             <div class="centered-container <?= $chevronLeft; ?> <?= $chevronRight; ?>">
                 <h1>Dashboard Ligue</h1> 
@@ -60,5 +74,6 @@ include('logic/dashboard-levels-logic.php');
                 <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>  
         </div>
+        <script src="js/dashboard.js"> </script>
     </body>
 </html>

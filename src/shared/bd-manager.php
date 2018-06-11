@@ -109,7 +109,7 @@ function chekMail($mail){
 
 
 // extraction des mots/phrases à traduir
-// appelé par: learning-logic.php                       // derniere modif non testé //
+// appelé par: learning-logic.php                     
 function getTranslation($code_lang,$lesson_index){
     global $db;
     $sql = "SELECT * FROM traduction 
@@ -161,8 +161,21 @@ function updateKlm($id_user,$klm_user) {
     $upd->closeCursor();
 } //
 
+// vérification si ce langage existe pour cette utilisateur
+// appelé par: dashboard-levels-logic.php
+function checkLang(int $id_user, int $cd_lang){
+    global $db;   
+    $sql = "SELECT COUNT(code_language) FROM users_languages WHERE user_idl = :id_user AND code_language = :cd_lang";
+    $chk = $db->prepare($sql);
+    $chk->bindValue(":id_user", $id_user, PDO::PARAM_INT);
+    $chk->bindValue(":cd_lang", $cd_lang, PDO::PARAM_STR);
+    $chk->execute();         
+    return (bool) $chk->fetchColumn();// return False si aucune colonne n'est créé.
+    
+} //
+
 // utilisé par home-logic.php
-function updateLang($id_user,$cd_lang) {
+function updateLang($id_user, $cd_lang) {
     global $db;
     $sql = "UPDATE users_languages SET code_language = :cd_lang, current_lang = :cur_lang WHERE user_idl = :id_user";
     $upd = $db->prepare($sql);

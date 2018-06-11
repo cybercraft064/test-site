@@ -1,4 +1,3 @@
-
 .container {
     height: 100vh;
     width: 100%;
@@ -30,8 +29,8 @@ img.logo {
     text-decoration: none;
     position: relative;
     cursor: pointer;
-
 }
+
 .burger {
     position: absolute;
     left:94%;
@@ -50,6 +49,7 @@ img.logo {
 .link-burger:hover .barre {
     border: 3px solid #ed0049;
 }
+
 .burger-menu{
     position: absolute;
     background-color: white;
@@ -172,3 +172,5 @@ a {
     color: #ed0049;
     font-size: 32px;
 }
+
+/* ----------------------------------------- */

@@ -40,19 +40,19 @@
                 <span class="small">apprendre !</span></h1>                  
             </div>
 
-            <div class="size-flag GB"><a href='logic/home-logic.php?lang=GB'  class="">
+            <div class="size-flag GB"><a href="../dashboard/dashboard-levels.php?level=1&lesson=0&newLang=GB" id="">
             <img class="size-flag" src="../../assets/img/pays/GB.png" alt="drapeau Anglais"> 
            </a></div>
-           <div class="size-flag DE"><a href='logic/home-logic.php?lang=DE' class="">
+           <div class="size-flag DE"><a href="../dashboard/dashboard-levels.php?level=1&lesson=0&newLang=DE" id="">
             <img class="size-flag" src="../../assets/img/pays/DE.png" alt="drapeau Allemand"> 
            </a></div>
-           <div class="size-flag IT"><a href='logic/home-logic.php?lang=IT' class="">
+           <div class="size-flag IT"><a href="../dashboard/dashboard-levels.php?level=1&lesson=0&newLang=IT" id="">
             <img class="size-flag" src="../../assets/img/pays/IT.png" alt="drapeau Italien"> 
            </a></div>
-           <div class="size-flag ES"><a href='logic/home-logic.php?lang=ES' class="">
+           <div class="size-flag ES"><a href="../dashboard/dashboard-levels.php?level=1&lesson=0&newLang=ES"  id="">
             <img class="size-flag" src="../../assets/img/pays/ES.png" alt="drapeau Espagnol"> 
            </a></div>
-           <div class="size-flag PT"><a href='logic/home-logic.php?lang=PT' class="">
+           <div class="size-flag PT"><a href="../dashboard/dashboard-levels.php?level=1&lesson=0&newLang=PT" id="">
             <img class="size-flag" src="../../assets/img/pays/PT.png" alt="drapeau Portugais"> 
            </a></div>
 

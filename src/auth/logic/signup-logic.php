@@ -24,7 +24,7 @@ $pseudo = "";
 // avec un retour sur son dashboard
 if (isset($_SESSION['email'])) {
 
-    header("Location: ../../dashboard/dashboard-lessons.php?level=".(int) htmlspecialchars($_SESSION['validated-level-bd']) ."&lesson=".(int) htmlspecialchars($_SESSION['validated-lesson-bd'])); 
+    header("Location: ../../dashboard/dashboard-lessons.php?level=".(int) ($_SESSION['validated-level-bd']) ."&lesson=".(int) ($_SESSION['validated-lesson-bd'])); 
 
 
     //sinon on récupère le post
@@ -47,14 +47,14 @@ if (isset($_SESSION['email'])) {
             $_SESSION['mail'] = $user['mail_user'];
             $_SESSION['id-user'] = $user['id_user'];
             $_SESSION['pseudo-user'] = $user['pseudo_user'];
-            $_SESSION['new_user'] ="ok"; 
+            $_SESSION['new-user'] ="ok"; 
             // init de ses compteur
             $_SESSION['validated-klm-bd'] = 0;
             $_SESSION['validated-level-bd'] = 1;
             $_SESSION['validated-lesson-bd'] = 0; 
 
       // direction l'accueil nouvelle utilisateur
-      header("Location: ../home/home.php"); 
+      header("Location: ../home/home.php?"); 
 
         } else {
             // si l'email existe en base -> Avertissement par un message transmit par le placeholder de l'input du mail

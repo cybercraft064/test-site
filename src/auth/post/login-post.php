@@ -46,13 +46,6 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
               $_SESSION['validated-level-bd'] = $rep1['level_user'];
               $_SESSION['validated-lesson-bd'] = $rep1['lesson_user'];    
 
-
-
-
-        var_dump($rep);
-
-
-
                                                         
         // et création de la current-lesson
         // sachant que current-lesson doit avoir +1

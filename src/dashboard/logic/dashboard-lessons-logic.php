@@ -12,9 +12,11 @@
     
     // variable reçu en $GET  // -------------------------------------------------- //
     // permet de connaitre le niveau des leçons à afficher suivant la demande (cas révision)
-    if (isset($_GET['level']) & !empty($_GET['level']) ) {
-        $levelLessons = (int) htmlspecialchars($_GET['level']);
-      //  $_SESSION['temoin-level-dash-lesson-logic']=$levelLessons; // ------- DEBUG -------
+    if (isset($_GET['level']) && !empty($_GET['level']) ) {
+        $levelLessons = (int) ($_GET['level']);
+
+        $_SESSION['temoin-level-dash-lesson-logic'] = $levelLessons; // ------- DEBUG -------
+
     } else {
         
         $levelLessons = htmlspecialchars($_SESSION['validated-level-bd']);

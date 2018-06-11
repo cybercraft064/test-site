@@ -8,7 +8,7 @@ if (isset($_SESSION['mail'])) {
 
   /*  $validatedLevel = $_SESSION['validated-level-bd'];
     $validatedLesson = $_SESSION['validated-lesson-bd'];  */
-    header("Location: ../../dashboard/dashboard-lessons.php?level=".(int) htmlspecialchars($_SESSION['validated-level-bd']) ."&lesson=".(int) htmlspecialchars($_SESSION['validated-lesson-bd']));  
+    header("Location: ../../dashboard/dashboard-lessons.php?level=".(int) ($_SESSION['validated-level-bd']) ."&lesson=".(int) ($_SESSION['validated-lesson-bd']));  
 
 } else {
 

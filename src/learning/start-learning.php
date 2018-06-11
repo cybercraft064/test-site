@@ -36,12 +36,14 @@ $_SESSION['current-lesson'] = (int) htmlspecialchars($_GET['lesson']);
 
 
 // fonction qui récupère sous forme de tableau toutes les lignes de mots/phrases à traduires (2)
-$translations = getTranslation($_SESSION['current-code-language'], $_SESSION['current-lesson']);
+$cdLang =  htmlspecialchars($_SESSION['current-code-language']);
+$curLesson = (int) $_SESSION['current-lesson'];
+
+$translations = getTranslation($cdLang, $curLesson );
 $_SESSION['translations'] = $translations;
 
 // nombre de traduction à effecter pour cette leçon
 $_SESSION['Nbtranslation-InLesson'] = count($translations);
 
-//$levelCurrent = (int) htmlspecialchars($_SESSION['validate-level-bd']);
-//header("Location: learning.php?level=".$levelCurrent);
-header("Location: learning.php");
+$levelCurrent = (int) ($_SESSION['current-level']);
+header("Location: learning.php?level=".$levelCurrent);
