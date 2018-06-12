@@ -84,7 +84,10 @@ include('logic/dashboard-lessons-logic.php');
                 <?php } // fin de boucle ?>
                
             </div>
-
+            <div class="lock-popup">
+                <h2>Leçon bloquée</h2>
+                <p>Finis les leçons précédentes pour débloquer celle-ci</p>
+            </div>
             <footer>
                 <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>    

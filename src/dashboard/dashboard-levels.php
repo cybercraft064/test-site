@@ -43,11 +43,10 @@ include('logic/dashboard-levels-logic.php');
 
             <div class="nav-left">
                 <div class="icon-cup">120</div>
-                    <p>Points Gagnés</p>
+                    <p>Leçons finies</p>
                 <div class="icon-win">05</div>
-                    <p>Combats Gagnés</p>
-                <div class="icon-bad">02</div>
-                    <p>Combats Perdus</P>
+                    <p>Km Parcourus</p>
+                
             </div>
             
 

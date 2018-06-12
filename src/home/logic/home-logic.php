@@ -9,7 +9,6 @@
     // test si s'est le premier passage dans home.php -> choix langue non efféctué
     if (isset($_GET['newLang'])) { 
 
-        echo "apres test isset(newLang) : ".$_GET['newLang']." ----- ";
 
     //test si il sagit d'un nouvelle utilisateur ou changement de langage
     // cas d'appel par home.php avec -> ?newLang
@@ -17,14 +16,11 @@
     // Test si s'est un nouvelle utilisateur
     if (isset($_SESSION['new-user']) && $_SESSION['validated-klm-bd'] == 0 ) {
 
-            $_SESSION['home-logic-new-user'] = true; // ------------------------------------------------------ DEBUG //
-        
             $_SESSION['current-code-language'] = htmlspecialchars($_GET['newLang']); 
     
             // mise à jour du choix langage en bd
             updateLang($idUser, $_SESSION['current-code-language']);
 
-            $_SESSION['home-logic-Create-lang'] = "ok"; // ----------------------------------------------- DEBUG //   
 
             unset($_SESSION['new-user']); 
             unset($_GET['newLang']);   
@@ -37,7 +33,6 @@
 
          } elseif (!isset($_SESSION['new-user']) && !empty($_GET['newLang'])) {  // -------------  Test de Changement de langage en cours de session   ----------------------- //
 
-          $_SESSION['home-logic-changement-Language-en-cours'] = "ok"; // ----------------------------------------------- DEBUG //  
        
           $currentCodeLang = $_SESSION['current-code-language'];
           // choix du language
@@ -47,7 +42,6 @@
           $checkLg = checkLang($idUser, $newLang);
             if ($checkLg == 1) { 
 
-                $_SESSION['home-logic-valeurDe-$checkLg'] = $checkLg; // --------------------------------------------- DEBUG // 
 
                 // Mise à jour du statut current_lang : TB -> users_languages
                 // la nouvelle langue devient current_lang = TRUE
@@ -79,14 +73,11 @@
 
              } else {  // s'est une nouvelle langue à aprendre //
 
-                $_SESSION['home-logic-nouvelle-langue-apprendre'] = "ok"; // ------------------------------------------- DEBUG //
                 
                 $currentLanguage = $_SESSION['current-code-language'];
-                $_SESSION['home-logic-valeur-de-$currentLanguage'] = $currentLanguage; // ------------------------------ DEBUG //
 
                 $newLanguage = htmlspecialchars($_GET['newLang']);
                 
-                $_SESSION['home-logic-ajout-nouvelle-lang'] = "Ancienne lang: ".$currentLanguage." nouvelle: ".$newLanguage; // ------------  DEBUG //  
 
                 // création en BD de la nouvelle langue indexé par l'id utilisateur
                 $_SESSION['home-logic-id-user: '] = $idUser;

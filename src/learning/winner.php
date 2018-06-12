@@ -21,7 +21,7 @@ include('logic/winner-logic.php');
 
                     <h1> winner </h1> 
                     <div class="pseudo"><?= htmlspecialchars($_SESSION['pseudo-user']); ?></div>
-                    
+                    <div class="kms">Tu as déjà parcourus 25 km en tout</div>
                     <span class="next-lesson">
                         <h2>tu passes à la leçon <span class="lesson"><?= $lesson_next;?></span></h2>
                     </span>
@@ -36,7 +36,7 @@ include('logic/winner-logic.php');
                     </span>
 
                     <div class="btn-center">
-                    <a class="next-button" href="../dashboard/dashboard-lessons.php?level=<?= $levelCurrent;?>">Continus</a>
+                    <a class="next-button" href="../dashboard/dashboard-lessons.php?level=<?= $levelCurrent;?>">Continuer</a>
                     <a href="../auth/logout.php" class="close-session">Se déconnecter</a>
                     </div>
 
