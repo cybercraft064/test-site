@@ -55,7 +55,7 @@ include('logic/dashboard-lessons-logic.php');
                         }
                         if($i > (int) $lesson){
                             $filterClass = "filter";
-                            $linkLesson = '#';
+                            $linkLesson = 'dashboard-lessons.php?lock=lockLesson';
                         }                    
                     ?>
 
@@ -67,7 +67,7 @@ include('logic/dashboard-lessons-logic.php');
                       // se qui permet de modifier .progress-bar uniquement pour ces cas la.
                     ?>
 
-                    <a href="<?= $linkLesson.($i+1);?>">           
+                    <a href="<?= $linkLesson.($i+1); ?>">           
                         <div class="record <?= $filterClass; ?>">
                             <p class="win"><?= $i+1; ?></p>
 
@@ -83,11 +83,12 @@ include('logic/dashboard-lessons-logic.php');
 
                 <?php } // fin de boucle ?>
                
-            </div>
-            <div class="lock-popup">
-                <h2>Leçon bloquée</h2>
-                <p>Finis les leçons précédentes pour débloquer celle-ci</p>
-            </div>
+                <div class="<?= $lockLesson; ?>lock-popup ">
+                    <h2>Leçon bloquée</h2><span>Finis les leçons précédentes pour débloquer celle-ci</span>
+                </div>
+
+            </div> <?php // Fin centered-level ?>
+
             <footer>
                 <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>    

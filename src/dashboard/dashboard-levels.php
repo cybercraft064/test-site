@@ -42,9 +42,9 @@ include('logic/dashboard-levels-logic.php');
 
 
             <div class="nav-left">
-                <div class="icon-cup">120</div>
+                <div class="icon-cup"><?= $nbLessonsFinichedInLevel ?></div>
                     <p>Leçons finies</p>
-                <div class="icon-win">05</div>
+                <div class="icon-win"><?= $klmInBd ?></div>
                     <p>Km Parcourus</p>
                 
             </div>

@@ -5,11 +5,18 @@
     
     // variables de travail
     $pseudo_user = $_SESSION['pseudo-user'];
+    $lockLesson = "";
+
     
     // numéro de la dernière leçon validée
     // utilisé pour invalider les leçons non encore effectuées
     $lesson = $_SESSION['validated-lesson-bd'];
-    
+
+    // Test si on a cliquez sur une leçon encore bloqué  
+    if (isset($_GET['lock']) && !empty($_GET['lock'])) { $lockLesson = "lockLesson"; };
+
+    $_SESSION['dashboard-lessons-$lockLesson=:'] = $lockLesson; // --------------------------------------- DEBUG ---------
+       
     // variable reçu en $GET  // -------------------------------------------------- //
     // permet de connaitre le niveau des leçons à afficher suivant la demande (cas révision)
     if (isset($_GET['level']) && !empty($_GET['level']) ) {

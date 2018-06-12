@@ -48,6 +48,7 @@
         $req->execute();
         $user1 = $req->fetch();
         $req->closeCursor();
+        $db = NULL; //Fermeture de la connexion
         return $user1;
     } //
 
@@ -125,6 +126,19 @@ function checkLang(int $id_user, $cd_lang){
     return (bool) $chk->fetchColumn();// return False si aucune colonne n'est créé.
     
 } //
+
+// récupération des niveaux par langues
+function loadNbLevelForLanguages($idUser) {
+    global $db;
+    $sql ="SELECT code_language, level_user FROM users_languages
+    WHERE user_idl = :id_user";
+    $rep = $db->prepare($sql);
+    $rep->bindValue(":id_user", $idUser, PDO::PARAM_INT);
+    $rep->execute();
+    $line = $rep->fetchAll(); //(PDO::FETCH_ASSOC);
+    $rep->closeCursor();
+    return $line;
+} //    
 
 
 // récupération des données de la Table-> users_languages (3)

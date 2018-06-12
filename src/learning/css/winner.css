@@ -14,24 +14,41 @@ h1 {
 
 h2 {
     font-size: 60px;
-    color: rgb(19, 255, 38);
+    color: rgb(1, 143, 13);
     text-align: center;
-    padding-top: 74px;
 }
 
 .pseudo {
-    font-size: 100px;
+    font-size: 80px;
     color: #ed0049;
     text-align: center;
     padding-top: 50px
 }
 
+.klm-winner,
+.klm-revision {
+    font-size: 30px;
+  /*  color: whitesmoke; */
+  color: blueviolet;
+    text-align: center;
+    padding-top: 60px;  
+    padding-bottom: 10px;  
+}
+.klm-revision {
+    padding-bottom: 30px;
+}
+
+
+
 .next-lesson .lesson,
 .next-level .level {
-    font-size: 120px;
+    font-size: 108px;
     color: #ed0049;
 }
 
+.klm-revision {
+    display: none;
+}
 .next-level {
     display: none;
 }
@@ -39,12 +56,16 @@ h2 {
     display: none;
 }
 
-
 /* ----------------- parent / enfant ------------ */
+.revision .klm-winner {
+    display: none;
+}
+.revision .klm-revision {
+    display: block;
+}
 .revision .next-lesson {
     display: none;
 }
-
 .revision .previous-lesson {
     display: block;
 }
@@ -70,13 +91,13 @@ h2 {
      font-weight: 700;
      padding:18px 0;
      color:white;
-     background-color: #ed0049;
+     background-color: blueviolet;
      text-decoration: none; 
      border-radius: 5px;
  }
 
  a.close-session {
-     background-color: blueviolet;
+     background-color:  #ed0049;
 
  }
 

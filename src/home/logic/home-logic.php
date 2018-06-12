@@ -108,8 +108,10 @@
 
                 header("Location: ../dashboard/dashboard-levels.php?level=1&lesson=0&lang=".$neWcurrentLanguage); 
 
-        }          
-      }        
-   }
+        } // nouvelle langue          
+      } // test changement de langage       
+   } // test premier passage
 
-  echo " pas encore de choix Premier appel de Home.php ";
+       // Affichage des niveaus déjà effectués par langues
+      $result = loadNbLevelForLanguages($idUser);
+        print_r($result);
