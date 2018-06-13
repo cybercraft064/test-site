@@ -130,7 +130,7 @@ function checkLang(int $id_user, $cd_lang){
 // récupération des niveaux par langues
 function loadNbLevelForLanguages($idUser) {
     global $db;
-    $sql ="SELECT code_language, level_user FROM users_languages
+    $sql ="SELECT code_language, level_user, lesson_user FROM users_languages
     WHERE user_idl = :id_user";
     $rep = $db->prepare($sql);
     $rep->bindValue(":id_user", $idUser, PDO::PARAM_INT);
@@ -157,7 +157,7 @@ function loadLineUserTbUsersLanguages( int $id){
 
 
 // extraction des mots/phrases à traduir
-// appelé par: learning-logic.php                     
+// appelé par: start-learning.php                     
 function getTranslation($code_lang, int $lesson_index){
     global $db;
     $sql = "SELECT * FROM traduction 

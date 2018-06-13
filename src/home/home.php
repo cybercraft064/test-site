@@ -19,7 +19,7 @@
             <img src="../../assets/img/speakies.png" class="speekies" />
 
             <div class="header">
-                <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>              
+                <span><img src="../../assets/img/logo-white.png" class="logo"/></span>              
                 <div class="link-burger" id="link-burger"> 
                     <div class="burger">
                         <div class="barre"></div>
@@ -27,7 +27,7 @@
                         <div class="barre"></div>
                     </div>
                     <ul class="burger-menu">
-                      <li><a href="../auth/logout.php">Se déconnecter</li>
+                      <li><a href="../auth/logout.php">Se déconnecter</a></li>
                     </ul>
                 </div>    
             </div>
@@ -41,25 +41,29 @@
             </div>
 
             <div class="size-flag GB"><a href="home.php?newLang=GB" id="">
-                <img class="size-flag" src="../../assets/img/pays/GB.png" alt="drapeau Anglais"></a>
-                <span class="levelFinished"><?php $nbLevelInBd ?></span>
+               <img class="size-flag" src="../../assets/img/pays/GB.png" alt="drapeau Anglais"></a>
             </div>
+            <span class="levelLesson GB"><?= $GB ?></span>
 
            <div class="size-flag DE"><a href="home.php?newLang=DE" id="">
-            <img class="size-flag" src="../../assets/img/pays/DE.png" alt="drapeau Allemand"> 
-           </a></div>
+              <img class="size-flag" src="../../assets/img/pays/DE.png" alt="drapeau Allemand"></a>
+           </div>
+           <span class="levelLesson DE"><?= $DE ?></span>
 
            <div class="size-flag IT"><a href="home.php?newLang=IT" id="">
-            <img class="size-flag" src="../../assets/img/pays/IT.png" alt="drapeau Italien"> 
-           </a></div>
+               <img class="size-flag" src="../../assets/img/pays/IT.png" alt="drapeau Italien"></a>
+           </div>
+           <span class="levelLesson IT"><?= $IT ?></span>
 
            <div class="size-flag ES"><a href="home.php?newLang=ES"  id="">
-            <img class="size-flag" src="../../assets/img/pays/ES.png" alt="drapeau Espagnol"> 
-           </a></div>
+               <img class="size-flag" src="../../assets/img/pays/ES.png" alt="drapeau Espagnol"></a>
+           </div>
+           <span class="levelLesson ES"><?= $ES ?></span>
 
            <div class="size-flag PT"><a href="home.php?newLang=PT" id="">
-            <img class="size-flag" src="../../assets/img/pays/PT.png" alt="drapeau Portugais"> 
-           </a></div>
+               <img class="size-flag" src="../../assets/img/pays/PT.png" alt="drapeau Portugais"></a>
+           </div>
+           <span class="levelLesson PT"><?= $PT ?></span>
 
 
             <div class="txt-right"> 

@@ -113,5 +113,45 @@
    } // test premier passage
 
        // Affichage des niveaus déjà effectués par langues
+       // tb -> users_languages
       $result = loadNbLevelForLanguages($idUser);
-        print_r($result);
+      $nb = (int) count($result);
+
+       for ($i = 0; $i < $nb; $i++) :
+         $cdLang = $result[$i]['code_language'];
+         $nbLevelInBd = $result[$i]['level_user'];
+         $nbLessonInBd = $result[$i]['lesson_user'];
+       
+         // association du code langue avec le nombre de niveau(s) et de leçon(s) déjà effectué(s) // ou switch!
+         if ($cdLang == "DE") {
+           $DE = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
+          } else {
+            $DE = "";
+          }
+
+         if ($cdLang == "ES") {
+           $ES = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
+          } else {
+            $ES = "";
+          }
+
+         if ($cdLang == "GB") {
+           $GB = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
+          } else {
+            $GB = "";
+          }
+
+         if ($cdLang == "IT") {
+           $IT = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
+          } else {
+            $IT = "";
+          }
+
+         if ($cdLang == "PT") {
+           $PT = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
+          } else {
+            $PT = "";
+          }
+
+       endfor ;
+

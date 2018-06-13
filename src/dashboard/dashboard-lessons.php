@@ -22,7 +22,7 @@ include('logic/dashboard-lessons-logic.php');
         <div class="container" style="background-image: url('<?= $backgroundLesson.$levelLessons.".jpg";?>')">
             
             <div class="header">
-                <a href=""><img src="../../assets/img/logo-white.png" class="logo"></a>
+                <span><img src="../../assets/img/logo-white.png" class="logo" /></span>
                 <img src="../../assets/img/pays/<?= strtoupper($_SESSION['current-code-language']); ?>.png" class="logo-language" />
                 <div class="link-burger" id="link-burger"> 
                     <div class="burger">
@@ -31,9 +31,9 @@ include('logic/dashboard-lessons-logic.php');
                         <div class="barre"></div>
                     </div>
                     <ul class="burger-menu">
-                        <li><a href="dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</li>
-                        <li><a href="../home/home.php">Choix des Langues</li> 
-                        <li><a href="../auth/logout.php">Se déconnecter</li>
+                        <li><a href="dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
+                        <li><a href="../home/home.php">Choix des Langues</a></li> 
+                        <li><a href="../auth/logout.php">Se déconnecter</a></li>
                     </ul>
                 </div>    
             </div>
