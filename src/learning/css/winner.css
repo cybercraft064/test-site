@@ -28,7 +28,6 @@ h2 {
 .klm-winner,
 .klm-revision {
     font-size: 30px;
-  /*  color: whitesmoke; */
   color: blueviolet;
     text-align: center;
     padding-top: 60px;  
@@ -37,8 +36,6 @@ h2 {
 .klm-revision {
     padding-bottom: 30px;
 }
-
-
 
 .next-lesson .lesson,
 .next-level .level {
