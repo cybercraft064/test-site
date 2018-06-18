@@ -128,6 +128,7 @@ header {
  /*   box-shadow: 8px 8px 10px grey;  */
 }
 
+
 /* -------------- Partie gauche ------------ */
 .left-block {
     display: block;
@@ -138,7 +139,6 @@ header {
     border-right: 1px solid #ccc;
  /*   background-color: blanchedalmond; */
 }
-
 
 .titleLeft {
     padding-left: 44px;

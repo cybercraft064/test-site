@@ -9,7 +9,6 @@ include('./admin/account-user-admin.php');
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Raleway:300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat" rel="stylesheet">
-    <link href="../../font-awesome/public/css/fontello.css" rel="stylesheet">
     <link href="../shared/css/reset.css" rel="stylesheet" type="text/css">
     <link href="./css/account.css" rel="stylesheet" type="text/css">
     <title>Speekoo-Home</title>
@@ -38,6 +37,7 @@ include('./admin/account-user-admin.php');
                 <span class="line-txt"></span>
             </section>
 
+
         <section class="middle">
 
             <div class="left-block">
@@ -52,7 +52,6 @@ include('./admin/account-user-admin.php');
 
                     <p><label class="label-form">Code Parrainage</label></p>
                     <div class="input-wrappers-left-bottom">
-                       <!-- <i class="icon-mail input-icon"></i> -->
                        <input type="text" class="field-input" name="parrains" placeholder=<?= $parrain_user; ?> />
                     </div>
                 </form>
