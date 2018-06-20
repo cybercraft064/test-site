@@ -55,6 +55,12 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
         // nous passons au dashboard-lesson  (1)le niveau en cours  (2)la dernière leçon validée en bd
         $validatedLevel = (int) $_SESSION['validated-level-bd'];
         $validatedLesson = (int) $_SESSION['validated-lesson-bd'];
+
+        // netoyage des variables du post
+        $mail = "";
+        $password = "";
+
+        // redirection
         header("Location: ../../dashboard/dashboard-lessons.php?level=".$validatedLevel."&lesson=".$validatedLesson); 
 
     }              
