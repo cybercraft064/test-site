@@ -70,6 +70,7 @@ include('logic/account-logic.php');
 
             <?php if (isset($_GET['checkPseudo']) && $_GET['checkPseudo'] == 1 ) {$check1 = "-good";} ?>
 
+            <span>
                 <form method="post" action="./post/account-post.php" class="form-right-pseudo" >
 
                     <p><label class="label-form ">Pseudo (Classement)</label></p>
@@ -77,8 +78,9 @@ include('logic/account-logic.php');
                     <i class="input-icon-pseudo icon-pseudo"></i>
                         <input type="text" class="field-input<?= $check1; ?>" name="pseudo" placeholder="<?= $_SESSION['txt-pseudo']; ?>" autocomplete="off" />
                     </div>
-                        <input type="submit" class="button-submit Fraleway fat-700" value="<?= $_SESSION['txt-button-pseudo']; ?>" />
+                        <input type="submit" class="button-submit Fraleway fat-700" name="valPseudo" value="<?= $_SESSION['txt-button-pseudo']; ?>" />
                 </form> 
+            </span>
 
                 <?php if (isset($_GET['checkPwd']) && !empty($_GET['checkPwd'])) {
 
@@ -95,6 +97,7 @@ include('logic/account-logic.php');
                     }
                 } ?>
 
+            <span>
                 <form  method="post" action="./post/account-post.php" class="form-right-pwd">
 
                     <p><label class="label-form ">Mot de passe</label></p>
@@ -102,9 +105,9 @@ include('logic/account-logic.php');
                     <i class="input-icon-pwd icon-pwd "></i>
                         <input type="password" class="field-input-pwd <?= $check2; ?>" name="pwd" placeholder="<?= $_SESSION['txt-password']; ?>" autocomplete="off" />
                     </div>
-                        <input type="submit" class="button-submit Fraleway fat-700" value="<?= $_SESSION['txt-button-pwd']; ?>" />
+                        <input type="submit" class="button-submit Fraleway fat-700" name="valPwd" value="<?= $_SESSION['txt-button-pwd']; ?>" />
                 </form> 
-
+            </span>    
             </div>
 
         </section>

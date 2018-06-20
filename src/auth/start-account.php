@@ -3,9 +3,10 @@
 // appelé par les menu
 
 // init des variables de travail
+$_SESSION['txt-pseudo'] = "";
+$_SESSION['end-pseudo'] = 0;
 $_SESSION['step'] = "";
 $_SESSION['txt-password'] = "";
-$_SESSION['txt-pseudo'] = "";
 $_SESSION['err-saisie'] = "";
 $_SESSION['newPassword1'] = "1";
 $_SESSION['newPassword2'] = "2";
