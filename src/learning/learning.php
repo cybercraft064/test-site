@@ -15,8 +15,8 @@ include('logic/learning-logic.php');
     <body>
         <div class="page-container" style="background-image: url('<?= $backgroundLesson.$level.".jpg";?>')">
             <a href="../dashboard/dashboard-lessons.php"><div class="close">x</div></a>
-             <div class="destroy-session">                              
-                 <a href="close-session.php"><input type="submit" value="closeSession" /></a>               
+             <div class="back-lesson">                              
+                <a href="dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a>               
             </div>
             <div class="centered-container">
 

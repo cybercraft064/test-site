@@ -1,0 +1,148 @@
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container-page {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-image: url("../../../assets/img/bg-learning-1.jpg");
+    background-size: cover;
+    font-family: "Raleway , sans-serif";
+    color: rgb(50,50,50);
+}
+
+.filter-page {
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+/*  ----------- polices de caractères -------- */
+.Fjalla {
+    font-family: 'Fjalla One', sans-serif; 
+}
+.Foswald {
+    font-family: 'Oswald', sans-serif; 
+}
+.Fraleway {
+    font-family: 'Raleway', sans-serif; 
+}
+.Fmontserrat {
+    font-family: 'Montserra', sans-serif;
+}
+.fat-300 {
+    font-weight: 300;
+}
+.fat-400 {
+    font-weight: 400;
+}
+.fat-700 {
+    font-weight: 700;
+}
+/* ------------------------------------------- */
+
+header {
+    height: 60px; 
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+.logo {
+    float: left;
+    height: 46px;
+    width: 132px;
+    padding: 24px 0 6px 24px;;
+}
+
+.link-burger {
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger {
+    float: right;
+    margin: 22px 22px 0 0;
+    
+}
+.barre {
+    width: 38px;
+    margin-top: 10px;
+    border: 3px solid rgb(248, 244, 237);
+    border-radius: 5px;
+}
+
+
+/* ------- gestion du menu ----------- */
+.link-burger:hover .barre {
+    border: 3px solid #ed0049;
+}
+
+.burger-menu{
+    position: absolute;
+    background-color: white;
+    padding:10px;
+    color:rgb(50,50,50);
+    top:80px;
+    right:50px;
+    border-radius: 5px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display:none;
+}
+
+.show-burger .burger-menu{
+    display: block;
+}
+
+/* ------------------------------------ */
+
+.tittle {
+    margin: auto;
+    margin-top: 74px;  
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 36px;
+    color: white;
+}
+
+
+.line-txt {
+    display: inline-block;
+    width: 69px;
+    margin: 0 18px;
+    border: 2px solid #ed0049;
+    margin-bottom: 10px;
+}
+
+.middle {
+    margin: auto;
+    margin-top: 39px;
+    height: 361px;
+    width: 758px;
+    background-color: rgba(250,250,250,0.8);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);  
+}
+
+/* ----------- Footer --------------- */
+.bg-mountains{
+    position: absolute;
+    bottom: 0px;
+    left:0px;
+    width:100%;
+}
+
+.pseudo {
+    position: absolute;
+    left: 32px;
+    bottom: 32px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #ed0049;
+    font-size: 32px;
+}

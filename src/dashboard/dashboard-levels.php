@@ -1,6 +1,6 @@
 <?php
 include('logic/dashboard-levels-logic.php');
-// appelé par 
+// 
  ?>
 
 <!DOCTYPE html>
@@ -33,6 +33,7 @@ include('logic/dashboard-levels-logic.php');
                     <ul class="burger-menu">
                       <li><a href="../home/home.php">Choix des Langues</a></li>  
                       <li><a href="../auth/logout.php">Se déconnecter</a></li>
+                      <li><a href="../auth/start-account.php">Account</a></li>
                     </ul>
 
                 </div>  

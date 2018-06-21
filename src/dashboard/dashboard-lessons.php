@@ -33,7 +33,9 @@ include('logic/dashboard-lessons-logic.php');
                     <ul class="burger-menu">
                         <li><a href="dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
                         <li><a href="../home/home.php">Choix des Langues</a></li> 
+                        <li><a href="../auth/start-account.php">Account</a></li>
                         <li><a href="../auth/logout.php">Se déconnecter</a></li>
+
                     </ul>
                 </div>    
             </div>

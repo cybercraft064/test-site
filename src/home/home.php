@@ -27,6 +27,7 @@
                         <div class="barre"></div>
                     </div>
                     <ul class="burger-menu">
+                      <li><a href="../auth/start-account.php">Account</a></li>
                       <li><a href="../auth/logout.php">Se déconnecter</a></li>
                     </ul>
                 </div>    
