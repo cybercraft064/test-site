@@ -26,7 +26,7 @@
 
                 <div class="title-container">
                     <div class="title-dash"></div>
-                    <h2 class="title">Inscription</h2>
+                    <h2 class="title">inscrition</h2>
                     <div class="title-dash"></div>
                 </div>  
                         
@@ -41,7 +41,7 @@
 
                     <div class="input-wrapper">
                         <div class="input-icon-box">
-                            <i class="icon-lock"></i>
+                            <i class="icon-pseudo"></i>
                         </div>
                         <input type="text" placeholder="Pseudo" class="field-input" name="newUserPseudo" autocomplete="off" required />
                     </div>                     

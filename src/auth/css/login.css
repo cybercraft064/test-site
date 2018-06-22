@@ -179,6 +179,18 @@ a {
     content:"";
 }
 
+.icon-pseudo::before {
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/backpacker1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 47px;
+    width: 41px; 
+    height: 33px;
+    margin-left: -14px;
+    content:"";
+}
+
 .icon-lock::before {
     display: inline-block;
     background-image: url('../../../assets/img/icons/cadenas.png');
