@@ -86,23 +86,63 @@ header {
     position: absolute;
     background-color: white;
     padding:10px;
+    text-transform: uppercase;
     color:rgb(50,50,50);
     top:80px;
-    right:50px;
+    right:37px;
     border-radius: 5px;
-    line-height: 20px;
+    line-height: 26px;
     font-size: 12px;
     font-weight: 700;
     display:none;
 }
 
+.burger-menu li a:hover {
+    color: #ed0049;
+}
+
+.burger-icon-user,
+.burger-icon-exit {
+    display: block;
+    position: absolute;
+    right: 104px
+}
+.burger-icon-user {
+    top: 11px;
+}
+.burger-icon-exit {
+    top: 38px;
+}
+
+.icon-user::before {
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/user.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+    width: 30px; 
+    height: 20px;
+    content:"";
+}
+.icon-exit::before {
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/exit2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 19px;
+    width: 30px; 
+    height: 20px;
+    content:"";
+}
+
 .show-burger .burger-menu{
     display: block;
+    padding-left: 36px;
 }
 
 /* ------------------------------------ */
 
-.tittle {
+.title {
     margin: auto;
     margin-top: 74px;  
     text-align: center;

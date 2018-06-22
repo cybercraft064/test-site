@@ -30,13 +30,15 @@ include('./logic/badges-logic.php');
                             <div class="barre"></div>
                         </div>
                         <ul class="burger-menu">
+                        <i class="burger-icon-user icon-user"></i>
                         <li><a href="../auth/start-account.php">Account</a></li>
-                        <li><a href="../auth/logout.php">Se déconnecter</a></li>
+                        <i class="burger-icon-exit icon-exit"></i>
+                        <li><a href="../auth/logout.php">Déconnexion</a></li>
                         </ul>
                     </div> 
                 </header>
 
-                <section class="tittle Foswald ">
+                <section class="title Foswald ">
                     <span class="line-txt"></span>
                     <span class="fat-300"> Tes <span class="fat-400">badges</span>
                     <span class="line-txt"></span>
