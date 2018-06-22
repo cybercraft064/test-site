@@ -36,9 +36,12 @@ a {
     margin: 0 25px;
     font-size: 14px;
     padding: 7px 0px 7px 0px;
-    font-family: "raleway";
+    font-family: "raleway", sans-serif;
     text-transform: uppercase;
     font-weight: 700;
+}
+.header-right li:hover {
+    color: #ed0049;
 }
 
 .centered-container {
@@ -84,13 +87,21 @@ a {
     transition: all 0.3s ease;
 }
 
-.icon-container {
+.icons {
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    text-align: center;
+}
+
+.icon-facebook::before {
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/facebook1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 34px;
+    width: 36px; 
+    height: 20px;
+    padding-top: 16px;
+    margin-left: 7px;
+    content:"";
 }
 
 .fb-button .button-separator {
@@ -136,6 +147,7 @@ a {
     font-weight: 700;
 }
 
+/* ---- Partie Formulaire -------- */
 .input-wrapper {
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 5px;
@@ -143,10 +155,7 @@ a {
     margin: 20px 0;
 }
 
-.bad-mail {
-    background-color: rgba(255, 0, 0, 0.5);
-}
-
+/* le trait de droite */
 .input-icon-box {
     height: 30px;
     width: 50px;
@@ -157,16 +166,37 @@ a {
     position: relative;
 }
 
-.input-icon-box i {
-    font-size: 28px;
-    color: rgb(80,80,80);
+.icon-mail::before {
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/mail1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px;
+    width: 41px; 
+    height: 20px;
+    padding-top: 14px;
+    margin-left: -14px;
+    content:"";
 }
 
-i.icon-mail {
-    background: url('../../../assets/img/mail.png') no-repeat center; 
+.icon-lock::before {
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/cadenas.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px;
+    width: 41px; 
+    height: 20px;
+    padding-top: 13px;
+    margin-left: -14px;
+    content:"";
 }
 
+.bad-mail {
+    background-color: rgba(255, 0, 0, 0.5);
+}
 
+/* class passé en paramètre */
 .field-input  {
     display: inline-block;
     vertical-align: middle;
@@ -203,7 +233,6 @@ input[type="text"]:focus {
 input[type="password"]:focus {
     outline:none;
 }
-
 
 .connect-button {
     border: 2px solid white;

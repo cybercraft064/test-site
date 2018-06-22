@@ -16,13 +16,12 @@ include('./logic/badges-logic.php');
         <title>Badges</title>
     </head> 
     <body>
-        <section class="container-page ">
+        <section class="page-container ">
                 
-
-            <div class="filter-page">
+            <div class="page-filter">
 
                 <header>
-                    <span><img src="../../assets/img/logo-white.png" class="logo"/></span>              
+                    <img src="../../assets/img/logo-white.png" class="logo"/>              
                     <div class="link-burger" id="link-burger"> 
                         <div class="burger">
                             <div class="barre"></div>
@@ -30,10 +29,10 @@ include('./logic/badges-logic.php');
                             <div class="barre"></div>
                         </div>
                         <ul class="burger-menu">
-                        <i class="burger-icon-user icon-user"></i>
-                        <li><a href="../auth/start-account.php">Account</a></li>
-                        <i class="burger-icon-exit icon-exit"></i>
-                        <li><a href="../auth/logout.php">Déconnexion</a></li>
+                            <i class="burger-icon-user icon-user"></i>
+                            <li><a href="../auth/start-account.php">Ton compte</a></li>
+                            <i class="burger-icon-exit icon-exit"></i>
+                            <li><a href="../auth/logout.php">Déconnexion</a></li>
                         </ul>
                     </div> 
                 </header>

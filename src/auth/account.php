@@ -25,8 +25,10 @@ include('logic/account-logic.php');
                     <div class="barre"></div>
                 </div>
                 <ul class="burger-menu">
+                    <i class="burger-icon-user icon-user"></i>
                     <li><a href="../dashboard/dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
-                    <li><a href="logout.php">Deconnexion</a></li>
+                    <i class="burger-icon-exit icon-exit"></i>
+                    <li><a href="logout.php">Déconnexion</a></li>
                 </ul> 
             </div>       
         </header>
