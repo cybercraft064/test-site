@@ -9,11 +9,14 @@ if (isset($_SESSION['step']) && $_SESSION['step'] == "carry-on") {
 
 // Gestion des changements de login est password par l'utilisateur
 
+// developpement futur
+$code_parrain = "Aey3BtfgrD"; // $_SESSION['cd-parrain']
+$nb_parrains = 6; // $_SESSION['nb-parrain']
+
+
 // variables de travail
-$email_user = "cybercraft64@hotmail.fr"; // $_SESSION['mail'];
-$code_parrain = "Aey3BtfgrD";
-$nb_parrains = 12;
-$pseudo_user = "LaTruffeBlanche";
+$email_user = htmlspecialchars($_SESSION['mail']);
+$pseudo_user = htmlspecialchars($_SESSION['mail']);
 $password_user = "";
 
 // variable changement de couleur field-input du password

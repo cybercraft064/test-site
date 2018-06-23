@@ -15,7 +15,7 @@ a {
 
 .page-filter {
     height: 100vh;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.4);
 }
 
 
@@ -26,9 +26,7 @@ a {
 .Foswald {
     font-family: 'Oswald', sans-serif; 
 }
-.Fraleway {
-    font-family: 'Raleway', sans-serif; 
-}
+
 .Fmontserrat {
     font-family: 'Montserra', sans-serif;
 }
@@ -43,19 +41,16 @@ a {
 }
 /* ------------------------------------------- */
 
-header {
-    height: 60px; 
-    width: 100%;
-    padding: 0;
-    margin: 0;
+.logo {
+    position: absolute;
+    left: 30px;
+    top: 25px;
+    height: 46px;
 }
 
-
-.logo {
-    float: left;
+img.logo {
     height: 46px;
-    width: 132px;
-    padding: 24px 0 6px 24px;;
+    width: 127px;
 }
 
 .link-burger {
@@ -65,10 +60,11 @@ header {
 }
 
 .burger {
-    float: right;
-    margin: 22px 22px 0 0;
-    
+    position: absolute;
+    left:94%;
+    top:22px;
 }
+
 .barre {
     width: 38px;
     margin-top: 10px;
@@ -85,14 +81,14 @@ header {
 .burger-menu{
     position: absolute;
     background-color: white;
-    padding:10px;
+    padding:13px;
     text-transform: uppercase;
     color:rgb(50,50,50);
-    top:80px;
-    right:37px;
+    top:93px;
+    right:63px;
     border-radius: 5px;
-    line-height: 26px;
-    font-size: 12px;
+    line-height: 38px;
+    font-size: 13px;
     font-weight: 700;
     display:none;
 }
@@ -101,29 +97,53 @@ header {
     color: #ed0049;
 }
 
+
+.burger-icon-level,
+.burger-icon-langue,
 .burger-icon-user,
 .burger-icon-exit {
     display: block;
     position: absolute;
-    right: 104px
-}
-.burger-icon-user {
-    top: 11px;
-}
-.burger-icon-exit {
-    top: 38px;
+    right: 164px
 }
 
-.icon-user::before {
+
+.icon-level::before {
+    content:"";
     display: inline-block;
-    background-image: url('../../../assets/img/icons/user.png');
+    background-image: url('../../../assets/img/icons/tongs.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 27px;
+    width: 27px; 
+    height: 25px;
+    margin-top: 7px;
+}
+
+.icon-langue::before {
+    content:"";
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/travel-map.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 32px;
     width: 30px; 
-    height: 20px;
-    content:"";
+    height: 25px;
+    margin-top: 7px;
 }
+
+.icon-user::before {
+    content:"";
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/user.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 37px;
+    width: 30px; 
+    height: 20px;
+    margin-top: 7px;
+}
+
 .icon-exit::before {
     display: inline-block;
     background-image: url('../../../assets/img/icons/exit2.png');
@@ -132,19 +152,20 @@ header {
     background-size: 19px;
     width: 30px; 
     height: 20px;
+    margin-top: 7px;
     content:"";
 }
 
 .show-burger .burger-menu{
     display: block;
-    padding-left: 36px;
+    padding-left: 50px;
 }
 
 /* ------------------------------------ */
 
 .title {
     margin: auto;
-    margin-top: 74px;  
+    padding-top: 176px;  
     text-align: center;
     text-transform: uppercase;
     font-size: 36px;

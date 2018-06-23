@@ -15,10 +15,16 @@
 </head>
 <body>
     <div class="page-container"> 
-		<div class=login-filter>
+		<div class=page-filter>
 
             <div class="header">
-				<a href="login.php"><img src="../../assets/img/logo-white.png" class="logo"></a>
+                <a href="login.php"><img src="../../assets/img/logo-white.png" class="logo"></a>
+
+                <div class="header-right">
+					<ul>
+						<a href="login.php"><li>Retour Login </li></a>
+					</ul>
+				</div>
        		</div>
 
 		

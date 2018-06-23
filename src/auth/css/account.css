@@ -13,6 +13,11 @@ a {
     color: rgb(50,50,50);
 }
 
+.page-filter {
+    height: 100vh;
+    background-color: rgba(0,0,0,0.4);
+}
+
 /*  ----------- polices de caractères -------- */
 .Fjalla {
     font-family: 'Fjalla One', sans-serif; 
@@ -37,23 +42,17 @@ a {
 }
 /* ------------------------------------------- */
 
-header {
-    height: 60px; 
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.blur {
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-}
 
 .logo {
-    float: left;
+    position: absolute;
+    left: 30px;
+    top: 25px;
     height: 46px;
-    width: 132px;
-    padding: 24px 0 6px 24px;
+}
+
+img.logo {
+    height: 46px;
+    width: 127px;
 }
 
 .link-burger {
@@ -63,17 +62,17 @@ header {
 }
 
 .burger {
-    float: right;
-    margin: 22px 22px 0 0;
-    
+    position: absolute;
+    left:94%;
+    top:22px;
 }
+
 .barre {
     width: 38px;
     margin-top: 10px;
     border: 3px solid rgb(248, 244, 237);
     border-radius: 5px;
 }
-
 
 /* ------- gestion du menu ----------- */
 .link-burger:hover .barre {
@@ -83,14 +82,14 @@ header {
 .burger-menu{
     position: absolute;
     background-color: white;
-    padding:10px;
+    padding:13px;
     text-transform: uppercase;
     color:rgb(50,50,50);
-    top:80px;
-    right:37px;
+    top:93px;
+    right:63px;
     border-radius: 5px;
-    line-height: 26px;
-    font-size: 12px;
+    line-height: 38px;
+    font-size: 13px;
     font-weight: 700;
     display:none;
 }
@@ -99,30 +98,41 @@ header {
     color: #ed0049;
 }
 
-.burger-icon-user,
+.burger-icon-level,
+.burger-icon-badge,
 .burger-icon-exit {
     display: block;
     position: absolute;
-    right: 104px
-}
-.burger-icon-user {
-    top: 11px;
-}
-.burger-icon-exit {
-    top: 38px;
+    right: 122px
 }
 
-.icon-user::before {
+
+.icon-level::before {
+    content:"";
     display: inline-block;
     background-image: url('../../../assets/img/icons/tongs.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 27px;
-    width: 27px; 
+    width: 30px; 
     height: 25px;
-    content:"";
+    margin-top: 7px;
 }
+
+.icon-badge::before {
+    content:"";
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/backpacking1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 27px;
+    width: 30px; 
+    height: 25px;
+    margin-top: 7px;
+}
+
 .icon-exit::before {
+    content:"";
     display: inline-block;
     background-image: url('../../../assets/img/icons/exit2.png');
     background-repeat: no-repeat;
@@ -130,19 +140,19 @@ header {
     background-size: 19px;
     width: 30px; 
     height: 20px;
-    content:"";
+    margin-top: 7px;
 }
 
 .show-burger .burger-menu{
     display: block;
-    padding-left: 36px;
+    padding-left: 50px;
 }
 
 /* ------------------------------------ */
 
 .txt-center-top {
     margin: auto;
-    margin-top: 74px;  
+    padding-top: 176px;  
     text-align: center;
     text-transform: uppercase;
     font-size: 36px;
@@ -163,7 +173,7 @@ header {
     margin-top: 39px;
     height: 361px;
     width: 758px;
-    background-color: rgba(250,250,250,0.7);
+    background-color: rgba(250,250,250,0.8);
     border-radius: 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);  
 }

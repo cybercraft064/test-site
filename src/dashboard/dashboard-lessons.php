@@ -19,7 +19,7 @@ include('logic/dashboard-lessons-logic.php');
         <title>DashBoard-Lessons</title>
     </head> 
     <body>
-        <div class="container" style="background-image: url('<?= $backgroundLesson.$levelLessons.".jpg";?>')">
+        <div class="page-container" style="background-image: url('<?= $backgroundLesson.$levelLessons.".jpg";?>')">
             
             <div class="header">
                 <span><img src="../../assets/img/logo-white.png" class="logo" /></span>
@@ -31,11 +31,16 @@ include('logic/dashboard-lessons-logic.php');
                         <div class="barre"></div>
                     </div>
                     <ul class="burger-menu">
+                        <i class="burger-icon-level icon-level"></i>
                         <li><a href="dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
+                        <i class="burger-icon-badge icon-badge"></i>
+                        <li><a href="../badge/badges.php">Tes Badges</a></li>
+                        <i class="burger-icon-langue icon-langue"></i>
                         <li><a href="../home/home.php">Choix des Langues</a></li> 
-                        <li><a href="../auth/start-account.php">Account</a></li>
-                        <li><a href="../auth/logout.php">Se déconnecter</a></li>
-
+                        <i class="burger-icon-user icon-user"></i>
+                        <li><a href="../auth/start-account.php">Ton compte</a></li>
+                        <i class="burger-icon-exit icon-exit"></i>
+                        <li><a href="../auth/logout.php">déconnexion</a></li>
                     </ul>
                 </div>    
             </div>

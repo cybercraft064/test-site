@@ -15,6 +15,7 @@ include('logic/account-logic.php');
 </head> 
 <body>
     <div class="page-container">
+        <div class="page-filter">
 
         <header>
             <img class="logo" src="../../assets/img/logo-white.png" />
@@ -25,8 +26,10 @@ include('logic/account-logic.php');
                     <div class="barre"></div>
                 </div>
                 <ul class="burger-menu">
-                    <i class="burger-icon-user icon-user"></i>
+                    <i class="burger-icon-level icon-level"></i>
                     <li><a href="../dashboard/dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
+                    <i class="burger-icon-badge icon-badge"></i>
+                    <li><a href="../badge/badges.php">Tes Badges</a></li>
                     <i class="burger-icon-exit icon-exit"></i>
                     <li><a href="logout.php">Déconnexion</a></li>
                 </ul> 
@@ -116,7 +119,7 @@ include('logic/account-logic.php');
 
         <footer>
         </footer>
-
-    </div> <!-- Fin Page container -->
+     </div>           
+    </div> 
     <script src="../shared/js/burger.js"> </script>
 </body>

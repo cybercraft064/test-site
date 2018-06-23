@@ -29,10 +29,14 @@ include('./logic/badges-logic.php');
                             <div class="barre"></div>
                         </div>
                         <ul class="burger-menu">
-                            <i class="burger-icon-user icon-user"></i>
-                            <li><a href="../auth/start-account.php">Ton compte</a></li>
-                            <i class="burger-icon-exit icon-exit"></i>
-                            <li><a href="../auth/logout.php">Déconnexion</a></li>
+                        <i class="burger-icon-level icon-level"></i>
+                        <li><a href="../dashboard/dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
+                        <i class="burger-icon-langue icon-langue"></i>
+                        <li><a href="../home/home.php">Choix des Langues</a></li> 
+                        <i class="burger-icon-user icon-user"></i>
+                        <li><a href="../auth/start-account.php">Ton compte</a></li>
+                        <i class="burger-icon-exit icon-exit"></i>
+                        <li><a href="../auth/logout.php">déconnexion</a></li>
                         </ul>
                     </div> 
                 </header>

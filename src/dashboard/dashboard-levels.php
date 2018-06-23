@@ -13,7 +13,7 @@ include('logic/dashboard-levels-logic.php');
         <title>DashBoard-Levels</title>
     </head>
     <body>
-        <div class="container-dashboard" style="background-image: url('<?= $backgroundLevel.$currentLevel.".jpg";?>')"> 
+        <div class="page-container" style="background-image: url('<?= $backgroundLevel.$currentLevel.".jpg";?>')"> 
 
             <div class="header">
 
@@ -31,9 +31,14 @@ include('logic/dashboard-levels-logic.php');
                     </div>
 
                     <ul class="burger-menu">
-                      <li><a href="../home/home.php">Choix des Langues</a></li>  
-                      <li><a href="../auth/logout.php">Se déconnecter</a></li>
-                      <li><a href="../auth/start-account.php">Account</a></li>
+                        <i class="burger-icon-badge icon-badge"></i>
+                        <li><a href="../badge/badges.php">Tes Badges</a></li>
+                        <i class="burger-icon-langue icon-langue"></i>
+                        <li><a href="../home/home.php">Choix des Langues</a></li> 
+                        <i class="burger-icon-user icon-user"></i>
+                        <li><a href="../auth/start-account.php">Ton compte</a></li>
+                        <i class="burger-icon-exit icon-exit"></i>
+                        <li><a href="../auth/logout.php">déconnexion</a></li>
                     </ul>
 
                 </div>  
@@ -73,6 +78,7 @@ include('logic/dashboard-levels-logic.php');
                 <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>  
         </div>
-        <script src="js/dashboard.js"> </script>
+        <!-- <script src="js/dashboard.js"> </script> -->
+        <script src="../shared/js/burger.js"> </script>
     </body>
 </html>

@@ -31,7 +31,7 @@
 
         
 
-         } elseif (!isset($_SESSION['new-user']) && !empty($_GET['newLang'])) {  // -------------  Test de Changement de langage en cours de session   ----------------------- //
+         } elseif (!isset($_SESSION['new-user']) && !empty($_GET['newLang'])) {  //  Test de Changement de langage en cours de session   //
 
        
           $currentCodeLang = $_SESSION['current-code-language'];
@@ -117,7 +117,12 @@
       $result = loadNbLevelForLanguages($idUser);
       $nb = (int) count($result);
 
-       for ($i = 0; $i < $nb; $i++) :
+    //  $_SESSION['nombre de langues'] = $result;  // ---- DEBUG ----- //
+
+    // Init des variables
+    $DE = ""; $ES = ""; $GB = ""; $IT = ""; $PT = "";
+
+       for ($i = 0; $i < $nb; $i++) {  
          $cdLang = $result[$i]['code_language'];
          $nbLevelInBd = $result[$i]['level_user'];
          $nbLessonInBd = $result[$i]['lesson_user'];
@@ -126,32 +131,32 @@
          if ($cdLang == "DE") {
            $DE = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
           } else {
-            $DE = "";
+            
           }
 
          if ($cdLang == "ES") {
            $ES = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
           } else {
-            $ES = "";
+            
           }
 
          if ($cdLang == "GB") {
            $GB = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
           } else {
-            $GB = "";
+            
           }
 
          if ($cdLang == "IT") {
            $IT = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
           } else {
-            $IT = "";
+            
           }
 
          if ($cdLang == "PT") {
            $PT = "<h2>Niveau: ".$nbLevelInBd." Leçon: ".$nbLessonInBd."</h2>";
           } else {
-            $PT = "";
+            
           }
 
-       endfor ;
+        }
 
