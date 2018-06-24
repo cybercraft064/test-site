@@ -30,6 +30,9 @@ include('logic/account-logic.php');
                     <li><a href="../dashboard/dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
                     <i class="burger-icon-badge icon-badge"></i>
                     <li><a href="../badge/badges.php">Tes Badges</a></li>
+                    <i class="burger-icon-langue icon-langue"></i>
+                    <li><a href="../home/home.php">Choix des Langues</a></li>
+                    <div class="borderLine"></div>
                     <i class="burger-icon-exit icon-exit"></i>
                     <li><a href="logout.php">Déconnexion</a></li>
                 </ul> 

@@ -84,8 +84,8 @@ img.logo {
     padding:13px;
     text-transform: uppercase;
     color:rgb(50,50,50);
-    top:93px;
-    right:63px;
+    top: 93px;
+    right: 63px;
     border-radius: 5px;
     line-height: 38px;
     font-size: 13px;
@@ -159,6 +159,13 @@ img.logo {
 .show-burger .burger-menu{
     display: block;
     padding-left: 50px;
+}
+
+.borderLine {
+    width: 179px;
+    border-bottom: 1px solid #ed0049;
+    margin-left: -37px;
+    padding: 4px 0;
 }
 
 /* ------------------------------------ */

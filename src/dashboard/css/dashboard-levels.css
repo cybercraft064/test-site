@@ -137,6 +137,13 @@ img.logo {
     padding-left: 50px;
 }
 
+.borderLine {
+    width: 179px;
+    border-bottom: 1px solid #ed0049;
+    margin-left: -37px;
+    padding: 4px 0;
+}
+
 /* ------------------------------------ */
 
 h1 {
