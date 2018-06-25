@@ -19,6 +19,7 @@ include('logic/account-logic.php');
 
         <header>
             <img class="logo" src="../../assets/img/logo-white.png" />
+            <img src="../../assets/img/pays/<?= strtoupper($currentCodeLang); ?>.png" class="logo-language" />
             <div class="link-burger" id="link-burger">
                 <div class="burger">
                     <div class="barre"></div>
@@ -31,7 +32,7 @@ include('logic/account-logic.php');
                     <i class="burger-icon-badge icon-badge"></i>
                     <li><a href="../badge/badges.php">Tes Badges</a></li>
                     <i class="burger-icon-langue icon-langue"></i>
-                    <li><a href="../home/home.php">Choix des Langues</a></li>
+                    <li><a href="../language/choose-langues.php">Choix des Langues</a></li>
                     <div class="borderLine"></div>
                     <i class="burger-icon-exit icon-exit"></i>
                     <li><a href="logout.php">Déconnexion</a></li>

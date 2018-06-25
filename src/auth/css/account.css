@@ -55,6 +55,15 @@ img.logo {
     width: 127px;
 }
 
+.logo-language {
+    position: absolute;
+    left:89%;
+    top:24px;
+    height: 55px;
+    width: 55px;
+    border-radius: 100%;
+}
+
 .link-burger {
     text-decoration: none;
     position: relative;

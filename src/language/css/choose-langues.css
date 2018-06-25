@@ -13,10 +13,10 @@ a {
     color: rgb(50,50,50);
 }
 
-.page-filter {
+/*.page-filter {
     height: 100vh;
-    background-color: rgba(0,0,0,0.4);
-}
+    background-color: rgba(0,0,0,0.2);
+}  -*/
 
 
 /*  ----------- polices de caractères -------- */
@@ -26,7 +26,6 @@ a {
 .Foswald {
     font-family: 'Oswald', sans-serif; 
 }
-
 .Fmontserrat {
     font-family: 'Montserra', sans-serif;
 }
@@ -96,8 +95,7 @@ img.logo {
     top: 93px;
     right: 63px;
     border-radius: 5px;
-    line-height: 38px;
-    font-size: 13px;
+    line-height: 31px;
     font-weight: 700;
     display:none;
 }
@@ -105,7 +103,6 @@ img.logo {
 .burger-menu li a:hover {
     color: #ed0049;
 }
-
 
 .burger-icon-level,
 .burger-icon-langue,
@@ -115,7 +112,6 @@ img.logo {
     position: absolute;
     right: 164px
 }
-
 
 .icon-level::before {
     content:"";
@@ -181,10 +177,10 @@ img.logo {
 
 .title {
     margin: auto;
-    padding-top: 176px;  
+    padding-top: 124px;  
     text-align: center;
     text-transform: uppercase;
-    font-size: 36px;
+    font-size: 43px;
     color: white;
 }
 
@@ -197,23 +193,76 @@ img.logo {
     margin-bottom: 10px;
 }
 
+/* --------- drapeaux ----------------- */
 .middle {
     margin: auto;
-    margin-top: 39px;
-    height: 361px;
-    width: 758px;
-    background-color: rgba(250,250,250,0.8);
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);  
+    margin-top: 78px;
+    height: 473px;
+    width: 1027px;
 }
 
-/* ----------- Footer --------------- */
-.bg-mountains{
-    position: absolute;
-    bottom: 0px;
-    left:0px;
-    width:100%;
+/* debut cercle ----------- */
+.border-flags {
+    display: inline-block;
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border: 6px solid rgba(92, 92, 92, 0.5);
+    border-radius: 100%;
+    margin: 20px;
 }
+
+.flag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 130px;
+    width: 130px;
+    background-size: cover;
+    border-radius: 100%;
+    line-height: 130px;
+    text-align: center;
+} 
+
+
+.filter {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: inherit;
+    border-radius: 100%;
+}    
+
+.flag .filter h2 {
+    color: white;
+    font-size: 22px;
+}
+
+/* ------- gestion des leçons deja faites par pays -- */
+.alredySelect {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 130px;
+    width: 130px;
+    background-size: cover;
+    border-radius: 100%;
+    line-height: 30px;
+    text-align: center;
+    }
+
+.flag-filter {
+    height: inherit;
+    background-color: rgba(250, 250, 250, 0.5);
+    border-radius: 100%;
+    color: black;
+    font-size: 20px;
+}
+
+.flag-filter h3 {
+    padding-top: 18px;
+}
+
+
+/* ----------- Footer --------------- */
 
 .pseudo {
     position: absolute;

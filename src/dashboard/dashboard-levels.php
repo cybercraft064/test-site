@@ -16,11 +16,8 @@ include('logic/dashboard-levels-logic.php');
         <div class="page-container" style="background-image: url('<?= $backgroundLevel.$currentLevel.".jpg";?>')"> 
 
             <div class="header">
-
                 <span><img src="../../assets/img/logo-white.png" class="logo" /></span>
-
                 <img src="../../assets/img/pays/<?= strtoupper($currentCodeLang); ?>.png" class="logo-language" />
-
 
                 <div class="link-burger" id="link-burger"> 
 
@@ -34,7 +31,7 @@ include('logic/dashboard-levels-logic.php');
                         <i class="burger-icon-badge icon-badge"></i>
                         <li><a href="../badge/badges.php">Tes Badges</a></li>
                         <i class="burger-icon-langue icon-langue"></i>
-                        <li><a href="../home/home.php">Choix des Langues</a></li> 
+                        <li><a href="../language/choose-langues.php">Choix des Langues</a></li> 
                         <div class="borderLine"></div>
                         <i class="burger-icon-user icon-user"></i>
                         <li><a href="../auth/start-account.php">Ton compte</a></li>
@@ -79,7 +76,6 @@ include('logic/dashboard-levels-logic.php');
                 <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>  
         </div>
-        <!-- <script src="js/dashboard.js"> </script> -->
         <script src="../shared/js/burger.js"> </script>
     </body>
 </html>

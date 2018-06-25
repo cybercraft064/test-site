@@ -36,7 +36,7 @@ include('logic/dashboard-lessons-logic.php');
                         <i class="burger-icon-badge icon-badge"></i>
                         <li><a href="../badge/badges.php">Tes Badges</a></li>
                         <i class="burger-icon-langue icon-langue"></i>
-                        <li><a href="../home/home.php">Choix des Langues</a></li>
+                        <li><a href="../language/choose-langues.php">Choix des Langues</a></li>
                         <div class="borderLine"></div>
                         <i class="burger-icon-user icon-user"></i>
                         <li><a href="../auth/start-account.php">Ton compte</a></li>

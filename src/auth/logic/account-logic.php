@@ -2,6 +2,9 @@
 session_start();
 // include de account.php
 
+// Logo du langage
+$currentCodeLang = htmlspecialchars($_SESSION['current-code-language']);
+
 // test si on à terminé les modifs
 if (isset($_SESSION['step']) && $_SESSION['step'] == "carry-on") {
     header('Location: ../dashboard/dashboard-levels.php?level=1 ');  // prevoir un retour à l'envoyeur (une variable stock le chemin de la page demandeur)

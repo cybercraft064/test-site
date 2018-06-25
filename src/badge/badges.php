@@ -1,6 +1,5 @@
 <?php
 
-// Appelé de badges.php
 include('./logic/badges-logic.php');
 
 ?>
@@ -21,7 +20,8 @@ include('./logic/badges-logic.php');
             <div class="page-filter">
 
                 <header>
-                    <img src="../../assets/img/logo-white.png" class="logo"/>              
+                    <img src="../../assets/img/logo-white.png" class="logo"/> 
+                    <img src="../../assets/img/pays/<?= strtoupper($currentCodeLang); ?>.png" class="logo-language" />             
                     <div class="link-burger" id="link-burger"> 
                         <div class="burger">
                             <div class="barre"></div>
@@ -32,8 +32,8 @@ include('./logic/badges-logic.php');
                         <i class="burger-icon-level icon-level"></i>
                         <li><a href="../dashboard/dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
                         <i class="burger-icon-langue icon-langue"></i>
-                        <li><a href="../home/home.php">Choix des Langues</a></li> 
-                        <div class="borderLine"></div>
+                        <li><a href="../language/choose-langues.php">Choix des Langues</a></li>
+                        <div class="borderLine"></div> 
                         <i class="burger-icon-user icon-user"></i>
                         <li><a href="../auth/start-account.php">Ton compte</a></li>
                         <i class="burger-icon-exit icon-exit"></i>

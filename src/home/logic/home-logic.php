@@ -1,5 +1,7 @@
 <?php
     session_start();
+
+    
     include("../shared/bd-manager.php");
 
     // Variables de contexte
