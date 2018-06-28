@@ -9,12 +9,12 @@
         
     } //
 
-    
+    // -----------------------------------------------------------------  INSERTION ------------------------------------- //
     //fonction création d'un utilisateur (1)
     // appelé par:  signup-logic.php
     function createUser($mail, $password, $pseudo){  
         global $db;      
-        $sql = "INSERT INTO users (mail_user,password_user,pseudo_user,klm_user) 
+        $sql = "INSERT INTO users (mail_user,password_user,pseudo_user,km_user) 
                 VALUES (:mail,:pwd,:pseudo,0)";
         $req = $db->prepare($sql);        
         $req->bindValue(':mail', $mail ,PDO::PARAM_STR);
@@ -23,7 +23,7 @@
         $req->execute(); 
         $req->closeCursor();
         
-        // recupération de l'ID 
+        // recupération de l'ID (dernier enregistrement)
         $id = $db->lastInsertId();
         $sql="";
 
@@ -68,7 +68,7 @@
 } //
 
 
-
+// --------------------------------------------------------------- CONTROLE --------------------------------- //
 // connexion utilisateur
 // appelé par:  login-post.php
     function checkUserConnexion($mail, $password) {
@@ -112,7 +112,7 @@
 
 
 // vérification si ce langage existe pour cette utilisateur
-// appelé par home-logic.php
+// appelé par choose-lang-logic.php
     function checkLang(int $id_user, $cd_lang){
     global $db;  
 
@@ -129,7 +129,9 @@
     
 } //
 
-// récupération des niveaux par langues
+
+// ---------------------------------------------------------------- EXTRACTION --------------------------------------- //
+// extraction des niveaux de l'utilisateur par langues
     function loadNbLevelForLanguages($idUser) {
     global $db;
 
@@ -140,13 +142,13 @@
     $rep = $db->prepare($sql);
     $rep->bindValue(":id_user", $idUser, PDO::PARAM_INT);
     $rep->execute();
-    $line = $rep->fetchAll(); //(PDO::FETCH_ASSOC);
+    $line = $rep->fetchAll(); 
     $rep->closeCursor();
     return $line;
 } //    
 
 
-// récupération des données de la Table-> users_languages (3)
+// extraction de la ligne du langage courrant
     function loadLineUserTbUsersLanguages( int $id){
     global $db;
 
@@ -181,8 +183,20 @@
     return $trad;
 } // 
 
+// extraction de la table badges
+// appelé par badges-logic.php                    
+function getBadge() {
+    global $db;
 
-// mise à jour de la dernière lecon validée
+    $sql = "SELECT * FROM badges"; 
+    $tbBadge = $db->prepare($sql);
+    $tbBadge->execute();
+    return $tbBadge->fetchAll();
+} // 
+
+
+// -------------------------------------------------------------- MISE A JOUR --------------------------------- //
+// mise à jour de la leçon validée
 // appelé par: learning-logic.php
     function updateLessons(int $id_user, int $lesson_user){
     global $db;
@@ -217,22 +231,23 @@
 
 
 // mise à jour des kilomètres effectués
-    function updateKlm( int $id_user, int $klm_user) {
+    function updateKm( int $id_user, int $km_user) {
     global $db;
 
     $sql = "UPDATE users 
-            SET klm_user = :klm_user 
+            SET km_user = :km_user 
             WHERE id_user = :id_user";
 
     $upd = $db->prepare($sql);
     $upd->bindValue(":id_user", $id_user, PDO::PARAM_INT);
-    $upd->bindValue(":klm_user", $klm_user, PDO::PARAM_INT);
+    $upd->bindValue(":km_user", $km_user, PDO::PARAM_INT);
     $upd->execute();
     $upd->closeCursor();
 } //
 
-
-// utilisé par home-logic.php
+// Cas nouvelle utilisateur
+// indication du choix de la langue à apprendre
+// utilisé par choose-langues-logic.php
     function updateLang( int $id_user, $cd_lang) {
     global $db;
 
@@ -249,8 +264,9 @@
 } //
 
 
+// Cas utilisateur déjà connu -> changement de langage
 // utilisé pour mettre à jour le status (current_lang)
-// utilisé par home-logic.php
+// utilisé par choose-langues-logic.php
      function updateStatusCurrentLang($idUser, $currentCodeLang, $newLang) {
 
     global $db;

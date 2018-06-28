@@ -38,7 +38,7 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
         $_SESSION['mail'] = $rep['mail_user'];
         $_SESSION['id-user'] = (int )$rep['id_user'];
         $_SESSION['pseudo-user'] = $rep['pseudo_user'];
-        $_SESSION['validated-klm-bd'] = $rep['klm_user'];
+        $_SESSION['validated-km-bd'] = $rep['km_user'];
 
              // chargement des variables de session Table-> users_languages
               $rep1 = loadLineUserTbUsersLanguages((int) $rep['id_user']);

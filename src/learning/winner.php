@@ -22,8 +22,8 @@ include('logic/winner-logic.php');
                     <h1> winner </h1> 
                     <div class="pseudo"><?= htmlspecialchars($_SESSION['pseudo-user']); ?></div>
 
-                    <div class="klm-winner">Tu viens de parcourrir 5 km de plus</div>
-                    <div class="klm-revision">Tu viens de parcourir 2 km de plus</div>
+                    <div class="km-winner">Tu viens de parcourrir 5 km de plus</div>
+                    <div class="km-revision">Tu viens de parcourir 2 km de plus</div>
                     
 
                     <span class="next-lesson">

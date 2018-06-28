@@ -49,7 +49,7 @@ if (isset($_SESSION['email'])) {
             $_SESSION['pseudo-user'] = $user['pseudo_user'];
             $_SESSION['new-user'] ="ok"; 
             // init de ses compteur
-            $_SESSION['validated-klm-bd'] = 0;
+            $_SESSION['validated-km-bd'] = 0;
             $_SESSION['validated-level-bd'] = 1;
             $_SESSION['validated-lesson-bd'] = 0; 
 

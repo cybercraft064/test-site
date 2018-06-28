@@ -25,15 +25,15 @@ h2 {
     padding-top: 50px
 }
 
-.klm-winner,
-.klm-revision {
+.km-winner,
+.km-revision {
     font-size: 30px;
   color: blueviolet;
     text-align: center;
     padding-top: 60px;  
     padding-bottom: 10px;  
 }
-.klm-revision {
+.km-revision {
     padding-bottom: 30px;
 }
 
@@ -43,7 +43,7 @@ h2 {
     color: #ed0049;
 }
 
-.klm-revision {
+.km-revision {
     display: none;
 }
 .next-level {
@@ -54,10 +54,10 @@ h2 {
 }
 
 /* ----------------- parent / enfant ------------ */
-.revision .klm-winner {
+.revision .km-winner {
     display: none;
 }
-.revision .klm-revision {
+.revision .km-revision {
     display: block;
 }
 .revision .next-lesson {

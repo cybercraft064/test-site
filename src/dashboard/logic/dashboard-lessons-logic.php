@@ -14,8 +14,6 @@
 
     // Test si on a cliquez sur une leçon encore bloqué  
     if (isset($_GET['lock']) && !empty($_GET['lock'])) { $lockLesson = "lockLesson"; };
-
-    $_SESSION['dashboard-lessons-$lockLesson=:'] = $lockLesson; // --------------------------------------- DEBUG ---------
        
     // variable reçu en $GET  // -------------------------------------------------- //
     // permet de connaitre le niveau des leçons à afficher suivant la demande (cas révision)
@@ -23,8 +21,6 @@
         $levelLessons = (int) ($_GET['level']);
 
         $_SESSION['current-level'] = $levelLessons;
-
-        $_SESSION['dashboard-lessons-logic-$levelLesson: '] = $levelLessons; // ------- DEBUG -------
 
     } else {
         
@@ -34,7 +30,7 @@
     // permet de récupèrer le nom de planète suivant le (level)
     include("./../shared/planets-name.php");   
     
-    // Lessons des différents levels // ----------  des que tu auras du temps crés une table pour la gestion des planetes  ----------- //
+    // Leçons des différents niveaus // ----------  des que tu auras du temps crés une table pour la gestion des planetes  ----------- //
     switch ($levelLessons) {
         case 1:
         $startLesson = 0;

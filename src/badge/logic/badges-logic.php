@@ -1,10 +1,16 @@
 <?php
 session_start();
 
-  $currentCodeLang = htmlspecialchars($_SESSION['current-code-language']);
+include('../shared/bd-manager.php');
+// récupération sous forme de tableau de la table -> badges
+$rowBadge = getBadge();
+$nb_badges = count($rowBadge);
+
+ $currentCodeLang = htmlspecialchars($_SESSION['current-code-language']);
+ $km = (int) ($_SESSION['validated-km-bd']);
 
 // Variables de contexte
-$currentBadge = "appareil-avec-photos.png";
+$currentBadge = 1;
 $titleBadge = "voyageur junior";
 $currentKm = "118";
 $nextBadge = "faceBook.png";

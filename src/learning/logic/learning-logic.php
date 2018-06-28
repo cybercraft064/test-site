@@ -28,19 +28,19 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
     if ($_SESSION['current-lesson'] <= $_SESSION['validated-lesson-bd']) {  /* test le cas d'une révision */
 
         $_SESSION['revision'] = true;
-        $klm = "";
+        $km = "";
         
         // incrementation des kilometres +2 en mode révision
-        $klm = (int) ($_SESSION['validated-klm-bd']);
-        $klm = $klm +2;
-        $_SESSION['validated-klm-bd'] = $klm;
-        updateKlm($id_user,$klm);
+        $km = (int) ($_SESSION['validated-km-bd']);
+        $km = $km +2;
+        $_SESSION['validated-km-bd'] = $km;
+        updateKm($id_user,$km);
 
 
        } else { /* sinon nous validons cette leçon en Bd */
 
         $_SESSION['revision'] = false;
-        $klm = "";
+        $km = "";
 
         // Validation du numéro de leçon : table -> users_languages
     
@@ -50,10 +50,10 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
         updateLessons($id_user,$lesson_user);  
 
         // incrementation des kilometres +5 : table -> users 
-        $klm = (int) ($_SESSION['validated-klm-bd']);
-        $klm = $klm +5;
-        $_SESSION['validated-klm-bd'] = $klm;
-        updateKlm($id_user,$klm);
+        $km = (int) ($_SESSION['validated-km-bd']);
+        $km = $km +5;
+        $_SESSION['validated-km-bd'] = $km;
+        updateKm($id_user,$km);
 
        }
             // traitement collectif //
@@ -102,6 +102,14 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
     $translations = $_SESSION['translations'];
     $_SESSION['source'] = $translations[$wordIndex]['source'];
     $_SESSION['reponse'] = $translations[$wordIndex]['reponse'];
+
+    // Récupération de la réponse
+    /* $answersString = $translations[$wordIndex]['targetExpressions'];
+    $answersTbl = split(";", $answersString);
+    $_SESSION['reponse'] = $answersTbl[0]; 
+    $_SESSION['reponse'] = $translations[$wordIndex]['targetExpressions'];
+*/
+
 
 
 

@@ -16,7 +16,7 @@
     // cas d'appel par home.php avec -> ?newLang
     
     // Test si s'est un nouvelle utilisateur
-    if (isset($_SESSION['new-user']) && $_SESSION['validated-klm-bd'] == 0 ) {
+    if (isset($_SESSION['new-user']) && $_SESSION['validated-km-bd'] == 0 ) {
 
             $_SESSION['current-code-language'] = htmlspecialchars($_GET['newLang']); 
     

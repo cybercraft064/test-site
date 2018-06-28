@@ -213,10 +213,10 @@ img.logo {
     height: 112px;
     margin: auto;
     width: 95px;
-    padding-top: 28px;
+    padding-top: 10px;
 }
 .img-current-badge {
-    height: 112px;
+    height: 140px;
     width: 100px;
 }
 
@@ -241,9 +241,10 @@ img.logo {
     width: 420px;
 }
 .next-badge {
+    margin-top: -40px;
     float: right;
-    height: 55px;
-    width: 55px;
+    height: 94px;
+    width: 70px;
 }
 .img-next-badge {
     height: inherit;
@@ -277,22 +278,20 @@ img.logo {
 .challenge-badge-container {
     position: relative;
     margin: auto;
-    margin-top: 75px;
+    margin-top: 80px;
     height: 115px;
     width: 896px;
 }
 .challenge-badge {
     display: inline-block;
     margin: -7px 19px 0px 19px;
-    height: 112px;
     width: 105px;
 }
 .img-challenge-badge {
     display: block;
     margin: auto;
-    margin-top: 4px;
-    height: 64px;
-    width: 57px;
+    height: 94px;
+    width: 70px;
 }
 .title-challenge-badge {
     padding-top: 6px;
@@ -307,12 +306,10 @@ img.logo {
 }
 
 /* ---------------------------------- */
-.general-progress-bar {
-    display: block;
-}
+
 .general-progress-bar {
     position: relative;
-    margin-top: 18px;
+    margin-top: 38px;
     margin-left: 60px;
     width: 773px;
     border-bottom: 1px solid #ed0049;
@@ -333,13 +330,6 @@ img.logo {
     border: 5px solid #ed0049;
     border-radius: 100%;
 }
-
-
-
-
-
-
-
 
 
 /* ----------- Footer --------------- */

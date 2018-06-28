@@ -29,11 +29,11 @@ if (!include("../shared/bd-manager.php")) {include("../../shared/bd-manager.php"
         $newLang = htmlspecialchars($_GET['newLang']);
 
     // Test si s'est un nouvelle utilisateur
-    if (isset($_SESSION['new-user']) && $_SESSION['validated-klm-bd'] == 0 ) {
+    if (isset($_SESSION['new-user']) && $_SESSION['validated-km-bd'] == 0 ) {
 
         $_SESSION['current-code-language'] = htmlspecialchars($_GET['newLang']); 
 
-        // mise à jour du choix langage en bd
+        // indication du choix langage en bd
         updateLang($idUser, $_SESSION['current-code-language']);
 
 

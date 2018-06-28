@@ -7,7 +7,7 @@
     $chevronRight = "";
     $pseudo_user = htmlspecialchars($_SESSION['pseudo-user']);
     $currentCodeLang = htmlspecialchars($_SESSION['current-code-language']);
-    $klmInBd = (int) ($_SESSION['validated-klm-bd']);
+    $kmInBd = (int) ($_SESSION['validated-km-bd']);
     $nbLessonsFinichedInLevel = (int) $_SESSION['validated-lesson-bd'];
 
 

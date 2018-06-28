@@ -51,7 +51,7 @@ include('./logic/badges-logic.php');
                 <section class="middle">
 
                     <section class="current-badge">
-                        <img src="../../assets/img/badges/<?= $currentBadge; ?>" alt="badge en cours" class="img-current-badge" />
+                        <img src="../../assets/img/badges/<?= $currentBadge; ?>.png" alt="badge en cours" class="img-current-badge" />
                     </section>
 
                     <section class="next-badge-container">
@@ -71,48 +71,23 @@ include('./logic/badges-logic.php');
                     </section>
 
                     <section class="challenge-badge-container">
-                        <div class="challenge-badge">
-                            <img src="../../assets/img/badges/<?= $challengeBadge; ?>" class="img-challenge-badge" />         
-                            <div class="title-challenge-badge Foswald fat-300">
-                            <?= $titleChallengeBadge; ?> <br>
-                            <span class="km-challenge-badge fat-400"> <?= $KmChallenge; ?> km </span>
-                            </div>
-                        </div> 
-                        <div class="challenge-badge">
-                        <img src="../../assets/img/badges/<?= $challengeBadge; ?>" class="img-challenge-badge" />         
-                            <div class="title-challenge-badge Foswald fat-300">
-                            <?= $titleChallengeBadge; ?> <br>
-                            <span class="km-challenge-badge fat-400"> <?= $KmChallenge; ?> km </span>
-                            </div>
-                        </div>
-                        <div class="challenge-badge">
-                        <img src="../../assets/img/badges/<?= $challengeBadge; ?>" class="img-challenge-badge" />         
-                            <div class="title-challenge-badge Foswald fat-300">
-                            <?= $titleChallengeBadge; ?> <br>
-                            <span class="km-challenge-badge fat-400"> <?= $KmChallenge; ?> km </span>
-                            </div>
-                        </div>
-                        <div class="challenge-badge">
-                        <img src="../../assets/img/badges/<?= $challengeBadge; ?>" class="img-challenge-badge" />         
-                            <div class="title-challenge-badge Foswald fat-300">
-                            <?= $titleChallengeBadge; ?> <br>
-                            <span class="km-challenge-badge fat-400"> <?= $KmChallenge; ?> km </span>
-                            </div>
-                        </div>
-                        <div class="challenge-badge">
-                        <img src="../../assets/img/badges/<?= $challengeBadge; ?>" class="img-challenge-badge" />         
-                            <div class="title-challenge-badge Foswald fat-300">
-                            <?= $titleChallengeBadge; ?> <br>
-                            <span class="km-challenge-badge fat-400"> <?= $KmChallenge; ?> km </span>
-                            </div>
-                        </div>
-                        <div class="challenge-badge">
-                        <img src="../../assets/img/badges/<?= $challengeBadge; ?>" class="img-challenge-badge" />         
-                            <div class="title-challenge-badge Foswald fat-300">
-                            <?= $titleChallengeBadge; ?> <br>
-                            <span class="km-challenge-badge fat-400"> <?= $KmChallenge; ?> km </span>
-                            </div>
-                        </div>  
+
+                        <?php  
+                            // init des variables
+                            $i = 0;
+                            while ($i < $nb_badges ) {  
+                                ?>
+                                <div class="challenge-badge">
+                                    <img src="../../assets/img/badges/<?=$i;?>.png" class="img-challenge-badge" />         
+                                    <div class="title-challenge-badge Foswald fat-300">
+                                    <?= $rowBadge[$i]['title_badge']; ?> <br>
+                                    <span class="km-challenge-badge fat-400"> <?= $rowBadge[$i]['km_badge']; ?> km </span>
+                                    </div>
+                                </div> 
+                        <?php 
+                                $i++;
+                            } 
+                        ?>
 
                     </section>
 
