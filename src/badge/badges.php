@@ -63,8 +63,8 @@ include('./logic/badges-logic.php');
                             <div class="next-badge">
                                 <img src="../../assets/img/badges/<?= $nextBadge; ?>" alt="badge suivant" class="img-next-badge" />    
                             </div>
-                            <div class="progress-bar">
-                                <div class="run-Progress-bar"> </div>
+                            <div id="progress">
+                                <progress value="<?= $currentKm; ?>" min="<?= $lowBar; ?>" max="<?= $highBar; ?>"> </progress> 
                             </div>
                             <div class="txt-progress-bar "> Plus que <?= $kmNextBadge; ?> km avant le prochain badge </div>      
                         </div>
@@ -102,7 +102,7 @@ include('./logic/badges-logic.php');
                     <div class="bg-moutains">
                         <img src="../../assets/img/mountain.png" class="bg-mountains" />
                     </div>
-                    <div class="pseudo"></div>    
+                    <div class="pseudo"><?= htmlspecialchars($pseudo_user);?></div>    
                 </footer>
 
              </div>                          

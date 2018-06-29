@@ -250,24 +250,106 @@ img.logo {
     height: inherit;
     width: inherit;
 }
-.progress-bar {
-    position: relative;
-    margin-top: 60px;
-    margin-left: 6px;
+
+/* ---------------- barre de progression ---------------- */
+#progress{
+    margin: auto; 
     width: 392px;
-    border: 4px solid rgba(0,0,0,0.2);
-    border-radius: 10px;
 }
-.run-Progress-bar {
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    width: 318px;
-    border: 4px solid #ed0049;
-    border-radius: 10px;
+progress{
+    display: inline-block;
+    -moz-box-sizing: border-box;
+         box-sizing: border-box;
+    width: 392px;
+    height: 10px;
+    padding: 1px 3px 1px 2px;
+    background: rgba(0,0,0,0.2);    
+    border-radius: 15px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.2);   
 }
+/* Style de la barre pour Firefox*/
+progress::-moz-progress-bar{
+    border-radius:10px;
+    background: #ed0049 ;
+    background: 
+      -moz-repeating-linear-gradient(
+        45deg, 
+        rgba(255,255,255,.2) 0,
+        rgba(255,255,255,.2) 10px, 
+        rgba(255,255,255,0) 10px,
+        rgba(255,255,255,0) 20px
+      ),
+      -moz-linear-gradient(
+        rgba(255,255,255,.1) 50%,
+        rgba(255,255,255,0) 60%
+      ),
+      #ed0049;
+    background: 
+      repeating-linear-gradient(
+        45deg, 
+        rgba(255,255,255,.2) 0,
+        rgba(255,255,255,.2) 10px, 
+        rgba(255,255,255,0) 10px,
+        rgba(255,255,255,0) 20px
+      ),
+      linear-gradient(
+        rgba(255,255,255,.1) 50%,
+        rgba(255,255,255,0) 60%
+      ),
+      #ed0049;
+    background-size: 392px 20px, auto, auto;
+    background-position: -392px 0, top, top;
+    background-position: top right, top, top;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 
+                0 -1px 0 rgba(0,0,0,.8) inset,
+                0 0 2px black; 
+}
+
+/* Style de la barre pour Chrome*/
+progress::-webkit-progress-value{
+    border-radius:10px;
+    background: #ed0049;
+    background: 
+      -webkit-repeating-linear-gradient(
+        45deg, 
+        rgba(255,255,255,.2) 0,
+        rgba(255,255,255,.2) 10px, 
+        rgba(255,255,255,0) 10px,
+        rgba(255,255,255,0) 20px
+      ),
+      -webkit-linear-gradient(
+        rgba(255,255,255,.1) 50%,
+        rgba(255,255,255,0) 60%
+      ),
+      #ed0049;
+    background: 
+      repeating-linear-gradient(
+        45deg, 
+        rgba(255,255,255,.2) 0,
+        rgba(255,255,255,.2) 10px, 
+        rgba(255,255,255,0) 10px,
+        rgba(255,255,255,0) 20px
+      ),
+      linear-gradient(
+        rgba(255,255,255,.1) 50%,
+        rgba(255,255,255,0) 60%
+      ),
+      #ed0049;
+    background-size: 392px 20px, auto, auto;
+    background-position: -392px 0, top, top;
+    background-position: top right, top, top;
+    box-shadow: 0 1px 0 rgba(255,255,255,.5) inset, 
+                0 -1px 0 rgba(0,0,0,.8) inset,
+                0 0 2px black;   
+}
+
+/* Enlève la couleur d'arrière-plan */
+progress::-webkit-progress-bar{
+    background: transparent;
+}
+
 .txt-progress-bar {
-    margin-top: 11px;
+    margin-top: 10px;
     text-align: center;
     font-size: 14px;
     color: gray;
