@@ -28,6 +28,10 @@ p.tt:before {
     padding-top: 20px;
 }
 
+.container-form {
+    margin: auto;
+}
+
 .container1,
 .container2 {
   /*  display: flex; */

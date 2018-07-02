@@ -18,12 +18,15 @@
 
 
         <form class="container-form" action="#">
-            <label class="lpseudo" for="pseudo">Entrez votre pseudo</label>
-            <p><input class="ipseudo" type="text" name="pseudo" placeHolder="juste lucien" /></p>
+            <label class="lpseudo" for="pseudo">Entrez votre pseudo:</label>   
+
+            <p><input class="ipseudo" type="text" name="pseudo" placeHolder="toto et lolo" /></p>
+
+
         </form>    
 
 
-<div class="block">
+<!-- <div class="block">
 <h2>Décorer les blockquote</h2>
 <span class="quote">La caractéristique besoin irrésistible de s'habiller comme tout le monde.<br><br><em>Pierre Desproges</em></span>
 </div>        
@@ -45,7 +48,7 @@
 
 
 
-    </section>    
+    </section>  -->   
 
 
 <body>
