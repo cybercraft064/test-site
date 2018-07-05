@@ -20,8 +20,7 @@ include('./logic/choose-langues-logic.php');
             <div class="page-filter">
 
                 <header>
-                    <img src="../../assets/img/logo-white.png" class="logo"/> 
-                    <img src="../../assets/img/pays/<?= strtoupper($currentLang); ?>.png" class="logo-language" />             
+                    <img src="../../assets/img/logo-white.png" class="logo"/>            
                     <div class="link-burger" id="link-burger"> 
                         <div class="burger">
                             <div class="barre"></div>

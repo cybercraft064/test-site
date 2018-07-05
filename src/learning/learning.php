@@ -14,10 +14,32 @@ include('logic/learning-logic.php');
     </head> 
     <body>
         <div class="page-container" style="background-image: url('<?= $backgroundLesson.$level.".jpg";?>')">
-            <a href="../dashboard/dashboard-lessons.php"><div class="close">x</div></a>
-             <div class="back-lesson">                              
-                <a href="dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a>               
-            </div>
+
+            <div class="header">
+                    <span><img src="../../assets/img/logo-white.png" class="logo" /></span>
+                    <img src="../../assets/img/pays/<?= strtoupper($_SESSION['current-code-language']); ?>.png" class="logo-language" />
+                    <div class="link-burger" id="link-burger"> 
+                        <div class="burger">
+                            <div class="barre"></div>
+                            <div class="barre"></div>
+                            <div class="barre"></div>
+                        </div>
+                        <ul class="burger-menu">
+                            <i class="burger-icon-level icon-level"></i>
+                            <li><a href="../dashboard/dashboard-levels.php?level=<?= $_SESSION['validated-level-bd']; ?>">Niveaux</a></li>
+                            <i class="burger-icon-badge icon-badge"></i>
+                            <li><a href="../badge/badges.php">Tes Badges</a></li>
+                            <i class="burger-icon-langue icon-langue"></i>
+                            <li><a href="../language/choose-langues.php">Choix des Langues</a></li>
+                            <div class="borderLine"></div>
+                            <i class="burger-icon-user icon-user"></i>
+                            <li><a href="../auth/start-account.php">Ton compte</a></li>
+                            <i class="burger-icon-exit icon-exit"></i>
+                            <li><a href="../auth/logout.php">déconnexion</a></li>
+                        </ul>
+                    </div>    
+                </div>
+
             <div class="centered-container">
 
                 <div class="directive-container">                    
@@ -37,12 +59,22 @@ include('logic/learning-logic.php');
                     </form>                  
                 </div>
 
-                <?php if($_SESSION['step'] === "check-answer" && $_SESSION['answer-reply'] === "incorrect"){ ?>
-                <div class="correction-container">
-                        <?= $_SESSION["reponse"]; ?> 
-                    </div>
-                </div>
-                <?php } ?>    
-        </div>    
+                <?php if($_SESSION['step'] === "check-answer" && $_SESSION['answer-reply'] === "incorrect")
+
+                { ?>
+                    <div class="correction-container"><?= $_SESSION["reponse"]; ?></div>
+                <?php }
+                
+/*                 // décrémentation du compteur de lignes
+                $_SESSION['wordIndex']--;  */
+                ?> 
+
+            </div> 
+
+            <footer>
+            <div class="pseudo"><?= $pseudo_user; ?></div>
+            </footer>
+        </div>     
+        <script src="../shared/js/burger.js"> </script>   
     </body>
 </html>

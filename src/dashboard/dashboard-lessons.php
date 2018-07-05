@@ -101,8 +101,6 @@ include('logic/dashboard-lessons-logic.php');
                 <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>    
         </div> 
-        
-        <script src="js/dashboard.js"> </script>
-    
+        <script src="js/dashboard.js"> </script>  
     </body>
 </html>    

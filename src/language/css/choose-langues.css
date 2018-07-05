@@ -52,15 +52,6 @@ img.logo {
     width: 127px;
 }
 
-.logo-language {
-    position: absolute;
-    left:89%;
-    top:24px;
-    height: 55px;
-    width: 55px;
-    border-radius: 100%;
-}
-
 .link-burger {
     text-decoration: none;
     position: relative;
@@ -69,7 +60,7 @@ img.logo {
 
 .burger {
     position: absolute;
-    left:94%;
+    right: 20px;
     top:22px;
 }
 
@@ -271,4 +262,50 @@ img.logo {
     font-family: 'Fjalla One', sans-serif;
     color: #ed0049;
     font-size: 32px;
+}
+
+/* ----------------- Media queries -------------- */
+@media (max-width: 768px){
+    .title {
+        font-size: 33px;
+    }    
+    .line-txt {
+        width: 40px;
+    }
+    .middle {
+        height: 400px;
+        width: 756px;
+    }
+    .border-flags {
+        height: 95px;
+        width: 95px;
+        border: 5px solid rgba(92, 92, 92, 0.5);
+    }
+    .flag,
+    .alredySelect {
+        top: 3px;
+        left: 2px;
+        height: 90px;
+        width: 90px;
+        line-height: 90px;
+    }
+    .alredySelect {
+        line-height: 20px; 
+    }
+
+    .flag .filter h2 {
+        font-size: 18px;
+    }
+    .flag-filter h3 {
+        padding-top: 14px;
+    }
+    .flag-filter {
+        font-size: 15px; 
+    }
+    .pseudo {
+        bottom: 46px;
+        left: 26px;
+        font-size: 28px;
+    }
+  
 }

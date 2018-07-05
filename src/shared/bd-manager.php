@@ -172,7 +172,8 @@
 
     $sql = "SELECT * FROM traduction 
             WHERE code_lang = :code_lang 
-            AND lesson_index = :lessonIndex";
+            AND lesson_index = :lessonIndex
+            ORDER BY wordIndex";
 
     $req = $db->prepare($sql);
     $req->bindValue(":code_lang",$code_lang, PDO::PARAM_INT);

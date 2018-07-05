@@ -4,6 +4,8 @@ session_start();
 
 // init des Valeurs Variable
 $backgroundLesson = '../../assets/img/bg-learning-';
+$pseudo_user = htmlspecialchars($_SESSION['pseudo-user']);
+$currentCodeLang = htmlspecialchars($_SESSION['current-code-language']);
 $level = (int) ($_SESSION['current-level']); 
 
 // recupération de l'id user 
@@ -14,11 +16,10 @@ include("../shared/bd-manager.php");
 
 
 // les variables session s'ont initialisées dans ( start-learning.php )
-// si le step est à saisie de l'utilisateur 
 if ($_SESSION['step'] === "userInput") {                                    /* Boucle principal  */
   
-  // incrementation mot suivant et sert de compteur de ligne
-  $_SESSION['wordIndex']++;
+  // incrementation mot suivant et sert de compteur de ligne  
+  $_SESSION['wordIndex']++; 
   
   if ($_SESSION['wordIndex'] > $_SESSION['Nbtranslation-InLesson']) {              /* test fin de la leçon */
 
@@ -37,7 +38,7 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
         updateKm($id_user,$km);
 
 
-       } else { /* sinon nous validons cette leçon en Bd */
+       } else { /* sinon nous validons cette leçon normalement  */
 
         $_SESSION['revision'] = false;
         $km = "";
@@ -89,29 +90,24 @@ if ($_SESSION['step'] === "userInput") {                                    /* B
               header("Location: winner.php?level=".(int) ($_SESSION['current-level']));  //($_SESSION['validated-level-bd'])
             }
 
-        }
-    }
+        } // fin test n'est pas une fin de lesson
+    } // fin Step -> userInput
     
-  // sinon nous somme en cours de leçon !! ------------------------------------ //
+  // sinon nous somme en Step -> check-answer en cours de leçon !! ------------------------------------ //
   
     // vu que s'est un tableau 
     // init de l'index à zéro au premier passage
     $wordIndex = (int) ($_SESSION['wordIndex'] -1);
     
-    // chargement de la ligne en cours de traitement
+
     $translations = $_SESSION['translations'];
     $_SESSION['source'] = $translations[$wordIndex]['source'];
     $_SESSION['reponse'] = $translations[$wordIndex]['reponse'];
+    $_SESSION['bad-reply'] = "";
 
-    // Récupération de la réponse
-    /* $answersString = $translations[$wordIndex]['targetExpressions'];
+    // Récupération de ou des réponse(s) ----------------------------> Future
+    /* $answersString = $translations[$wordIndex]['reponse'];
     $answersTbl = split(";", $answersString);
     $_SESSION['reponse'] = $answersTbl[0]; 
-    $_SESSION['reponse'] = $translations[$wordIndex]['targetExpressions'];
 */
-
-
-
-
-
 

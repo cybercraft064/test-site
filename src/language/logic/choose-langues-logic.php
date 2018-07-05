@@ -8,7 +8,6 @@ if (!include("../shared/bd-manager.php")) {include("../../shared/bd-manager.php"
   
      // Variables de contexte
      $pseudo_user = htmlspecialchars($_SESSION['pseudo-user']);
-     $currentLang = htmlspecialchars($_SESSION['current-code-language']);
      $idUser = (int) $_SESSION['id-user'];
      
      // Listes

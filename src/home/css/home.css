@@ -38,7 +38,7 @@ img.logo {
 }
 .burger {
     position: absolute;
-    left:94%;
+    right: 20px;
     top:22px;
 }
 
@@ -113,7 +113,6 @@ img.logo {
     padding-left: 36px;
 }
 
-/* ------------------------------------ */
 
 /*  ------------------ texte --------------- */
 .txt-left {
@@ -129,33 +128,18 @@ img.logo {
     text-align: center;
 }
 
-.txt-right {
-    position: absolute;
-    top:30%;
-    right:5%;
-    transform: translateY(-50%);
-    font-family: 'Fjalla One', sans-serif;  
-    color: white;
-    font-weight: 700; 
-    width: 320px;
-    padding-top: 30px;    
-    text-align: center;
-}
-
-.txt-left .big,
-.txt-right .big {
+.txt-left .big {
     font-size: 42px;
     line-height: 50px;
     text-align: justify;
     text-transform: uppercase;
 }
 
-.txt-left .small,
-.txt-right .small {
+.txt-left .small {
     font-size: 32px;
 }
 
-/* .button-game {
+.button-game {
     display:inline-block;
     margin-top: 20px;
     margin-left: -20px;
@@ -168,90 +152,11 @@ img.logo {
     border-radius: 5px;
     text-decoration: none;   
 }
+
 .button-game:hover {
     background-color: green;
-} */
-
-/* ----------------------- Flag ------------------------------ */
-
-.size-flag {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    border: none;
-    border-radius: 100px;
 } 
 
-.levelLesson {
-    position: absolute; 
-    font-family: 'Fjalla One', sans-serif;
-    color: white;
-}
-
-.flag-rotate {
-    transform: rotate(0deg); /* au cas ou */
-}
-
-.GB {
-    top: 500px;
-    left: 350px;
-}
-.GB:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
-}
-.levelLesson.GB {
-    margin: 47px 0 0 114px;
-}
-
-
-.DE {
-    top: 400px;
-    left: 450px;
-}
-.DE:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
-}
-.levelLesson.DE {
-    margin: 47px 0 0 114px;
-}
-
-
-.IT {
-    top: 300px;
-    left: 550px;
-}
-.IT:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
-}
-.levelLesson.IT {
-    margin: 47px 0 0 114px;
-}
-
-
-.ES {
-    top: 200px;
-    left: 650px;
-}
-.ES:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
-}
-.levelLesson.ES {
-    margin: 47px 0 0 114px;
-}
-
-
-.PT {
-    top: 100px;
-    left: 750px;
-}
-.PT:hover {
-    box-shadow: 5px 5px 8px rgb(78, 116, 138);
-}
-.levelLesson.PT {
-    margin: 47px 0 0 114px;
-}
-
-/* ------------------------ endf flag ----------------------- */
 
 .bg-mountains{
     position: absolute;
@@ -273,4 +178,18 @@ img.logo {
     font-family: 'Fjalla One', sans-serif;
     color: #ed0049;
     font-size: 32px;
+}
+
+/* ----------------- Media queries -------------- */
+@media (max-width: 768px){
+
+    .pseudo {
+        position: absolute;
+        top:220px;
+        left:455px;
+        font-family: 'Fjalla One', sans-serif;
+        color: #ed0049;
+        font-size: 32px;
+    }
+  
 }

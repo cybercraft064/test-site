@@ -1,16 +1,162 @@
+a {
+    text-decoration: none;
+}
+
 .page-container{
     width: 100%;
     height: 100vh;
+    position: relative;
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
 }
-.page-container .close{
-    font-size: 40px;
-    color:white;
+.logo {
     position: absolute;
-    top:20px;
-    right:20px;
+    left: 30px;
+    top: 25px;
+    height: 46px;
 }
+
+img.logo {
+    height: 46px;
+    width: 127px;
+}
+
+.logo-language {
+    position: absolute;
+    left:89%;
+    top:24px;
+    height: 55px;
+    width: 55px;
+    border-radius: 100%;
+}
+
+.link-burger {
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.burger {
+    position: absolute;
+    left:94%;
+    top:22px;
+}
+
+.barre {
+    width: 38px;
+    margin-top: 10px;
+    border: 3px solid rgb(248, 244, 237);
+    border-radius: 5px;
+}
+
+
+/* ------- gestion du menu ----------- */
+.link-burger:hover .barre {
+    border: 3px solid #ed0049;
+}
+
+.burger-menu{
+    position: absolute;
+    background-color: white;
+    padding:13px;
+    text-transform: uppercase;
+    color:rgb(50,50,50);
+    top:93px;
+    right:63px;
+    border-radius: 5px;
+    line-height: 38px;
+    font-size: 13px;
+    font-weight: 700;
+    display:none;
+}
+
+.burger-menu li a:hover {
+    color: #ed0049;
+}
+
+
+.burger-icon-level,
+.burger-icon-badge,
+.burger-icon-langue,
+.burger-icon-user,
+.burger-icon-exit {
+    display: block;
+    position: absolute;
+    right: 164px
+}
+
+.icon-level::before {
+    content:"";
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/tongs.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 27px;
+    width: 27px; 
+    height: 25px;
+    margin-top: 7px;
+}
+.icon-badge::before {
+    content:"";
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/backpacking1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 27px;
+    width: 30px; 
+    height: 25px;
+    margin-top: 7px;
+}
+
+.icon-langue::before {
+    content:"";
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/travel-map.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+    width: 30px; 
+    height: 25px;
+    margin-top: 7px;
+}
+
+.icon-user::before {
+    content:"";
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/user.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 37px;
+    width: 30px; 
+    height: 20px;
+    margin-top: 7px;
+}
+
+.icon-exit::before {
+    display: inline-block;
+    background-image: url('../../../assets/img/icons/exit2.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 19px;
+    width: 30px; 
+    height: 20px;
+    margin-top: 7px;
+    content:"";
+}
+
+.show-burger .burger-menu{
+    display: block;
+    padding-left: 50px;
+}
+
+.borderLine {
+    width: 179px;
+    border-bottom: 1px solid #ed0049;
+    margin-left: -37px;
+    padding: 4px 0;
+}
+
+/* ------------------------------------ */
 .centered-container{
     position: absolute;
     top:50%;
@@ -102,3 +248,16 @@ input[type="text"]:focus {
     line-height: 50px;
     font-size: 14px;
 }
+
+/* ---- Footer ----------------------------- */
+
+.pseudo {
+    position: absolute;
+    left: 32px;
+    bottom: 32px;
+    font-family: 'Fjalla One', sans-serif;
+    color: #ed0049;
+    font-size: 32px;
+}
+
+/* ----------------------------------------- */

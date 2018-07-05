@@ -14,6 +14,7 @@ if ($_SESSION['step'] === "userInput") {
         $_SESSION['couleur-css'] = "good-reply";
         $_SESSION['answer-reply'] = "correct";
         $_SESSION['cptGoodReply']++;
+
         
     } else {
         $_SESSION['value'] = $userAnswer;
@@ -24,11 +25,14 @@ if ($_SESSION['step'] === "userInput") {
         
     }
     
-    // changement de step quelque soit la réponse
+    // changement de step 
     $_SESSION['step'] = "check-answer"; // état vérification de la réponse   
     header('location: ../learning.php');
     
-}  else {
+}  else { // sinon mot/phrase suivante
+
+    // si la réponse n'est pas bonne [on refait un tour]
+    if ($_SESSION['answer-reply'] == "incorrect") {$_SESSION['wordIndex']--;}
 
     $_SESSION['step'] = "userInput"; 
     $_SESSION['value'] = "";
