@@ -1,6 +1,6 @@
 <?php
 include('logic/learning-logic.php');
- ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -11,9 +11,18 @@ include('logic/learning-logic.php');
         <link href="../shared/css/reset.css" rel="stylesheet" type="text/css">
         <link href="./css/learning.css" rel="stylesheet" type="text/css">
         <title>learning</title>
+
+
     </head> 
     <body>
         <div class="page-container" style="background-image: url('<?= $backgroundLesson.$level.".jpg";?>')">
+        
+            <script>
+                /* récupération d'un tableau contenant la leçon à faire */
+                var translations = <?php echo json_encode($translations); ?>
+                /* récupèration du numéro de leçon en cours */
+                var currentLesson = <?php echo json_encode($curLesson); ?>
+            </script>
 
             <div class="header">
                     <span><img src="../../assets/img/logo-white.png" class="logo" /></span>
@@ -40,41 +49,54 @@ include('logic/learning-logic.php');
                     </div>    
                 </div>
 
+
             <div class="centered-container">
 
                 <div class="directive-container">                    
                     Traduis l'expression
                 </div>
 
+<!--  cette partie passe en script js   -->
+
                 <div class="source-container">
-                    <?= $_SESSION["source"]; ?>
+                    <p id="data_WordSource"></p>
                 </div>  
             
                 <!-- $couleur change suivant la réponse -->
-                <div class="target-container <?= $_SESSION['couleur-css']; ?>">
-                
-                    <form method="post" action="post/learning-post.php">                        
-                        <input type="text" name="input-reply" class="in-reply" value="<?= htmlspecialchars($_SESSION['value']); ?>" autocomplete="off" autofocus />
-                        <input type="submit" value="Envoyer" class="next-button <?= $_SESSION['nextButton-css']; ?>" />
-                    </form>                  
+                <div id="data_Couleur_Css" class="target-container">
+                                          
+                   <input type="text" 
+                          id="data_InputReply" 
+                          class="in-reply" 
+                          autocomplete="off" 
+                          value=""
+                     />
+
+                   <button id="data_NextButton_Css" 
+                           class="next-button" 
+                           onclick="F_checkAnswer(correctAnswer)">                          
+                    </button>
+                                                 
                 </div>
 
-                <?php if($_SESSION['step'] === "check-answer" && $_SESSION['answer-reply'] === "incorrect")
-
-                { ?>
-                    <div class="correction-container"><?= $_SESSION["reponse"]; ?></div>
-                <?php }
-                
-/*                 // décrémentation du compteur de lignes
-                $_SESSION['wordIndex']--;  */
-                ?> 
+                <!-- utilisé seulement en cas de mauvaise réponse -->
+                    <div id="data_BadReply">
+                        <p id="data_WordReply"></p>
+                    </div>
+                     
 
             </div> 
 
             <footer>
             <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>
-        </div>     
-        <script src="../shared/js/burger.js"> </script>   
+        </div> 
+        <div id="data_PseudoUser" class="data"><?php echo $_SESSION['pseudo-user']; ?></div>
+        <div id="data_CurrentCodeLanguage" class="data"><?php echo $_SESSION['current-code-language']; ?></div>
+
+
+        <script src="../shared/js/burger.js"> </script> 
+        <script src="js/learning.js"></script>
+    
     </body>
 </html>

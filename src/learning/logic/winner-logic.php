@@ -15,9 +15,7 @@ if (isset ($_GET['level']) & !empty($_GET['level'])  ) {
 }
 
 // indication du passage à la leçon suivante
-$lesson_current = (int) htmlspecialchars($_SESSION['validated-lesson-bd']);
-$lesson_next = $lesson_current +1;
-
+$lesson_next = (int) htmlspecialchars($_SESSION['validated-lesson-bd'] +1);
 
 // test si nous somme en révision
 // cela change le message d'accueil

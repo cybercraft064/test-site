@@ -56,7 +56,8 @@ include('logic/dashboard-lessons-logic.php');
                 <?php for ($i=$startLesson; $i<$endLesson; $i++){ // début de la boucle principal
 
                         $filterClass = "";
-                        $linkLesson = "./../learning/start-learning.php?lesson=";
+                        // $linkLesson = "./../learning/start-learning.php?lesson="; // direction la leçon à faire
+                        $linkLesson = "./../learning/learning.php?lesson="; // direction la leçon à faire
 
                         if ($i == (int) $lesson){ 
                             $filterClass="unit-to-do";

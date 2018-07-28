@@ -1,9 +1,10 @@
 <?php
-    session_start();
+ //   session_start();
 // appelé par dashboard-lessons.php avec un $_GET['lesson'];
 
-include("../shared/bd-manager.php"); 
+// include("../shared/bd-manager.php"); 
 
+/*
 // variable de la boucle principal
 // réponse à la première question de la leçon
 $_SESSION['step'] ="userInput";
@@ -32,21 +33,29 @@ $_SESSION['cptGoodReply'] = 0;
 //init du compteur de mauvaise réponse
 $_SESSION['cptBadReply'] = 0;
 
+*/
+
 
 // récupération du numéro de la leçon à traduire (1)
-// provient de dashboard-lessons.php
-$_SESSION['current-lesson'] = (int) ($_GET['lesson']);
+// provient de -->  dashboard-lessons.php
+//$_SESSION['current-lesson'] = (int) ($_GET['lesson']);
+
 
 // récupération des variables de traitement 
-$cdLang =  htmlspecialchars($_SESSION['current-code-language']);
-$curLesson = (int) $_SESSION['current-lesson'];
+    //$cdLang =  htmlspecialchars($_SESSION['current-code-language']);
+//$curLesson = (int) $_SESSION['current-lesson'];
 
-// fonction qui récupère sous forme de tableau toutes les lignes de mots/phrases à traduires (2)
-$translations = getTranslation($cdLang, $curLesson );
-$_SESSION['translations'] = $translations;
+/* fonction qui récupère sous forme de tableau ------------------ /
+ toutes les lignes de mots/phrases à traduires (2) */
+//$translations = getTranslation($cdLang, $curLesson );
+//$_SESSION['translations'] = $translations;
 
 // nombre de traduction à effecter pour cette leçon
-$_SESSION['Nbtranslation-InLesson'] = count($translations);
+/* $_SESSION['Nbtranslation-InLesson'] = count($translations);  // en double pour le moment
+$nbWord = count($translations); */
 
-$levelCurrent = ($_SESSION['current-level']);
-header("Location: learning.php?level=".$levelCurrent);
+// current-level sert à la couleur du fond d'ecran suivant le niveau
+//$levelCurrent = ($_SESSION['current-level']);
+
+// redirection vers le traitement de la leçon
+// header("Location: learning2.php?level=".$levelCurrent."&cdLang=".$cdLang."&curLesson=".$curLesson."&nbWord=".$nbWord);

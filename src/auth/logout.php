@@ -2,5 +2,12 @@
 session_start();
 session_unset(); 
 session_destroy(); 
-header('location: ../auth/login.php');
+?>
+
+<script>
+    sessionStorage.clear();
+    localStorage.clear();
+</script>
+
+<?php header('location: ../auth/login.php'); ?>
     

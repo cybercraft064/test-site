@@ -149,7 +149,7 @@
 
 
 // extraction de la ligne du langage courrant
-    function loadLineUserTbUsersLanguages( int $id){
+    function loadLineUserTbUsersLanguages(int $id){
     global $db;
 
     $sql ="SELECT * FROM users_languages
@@ -198,13 +198,15 @@ function getBadge() {
 
 // -------------------------------------------------------------- MISE A JOUR --------------------------------- //
 // mise à jour de la leçon validée
+// 
 // appelé par: learning-logic.php
     function updateLessons(int $id_user, int $lesson_user){
     global $db;
 
     $sql = "UPDATE users_languages 
             SET lesson_user = :lesson_user 
-            WHERE user_idl = :id_user";
+            WHERE user_idl = :id_user 
+            AND current_lang=1";
 
     $upd = $db->prepare($sql);
     $upd->bindValue(":id_user", $id_user, PDO::PARAM_INT);
@@ -221,7 +223,8 @@ function getBadge() {
 
     $sql = "UPDATE users_languages 
             SET level_user = :level_user 
-            WHERE user_idl = :id_user";
+            WHERE user_idl = :id_user
+            AND current_lang=1";
 
     $upd = $db->prepare($sql);
     $upd->bindValue(":id_user", $id_user, PDO::PARAM_INT);

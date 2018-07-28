@@ -1,3 +1,8 @@
+/* le .js correspond aux variables utilisé en js et non affichable */
+.data {
+    display: none;
+}
+
 a {
     text-decoration: none;
 }
