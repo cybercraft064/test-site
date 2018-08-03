@@ -17,9 +17,6 @@ var dataInputReply
 
 
 
-
-
-
 // -- Préparation de la vue  -- //
 // Fonction: Début d'une leçon
 function F_begineView() {  
