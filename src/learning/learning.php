@@ -5,6 +5,7 @@ include('logic/learning-logic.php');
 <!DOCTYPE html>
 <html>
     <head>
+    
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700|Raleway:300,400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat" rel="stylesheet">
@@ -17,12 +18,7 @@ include('logic/learning-logic.php');
     <body>
         <div class="page-container" style="background-image: url('<?= $backgroundLesson.$level.".jpg";?>')">
         
-            <script>
-                /* récupération d'un tableau contenant la leçon à faire */
-                var translations = <?php echo json_encode($translations); ?>
-                /* récupèration du numéro de leçon en cours */
-                var currentLesson = <?php echo json_encode($curLesson); ?>
-            </script>
+            
 
             <div class="header">
                     <span><img src="../../assets/img/logo-white.png" class="logo" /></span>
@@ -73,8 +69,7 @@ include('logic/learning-logic.php');
                      />
 
                    <button id="data_NextButton_Css" 
-                           class="next-button" 
-                           onclick="F_checkAnswer(correctAnswer)">                          
+                           class="next-button" >                          
                     </button>
                                                  
                 </div>
@@ -82,8 +77,7 @@ include('logic/learning-logic.php');
                 <!-- utilisé seulement en cas de mauvaise réponse -->
                     <div id="data_BadReply">
                         <p id="data_WordReply"></p>
-                    </div>
-                     
+                    </div>                    
 
             </div> 
 
@@ -91,10 +85,13 @@ include('logic/learning-logic.php');
             <div class="pseudo"><?= $pseudo_user; ?></div>
             </footer>
         </div> 
-        <div id="data_PseudoUser" class="data"><?php echo $_SESSION['pseudo-user']; ?></div>
-        <div id="data_CurrentCodeLanguage" class="data"><?php echo $_SESSION['current-code-language']; ?></div>
 
-
+        <script>
+            /* récupération d'un tableau contenant la leçon à faire */
+            var translations = <?php echo json_encode($translations); ?>
+            /* récupèration du numéro de leçon en cours */
+            var currentLesson = <?php echo $curLesson; ?>
+        </script>
         <script src="../shared/js/burger.js"> </script> 
         <script src="js/learning.js"></script>
     
