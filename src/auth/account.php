@@ -56,13 +56,13 @@ include('logic/account-logic.php');
                     <p><label class="label-form">E-mail</label></p>
                     <div class="input-wrappers-left">
                     <i class="input-icon-mail icon-mail"></i>
-                        <input type="email" class="field-input" name="email" placeholder=<?= $email_user; ?> disabled="TRUE" autocomplete="off" />
+                        <input type="email" class="field-input" name="email" placeholder="<?= $email_user; ?>" disabled="TRUE" autocomplete="off" />
                     </div>
 
                     <p><label class="label-form">Code Parrainage</label></p>
                     <div class="input-wrappers-left-bottom">
                     <i class="input-icon-parrain icon-parrain"></i>
-                       <input type="text" class="field-input" name="parrains" placeholder=<?= $code_parrain; ?> />
+                       <input type="text" class="field-input" name="parrains" placeholder="<?= $code_parrain; ?>" />
                     </div>
                 </form>
 
