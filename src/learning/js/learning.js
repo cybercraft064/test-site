@@ -12,10 +12,6 @@ var textButton;
 var dataBadReply;
 var dataWordReply;
 var dataInputReply
-// Chargement de quelques noeuds sous forme de variable, un seul appel
-
-
-// test gitHub
 
 // -- Préparation de la vue  -- //
 // Fonction: Début d'une leçon
@@ -50,14 +46,12 @@ function F_checkAnswer() {
     // Compare la réponse
     if (userAnswer != "" ) {
         if (userAnswer == correctAnswer) {
-                console.log("Fonction: F_checkAnswer --> Bonne réponse");
             dataCouleurCss.classList.add("good-reply");             
             textButton.textContent="suivant".toUpperCase();        
             goodAnswer = true;
             
 
         } else {
-                console.log("Fonction F_checkAnswer --> Mauvaise réponse");
             dataCouleurCss.classList.add("bad-reply");
             dataBadReply.classList.add("correction-container");
             dataWordReply.textContent=correctAnswer;
@@ -116,8 +110,10 @@ function F_loopWord() {
     F_begineView(wordIndex);
 }
 
+// lancement des scripts en fin du loading de la page web.
 window.addEventListener('load', function(){
-
+	
+// Chargement de quelques noeuds sous forme de variable, un seul appel
     dataCouleurCss = document.getElementById("data_Couleur_Css");
     textButton = document.getElementById("data_NextButton_Css"); 
     dataBadReply = document.getElementById("data_BadReply"); 
@@ -125,20 +121,18 @@ window.addEventListener('load', function(){
     dataInputReply = document.getElementById("data_InputReply");
 
     // MEttre les event listeners
-    dataInputReply.addEventListener("keypress", function (e){
+    dataInputReply.addEventListener("keypress", function (e){ // touche Entrée
         if(e.keyCode == 13){
 
-            if (etape=="check"){
-                F_checkAnswer(); 
+            if (etape == "check"){
+                F_checkAnswer();// lancement de la fonction de controle saisie 
             }else{
-                (goodAnswer) ? F_nextWord() : F_loopWord();
-            }
-            
+                (goodAnswer) ? F_nextWord() : F_loopWord(); // Ternaire sur la bonne réponse
+            }           
         }
     });
 
-    textButton.addEventListener("click", function(){
-
+    textButton.addEventListener("click", function(){ // idem mais quand click sur le bouton
         if (etape == 'check' ){
             F_checkAnswer();
         } else {
